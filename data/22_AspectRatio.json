@@ -1,0 +1,21 @@
+{
+  "name": "AspectRatio",
+  "description": "A widget that attempts to size the child to a specific aspect ratio (width divided by height). Useful for keeping images, videos, or other content proportional.",
+  "how_to_use": "AspectRatio(\n  aspectRatio: 16 / 9,\n  child: Container(\n    color: Colors.blue,\n  ),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget below this widget in the tree that will be sized according to the aspect ratio.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "aspectRatio",
+      "type": "double",
+      "description": "The ratio of the width to the height of the child.",
+      "default_value": "Required",
+      "possible_values": "Any positive double, e.g., 16/9, 4/3, 1.0 (square)"
+    }
+  ]
+}

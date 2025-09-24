@@ -1,0 +1,49 @@
+{
+  "name": "CircularProgressIndicator",
+  "description": "A material design circular progress indicator. Indicates that an operation is ongoing. Can be determinate (with a value) or indeterminate (spinning).",
+  "how_to_use": "CircularProgressIndicator(\n  value: 0.7, // Optional for determinate progress (0.0 to 1.0)\n  backgroundColor: Colors.grey[200],\n  valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),\n  strokeWidth: 4.0,\n);",
+  "properties": [
+    {
+      "name": "value",
+      "type": "double?",
+      "description": "The progress value, from 0.0 to 1.0. If null, the indicator is indeterminate (spinning).",
+      "default_value": "null",
+      "possible_values": "Any double between 0.0 and 1.0, or null"
+    },
+    {
+      "name": "backgroundColor",
+      "type": "Color?",
+      "description": "The color of the circle track behind the progress indicator.",
+      "default_value": "null",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "valueColor",
+      "type": "Animation<Color?>?",
+      "description": "The color of the progress indicator. Usually wrapped in an AlwaysStoppedAnimation for a fixed color.",
+      "default_value": "null (uses Theme's accent color)",
+      "possible_values": "Any Animation<Color?>, e.g., AlwaysStoppedAnimation<Color>(Colors.blue)"
+    },
+    {
+      "name": "strokeWidth",
+      "type": "double",
+      "description": "The thickness of the line used to draw the circle.",
+      "default_value": "4.0",
+      "possible_values": "Any positive double"
+    },
+    {
+      "name": "semanticsLabel",
+      "type": "String?",
+      "description": "Optional semantic label for accessibility.",
+      "default_value": "null",
+      "possible_values": "Any string"
+    },
+    {
+      "name": "semanticsValue",
+      "type": "String?",
+      "description": "Optional semantic value describing the current progress.",
+      "default_value": "null",
+      "possible_values": "Any string"
+    }
+  ]
+}

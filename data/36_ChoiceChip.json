@@ -1,0 +1,77 @@
+{
+  "name": "ChoiceChip",
+  "description": "A material design chip that represents a single choice from a set. Useful for filter options, preferences, or selections.",
+  "how_to_use": "bool _isSelected = false;\n\nChoiceChip(\n  label: Text('Option 1'),\n  selected: _isSelected,\n  onSelected: (bool selected) {\n    setState(() {\n      _isSelected = selected;\n    });\n  },\n  selectedColor: Colors.blue,\n  backgroundColor: Colors.grey[200],\n  labelStyle: TextStyle(color: Colors.white),\n);",
+  "properties": [
+    {
+      "name": "label",
+      "type": "Widget",
+      "description": "The primary content of the chip, usually a Text widget.",
+      "default_value": "Required",
+      "possible_values": "Any widget, typically Text"
+    },
+    {
+      "name": "selected",
+      "type": "bool",
+      "description": "Whether this chip is currently selected.",
+      "default_value": "false",
+      "possible_values": "true or false"
+    },
+    {
+      "name": "onSelected",
+      "type": "ValueChanged<bool>?",
+      "description": "Called when the chip is tapped, providing the new selected state.",
+      "default_value": "null (chip is disabled)",
+      "possible_values": "Function(bool selected) or null"
+    },
+    {
+      "name": "avatar",
+      "type": "Widget?",
+      "description": "A widget to display before the label, often a CircleAvatar.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "backgroundColor",
+      "type": "Color?",
+      "description": "The chip's background color when not selected.",
+      "default_value": "Theme dependent",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "selectedColor",
+      "type": "Color?",
+      "description": "The chip's background color when selected.",
+      "default_value": "Theme dependent",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "labelStyle",
+      "type": "TextStyle?",
+      "description": "The style to use for the label text.",
+      "default_value": "Theme dependent",
+      "possible_values": "Any TextStyle"
+    },
+    {
+      "name": "labelPadding",
+      "type": "EdgeInsetsGeometry?",
+      "description": "Empty space surrounding the label.",
+      "default_value": "EdgeInsets.symmetric(horizontal: 8.0)",
+      "possible_values": "Any EdgeInsets"
+    },
+    {
+      "name": "shape",
+      "type": "ShapeBorder?",
+      "description": "The shape of the chip, often a StadiumBorder or RoundedRectangleBorder.",
+      "default_value": "StadiumBorder()",
+      "possible_values": "Any ShapeBorder"
+    },
+    {
+      "name": "clipBehavior",
+      "type": "Clip",
+      "description": "How to clip the chip's content if it overflows.",
+      "default_value": "Clip.none",
+      "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+    }
+  ]
+}

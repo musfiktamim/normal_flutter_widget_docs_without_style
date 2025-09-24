@@ -1,0 +1,35 @@
+{
+  "name": "ClipPath",
+  "description": "A widget that clips its child using a custom path. Useful for creating complex shapes, custom designs, or animations.",
+  "how_to_use": "ClipPath(\n  clipper: MyCustomClipper(),\n  child: Container(\n    color: Colors.blue,\n    width: 200,\n    height: 100,\n  ),\n);\n\n// Example of a custom clipper\nclass MyCustomClipper extends CustomClipper<Path> {\n  @override\n  Path getClip(Size size) {\n    Path path = Path();\n    path.lineTo(size.width, 0);\n    path.lineTo(size.width, size.height);\n    path.lineTo(0, size.height);\n    path.close();\n    return path;\n  }\n\n  @override\n  bool shouldReclip(CustomClipper<Path> oldClipper) => false;\n}",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget to display inside the custom path.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "clipper",
+      "type": "CustomClipper<Path>?",
+      "description": "A custom clipper that defines the clipping path.",
+      "default_value": "null",
+      "possible_values": "Any class that extends CustomClipper<Path>"
+    },
+    {
+      "name": "clipBehavior",
+      "type": "Clip",
+      "description": "How to clip the content if it overflows the custom path.",
+      "default_value": "Clip.antiAlias",
+      "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+    },
+    {
+      "name": "key",
+      "type": "Key?",
+      "description": "An optional identifier for this widget.",
+      "default_value": "null",
+      "possible_values": "Any Key"
+    }
+  ]
+}

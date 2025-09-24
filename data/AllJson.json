@@ -1,0 +1,2386 @@
+[
+    {
+        "_id": 1,
+        "name": "AboutDialog",
+        "description": "A Material Design dialog that shows application information such as name, version, and legalese. Typically used for an “About” section in apps.",
+        "how_to_use": "showAboutDialog(\n  context: context,\n  applicationName: 'My Flutter App',\n  applicationVersion: '1.0.0',\n  applicationLegalese: '© 2025 My Company',\n  applicationIcon: FlutterLogo(size: 48),\n);",
+        "properties": [
+            {
+                "name": "applicationName",
+                "type": "String?",
+                "description": "The name of the application to display in the dialog.",
+                "default_value": "null (defaults to the app's title from MaterialApp if provided)",
+                "possible_values": "Any string"
+            },
+            {
+                "name": "applicationVersion",
+                "type": "String?",
+                "description": "The version of the application.",
+                "default_value": "null",
+                "possible_values": "Any string (e.g., '1.0.0')"
+            },
+            {
+                "name": "applicationIcon",
+                "type": "Widget?",
+                "description": "An optional widget to display as the application icon at the top of the dialog.",
+                "default_value": "null",
+                "possible_values": "Any widget (e.g., FlutterLogo())"
+            },
+            {
+                "name": "applicationLegalese",
+                "type": "String?",
+                "description": "Optional legal text to display, such as copyright information.",
+                "default_value": "null",
+                "possible_values": "Any string"
+            },
+            {
+                "name": "children",
+                "type": "List<Widget>?",
+                "description": "Optional widgets to display between the version/legalese and the close button.",
+                "default_value": "null",
+                "possible_values": "Any list of widgets"
+            }
+        ]
+    },
+    {
+        "_id": 2,
+        "name": "AboutListTile",
+        "description": "A convenience ListTile that opens an About dialog when tapped. It’s a quick way to include an app information section inside a Drawer or Settings screen.",
+        "how_to_use": "AboutListTile(\n  icon: Icon(Icons.info),\n  applicationName: 'My Flutter App',\n  applicationVersion: '1.0.0',\n  applicationLegalese: '© 2025 My Company',\n  aboutBoxChildren: [\n    Text('This app is built with Flutter.'),\n  ],\n);",
+        "properties": [
+            {
+                "name": "icon",
+                "type": "Widget?",
+                "description": "Leading widget shown before the title (usually an Icon).",
+                "default_value": "null",
+                "possible_values": "Any widget, e.g. Icon(Icons.info)"
+            },
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "Custom widget for the tile’s title. If null, `applicationName` or a default text is used.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "applicationName",
+                "type": "String?",
+                "description": "The name of the application displayed in the About dialog.",
+                "default_value": "null (defaults to the MaterialApp title if available)",
+                "possible_values": "Any string"
+            },
+            {
+                "name": "applicationVersion",
+                "type": "String?",
+                "description": "The version of the application displayed in the About dialog.",
+                "default_value": "null",
+                "possible_values": "Any string (e.g. '1.0.0')"
+            },
+            {
+                "name": "applicationIcon",
+                "type": "Widget?",
+                "description": "Widget displayed as the application icon inside the About dialog.",
+                "default_value": "null",
+                "possible_values": "Any widget, e.g. FlutterLogo()"
+            },
+            {
+                "name": "applicationLegalese",
+                "type": "String?",
+                "description": "Optional legal text such as copyright or license info.",
+                "default_value": "null",
+                "possible_values": "Any string"
+            },
+            {
+                "name": "aboutBoxChildren",
+                "type": "List<Widget>?",
+                "description": "Additional widgets to display in the About dialog below the version/legalese.",
+                "default_value": "null",
+                "possible_values": "Any list of widgets"
+            },
+            {
+                "name": "dense",
+                "type": "bool?",
+                "description": "Whether this list tile is part of a vertically dense list.",
+                "default_value": "false",
+                "possible_values": "true or false"
+            },
+            {
+                "name": "onTap",
+                "type": "VoidCallback?",
+                "description": "Callback when the tile is tapped. Defaults to showing the About dialog.",
+                "default_value": "null (shows default dialog)",
+                "possible_values": "Any function"
+            }
+        ]
+    },
+    {
+        "_id": 3,
+        "name": "AbsorbPointer",
+        "description": "A widget that prevents its subtree from receiving pointer events. It still participates in layout and painting but absorbs any touches, gestures, or pointer interactions.",
+        "how_to_use": "AbsorbPointer(\n  absorbing: true,\n  child: ElevatedButton(\n    onPressed: () {\n      print('Button tapped');\n    },\n    child: Text('Tap Me'),\n  ),\n)",
+        "properties": [
+            {
+                "name": "absorbing",
+                "type": "bool",
+                "description": "Whether to absorb (block) pointer events. If true, the child cannot be interacted with.",
+                "default_value": "true",
+                "possible_values": "true or false"
+            },
+            {
+                "name": "ignoringSemantics",
+                "type": "bool",
+                "description": "Whether to ignore the semantics of the child for accessibility. Useful when disabling interactions but keeping or removing semantics.",
+                "default_value": "false",
+                "possible_values": "true or false"
+            },
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget below this widget in the tree that will be prevented from receiving pointer events.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            }
+        ]
+    },
+    {
+        "_id": 4,
+        "name": "AlertDialog",
+        "description": "A Material Design alert dialog. It typically contains a title, content, and a set of actions. Used to notify the user of situations that require acknowledgment or a decision.",
+        "how_to_use": "showDialog(\n  context: context,\n  builder: (context) {\n    return AlertDialog(\n      title: Text('Delete Item'),\n      content: Text('Are you sure you want to delete this item?'),\n      actions: [\n        TextButton(\n          onPressed: () => Navigator.pop(context),\n          child: Text('Cancel'),\n        ),\n        ElevatedButton(\n          onPressed: () {\n            // Perform delete\n            Navigator.pop(context);\n          },\n          child: Text('Delete'),\n        ),\n      ],\n    );\n  },\n);",
+        "properties": [
+            {
+                "name": "title",
+                "type": "Widget?",
+                "description": "The primary content of the dialog displayed in the title area.",
+                "default_value": "null",
+                "possible_values": "Any widget, typically a Text widget."
+            },
+            {
+                "name": "titlePadding",
+                "type": "EdgeInsetsGeometry?",
+                "description": "Padding around the title.",
+                "default_value": "EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0.0)",
+                "possible_values": "Any EdgeInsets value."
+            },
+            {
+                "name": "titleTextStyle",
+                "type": "TextStyle?",
+                "description": "Text style of the title.",
+                "default_value": "null (inherits from theme)",
+                "possible_values": "Any TextStyle."
+            },
+            {
+                "name": "content",
+                "type": "Widget?",
+                "description": "The main content of the dialog, typically a Text or Column widget.",
+                "default_value": "null",
+                "possible_values": "Any widget."
+            },
+            {
+                "name": "contentPadding",
+                "type": "EdgeInsetsGeometry",
+                "description": "Padding around the content.",
+                "default_value": "EdgeInsets.fromLTRB(24.0, 20.0, 24.0, 24.0)",
+                "possible_values": "Any EdgeInsets value."
+            },
+            {
+                "name": "contentTextStyle",
+                "type": "TextStyle?",
+                "description": "Text style for the content area.",
+                "default_value": "null (inherits from theme)",
+                "possible_values": "Any TextStyle."
+            },
+            {
+                "name": "actions",
+                "type": "List<Widget>?",
+                "description": "The set of actions at the bottom of the dialog (e.g., buttons).",
+                "default_value": "null",
+                "possible_values": "List of widgets, typically TextButton or ElevatedButton."
+            },
+            {
+                "name": "actionsPadding",
+                "type": "EdgeInsetsGeometry",
+                "description": "Padding around the actions area.",
+                "default_value": "EdgeInsets.only(bottom: 8.0, left: 8.0, right: 8.0)",
+                "possible_values": "Any EdgeInsets value."
+            },
+            {
+                "name": "actionsOverflowDirection",
+                "type": "VerticalDirection?",
+                "description": "The direction in which action buttons should overflow.",
+                "default_value": "null",
+                "possible_values": "up or down"
+            },
+            {
+                "name": "backgroundColor",
+                "type": "Color?",
+                "description": "The background color of the dialog.",
+                "default_value": "null (uses Theme dialogBackgroundColor)",
+                "possible_values": "Any Color."
+            },
+            {
+                "name": "elevation",
+                "type": "double?",
+                "description": "The z-coordinate of the dialog's material.",
+                "default_value": "null (uses Theme)",
+                "possible_values": "Any double value."
+            },
+            {
+                "name": "shape",
+                "type": "ShapeBorder?",
+                "description": "Shape of the dialog's border.",
+                "default_value": "null (uses default Material shape)",
+                "possible_values": "RoundedRectangleBorder, etc."
+            },
+            {
+                "name": "scrollable",
+                "type": "bool",
+                "description": "Whether the content is scrollable if it overflows.",
+                "default_value": "false",
+                "possible_values": "true or false"
+            },
+            {
+                "name": "clipBehavior",
+                "type": "Clip",
+                "description": "How to clip content if it overflows the dialog's boundary.",
+                "default_value": "Clip.none",
+                "possible_values": "none, hardEdge, antiAlias, antiAliasWithSaveLayer"
+            },
+            {
+                "name": "insetPadding",
+                "type": "EdgeInsets",
+                "description": "Padding applied to the dialog to prevent it from growing too large.",
+                "default_value": "EdgeInsets.symmetric(horizontal: 40.0, vertical: 24.0)",
+                "possible_values": "Any EdgeInsets value."
+            },
+            {
+                "name": "semanticLabel",
+                "type": "String?",
+                "description": "Semantic label for accessibility.",
+                "default_value": "null",
+                "possible_values": "Any string."
+            }
+        ]
+    },
+    {
+        "_id": 5,
+        "name": "Align",
+        "description": "A widget that aligns its child within itself and optionally sizes itself based on the child's size.",
+        "how_to_use": "Align(\n  alignment: Alignment.topRight,\n  widthFactor: 2.0,\n  heightFactor: 2.0,\n  child: Container(\n    color: Colors.blue,\n    width: 50,\n    height: 50,\n  ),\n);",
+        "properties": [
+            {
+                "name": "alignment",
+                "type": "AlignmentGeometry",
+                "description": "Defines how the child is aligned within the parent.",
+                "default_value": "Alignment.center",
+                "possible_values": "Alignment.topLeft, Alignment.topCenter, Alignment.topRight, Alignment.centerLeft, Alignment.center, Alignment.centerRight, Alignment.bottomLeft, Alignment.bottomCenter, Alignment.bottomRight, Alignment(x, y)"
+            },
+            {
+                "name": "widthFactor",
+                "type": "double?",
+                "description": "If non-null, sets the width of the Align widget to be this factor times the child's width.",
+                "default_value": "null",
+                "possible_values": "Any positive double or null"
+            },
+            {
+                "name": "heightFactor",
+                "type": "double?",
+                "description": "If non-null, sets the height of the Align widget to be this factor times the child's height.",
+                "default_value": "null",
+                "possible_values": "Any positive double or null"
+            },
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget below this widget in the tree to be aligned.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            }
+        ]
+    },
+    {
+        "_id": 6,
+        "name": "AnimatedAlign",
+        "description": "A widget that automatically transitions its child's position over a given duration whenever the alignment changes. Useful for smooth animations when changing alignment.",
+        "how_to_use": "AnimatedAlign(\n  alignment: _isTopRight ? Alignment.topRight : Alignment.bottomLeft,\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n  child: Container(\n    width: 50,\n    height: 50,\n    color: Colors.red,\n  ),\n);",
+        "properties": [
+            {
+                "name": "alignment",
+                "type": "AlignmentGeometry",
+                "description": "The alignment of the child within the parent. Changes to this value are animated.",
+                "default_value": "Alignment.center",
+                "possible_values": "Alignment.topLeft, Alignment.topCenter, Alignment.topRight, Alignment.centerLeft, Alignment.center, Alignment.centerRight, Alignment.bottomLeft, Alignment.bottomCenter, Alignment.bottomRight, Alignment(x, y)"
+            },
+            {
+                "name": "duration",
+                "type": "Duration",
+                "description": "The length of time the animation should last when alignment changes.",
+                "default_value": "Required",
+                "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+            },
+            {
+                "name": "curve",
+                "type": "Curve",
+                "description": "The animation curve to use when changing alignment.",
+                "default_value": "Curves.linear",
+                "possible_values": "Any Flutter animation curve, e.g., Curves.easeIn, Curves.easeOut"
+            },
+            {
+                "name": "widthFactor",
+                "type": "double?",
+                "description": "If non-null, sets the width of the AnimatedAlign to this factor times the child's width.",
+                "default_value": "null",
+                "possible_values": "Any positive double or null"
+            },
+            {
+                "name": "heightFactor",
+                "type": "double?",
+                "description": "If non-null, sets the height of the AnimatedAlign to this factor times the child's height.",
+                "default_value": "null",
+                "possible_values": "Any positive double or null"
+            },
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget below this widget in the tree to animate.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            }
+        ]
+    },
+    {
+        "_id": 7,
+        "name": "AnimatedBuilder",
+        "description": "A widget that rebuilds whenever the given animation changes. It is useful for creating custom animations without creating a separate StatefulWidget.",
+        "how_to_use": "AnimationController _controller = AnimationController(\n  duration: const Duration(seconds: 2),\n  vsync: this,\n);\n\nAnimatedBuilder(\n  animation: _controller,\n  builder: (context, child) {\n    return Transform.rotate(\n      angle: _controller.value * 2 * 3.1416,\n      child: child,\n    );\n  },\n  child: Container(\n    width: 100,\n    height: 100,\n    color: Colors.blue,\n  ),\n);",
+        "properties": [
+            {
+                "name": "animation",
+                "type": "Listenable",
+                "description": "The animation (usually an AnimationController or Animation) to listen to. The builder is called whenever this animation updates.",
+                "default_value": "Required",
+                "possible_values": "Any object that implements Listenable, e.g., AnimationController or Animation<double>"
+            },
+            {
+                "name": "builder",
+                "type": "Widget Function(BuildContext, Widget?)",
+                "description": "Called whenever the animation changes. Must return a widget that is part of the widget tree.",
+                "default_value": "Required",
+                "possible_values": "Any function returning a widget."
+            },
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "Optional child widget that does not depend on the animation and can be passed to the builder to avoid rebuilding it every frame.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            }
+        ]
+    },
+    {
+        "_id": 8,
+        "name": "AnimatedContainer",
+        "description": "A container that automatically animates changes to its properties over a given duration and curve. Useful for creating implicit animations without a StatefulWidget.",
+        "how_to_use": "AnimatedContainer(\n  width: _isExpanded ? 200 : 100,\n  height: _isExpanded ? 200 : 100,\n  color: _isExpanded ? Colors.blue : Colors.red,\n  alignment: _isExpanded ? Alignment.center : Alignment.topLeft,\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n  child: const Text('Animated Container'),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget below this widget in the tree.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "alignment",
+                "type": "AlignmentGeometry?",
+                "description": "How to align the child within the container.",
+                "default_value": "null",
+                "possible_values": "Alignment.topLeft, Alignment.center, Alignment.bottomRight, etc."
+            },
+            {
+                "name": "padding",
+                "type": "EdgeInsetsGeometry?",
+                "description": "Empty space inside the container around the child.",
+                "default_value": "null",
+                "possible_values": "EdgeInsets.all(), EdgeInsets.symmetric(), etc."
+            },
+            {
+                "name": "color",
+                "type": "Color?",
+                "description": "Background color of the container.",
+                "default_value": "null",
+                "possible_values": "Any Color, e.g., Colors.red"
+            },
+            {
+                "name": "decoration",
+                "type": "Decoration?",
+                "description": "A decoration to paint behind the child. Cannot be specified if color is non-null.",
+                "default_value": "null",
+                "possible_values": "BoxDecoration, ShapeDecoration, etc."
+            },
+            {
+                "name": "foregroundDecoration",
+                "type": "Decoration?",
+                "description": "A decoration to paint in front of the child.",
+                "default_value": "null",
+                "possible_values": "BoxDecoration, ShapeDecoration, etc."
+            },
+            {
+                "name": "width",
+                "type": "double?",
+                "description": "The width of the container.",
+                "default_value": "null",
+                "possible_values": "Any positive double or null"
+            },
+            {
+                "name": "height",
+                "type": "double?",
+                "description": "The height of the container.",
+                "default_value": "null",
+                "possible_values": "Any positive double or null"
+            },
+            {
+                "name": "constraints",
+                "type": "BoxConstraints?",
+                "description": "Additional constraints to apply to the container.",
+                "default_value": "null",
+                "possible_values": "BoxConstraints(minWidth: ..., maxHeight: ...)"
+            },
+            {
+                "name": "margin",
+                "type": "EdgeInsetsGeometry?",
+                "description": "Empty space around the container.",
+                "default_value": "null",
+                "possible_values": "EdgeInsets.all(), EdgeInsets.symmetric(), etc."
+            },
+            {
+                "name": "transform",
+                "type": "Matrix4?",
+                "description": "A transformation to apply before painting the container.",
+                "default_value": "null",
+                "possible_values": "Any Matrix4"
+            },
+            {
+                "name": "duration",
+                "type": "Duration",
+                "description": "The length of time over which to animate changes to properties.",
+                "default_value": "Required",
+                "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+            },
+            {
+                "name": "curve",
+                "type": "Curve",
+                "description": "The animation curve to use when animating changes.",
+                "default_value": "Curves.linear",
+                "possible_values": "Curves.easeIn, Curves.easeOut, Curves.easeInOut, etc."
+            }
+        ]
+    },
+    {
+        "_id": 9,
+        "name": "AnimatedCrossFade",
+        "description": "A widget that cross-fades between two children and animates their size over a given duration. Useful for smoothly transitioning between two widgets.",
+        "how_to_use": "AnimatedCrossFade(\n  firstChild: Container(\n    width: 100,\n    height: 100,\n    color: Colors.blue,\n    child: Center(child: Text('First')),\n  ),\n  secondChild: Container(\n    width: 150,\n    height: 150,\n    color: Colors.red,\n    child: Center(child: Text('Second')),\n  ),\n  crossFadeState: _showFirst ? CrossFadeState.showFirst : CrossFadeState.showSecond,\n  duration: const Duration(seconds: 1),\n  firstCurve: Curves.easeIn,\n  secondCurve: Curves.easeOut,\n);",
+        "properties": [
+            {
+                "name": "firstChild",
+                "type": "Widget",
+                "description": "The first widget to display in the cross-fade.",
+                "default_value": "Required",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "secondChild",
+                "type": "Widget",
+                "description": "The second widget to display in the cross-fade.",
+                "default_value": "Required",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "crossFadeState",
+                "type": "CrossFadeState",
+                "description": "Determines which child is shown.",
+                "default_value": "Required",
+                "possible_values": "CrossFadeState.showFirst, CrossFadeState.showSecond"
+            },
+            {
+                "name": "duration",
+                "type": "Duration",
+                "description": "The length of time over which to animate the cross-fade.",
+                "default_value": "Required",
+                "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+            },
+            {
+                "name": "reverseDuration",
+                "type": "Duration?",
+                "description": "The duration of the reverse animation. If null, uses `duration`.",
+                "default_value": "null",
+                "possible_values": "Any Duration or null"
+            },
+            {
+                "name": "sizeCurve",
+                "type": "Curve",
+                "description": "The curve to apply to the size animation during the cross-fade.",
+                "default_value": "Curves.linear",
+                "possible_values": "Any Flutter curve, e.g., Curves.easeInOut"
+            },
+            {
+                "name": "firstCurve",
+                "type": "Curve",
+                "description": "The curve to apply to the first child’s opacity animation.",
+                "default_value": "Curves.linear",
+                "possible_values": "Any Flutter curve"
+            },
+            {
+                "name": "secondCurve",
+                "type": "Curve",
+                "description": "The curve to apply to the second child’s opacity animation.",
+                "default_value": "Curves.linear",
+                "possible_values": "Any Flutter curve"
+            },
+            {
+                "name": "alignment",
+                "type": "AlignmentGeometry",
+                "description": "The alignment of the children within the parent during the cross-fade.",
+                "default_value": "Alignment.center",
+                "possible_values": "Any Alignment, e.g., Alignment.topLeft, Alignment.center, etc."
+            }
+        ]
+    },
+    {
+        "_id": 10,
+        "name": "AnimatedDefaultTextStyle",
+        "description": "A widget that automatically animates changes in the default text style (TextStyle) of its child over a given duration. Useful for smooth text style transitions without a StatefulWidget.",
+        "how_to_use": "AnimatedDefaultTextStyle(\n  style: _isBold\n      ? TextStyle(fontSize: 24, color: Colors.blue, fontWeight: FontWeight.bold)\n      : TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.normal),\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n  child: const Text('Animated Text Style'),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget",
+                "description": "The widget below this widget in the tree whose text style will be animated.",
+                "default_value": "Required",
+                "possible_values": "Any widget containing text"
+            },
+            {
+                "name": "style",
+                "type": "TextStyle",
+                "description": "The target text style to animate to.",
+                "default_value": "Required",
+                "possible_values": "Any TextStyle"
+            },
+            {
+                "name": "duration",
+                "type": "Duration",
+                "description": "The length of time over which to animate the text style changes.",
+                "default_value": "Required",
+                "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+            },
+            {
+                "name": "curve",
+                "type": "Curve",
+                "description": "The animation curve to use when animating the text style changes.",
+                "default_value": "Curves.linear",
+                "possible_values": "Any Flutter animation curve, e.g., Curves.easeInOut"
+            },
+            {
+                "name": "textAlign",
+                "type": "TextAlign?",
+                "description": "How the text should be aligned horizontally within its bounds.",
+                "default_value": "null",
+                "possible_values": "start, end, center, justify, left, right"
+            },
+            {
+                "name": "softWrap",
+                "type": "bool?",
+                "description": "Whether the text should break at soft line breaks.",
+                "default_value": "null",
+                "possible_values": "true or false"
+            },
+            {
+                "name": "overflow",
+                "type": "TextOverflow?",
+                "description": "How visual overflow should be handled.",
+                "default_value": "null",
+                "possible_values": "clip, fade, ellipsis, visible"
+            },
+            {
+                "name": "maxLines",
+                "type": "int?",
+                "description": "The maximum number of lines for the text.",
+                "default_value": "null (unlimited)",
+                "possible_values": "Any positive integer"
+            }
+        ]
+    },
+    {
+        "_id": 11,
+        "name": "AnimatedIcon",
+        "description": "A widget that displays an animated icon that can be controlled via an AnimationController. Useful for animated transitions between icon states.",
+        "how_to_use": "AnimatedIcon(\n  icon: AnimatedIcons.menu_close,\n  progress: _controller,\n  size: 48.0,\n  color: Colors.blue,\n);",
+        "properties": [
+            {
+                "name": "icon",
+                "type": "AnimatedIconData",
+                "description": "The type of animated icon to display. This defines the animation between two icon states.",
+                "default_value": "Required",
+                "possible_values": "Any AnimatedIcons built-in icons, e.g., AnimatedIcons.menu_close, AnimatedIcons.play_pause, AnimatedIcons.add_event, etc."
+            },
+            {
+                "name": "progress",
+                "type": "Animation<double>",
+                "description": "Controls the animation of the icon. The value should typically be between 0.0 and 1.0.",
+                "default_value": "Required",
+                "possible_values": "Any Animation<double> or AnimationController"
+            },
+            {
+                "name": "size",
+                "type": "double?",
+                "description": "The size of the icon in logical pixels.",
+                "default_value": "24.0",
+                "possible_values": "Any positive double"
+            },
+            {
+                "name": "color",
+                "type": "Color?",
+                "description": "The color to use when painting the icon.",
+                "default_value": "null (inherits from IconTheme)",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "semanticLabel",
+                "type": "String?",
+                "description": "Text description for accessibility.",
+                "default_value": "null",
+                "possible_values": "Any string"
+            },
+            {
+                "name": "textDirection",
+                "type": "TextDirection?",
+                "description": "The text direction to use for rendering icons that depend on text direction (like arrow animations).",
+                "default_value": "null",
+                "possible_values": "TextDirection.ltr or TextDirection.rtl"
+            }
+        ]
+    },
+    {
+        "_id": 12,
+        "name": "AnimatedList",
+        "description": "A scrollable list of widgets that animates items when they are inserted or removed. Useful for dynamic lists where items can appear or disappear with smooth animations.",
+        "how_to_use": "final GlobalKey<AnimatedListState> _listKey = GlobalKey<AnimatedListState>();\nList<String> items = ['Item 1', 'Item 2'];\n\nAnimatedList(\n  key: _listKey,\n  initialItemCount: items.length,\n  itemBuilder: (context, index, animation) {\n    return SizeTransition(\n      sizeFactor: animation,\n      child: ListTile(title: Text(items[index])),\n    );\n  },\n);\n\n// To insert an item:\nitems.insert(1, 'New Item');\n_listKey.currentState?.insertItem(1);\n\n// To remove an item:\nfinal removedItem = items.removeAt(0);\n_listKey.currentState?.removeItem(\n  0,\n  (context, animation) => SizeTransition(\n    sizeFactor: animation,\n    child: ListTile(title: Text(removedItem)),\n  ),\n);",
+        "properties": [
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional key to uniquely identify the AnimatedList.",
+                "default_value": "null",
+                "possible_values": "Any Key"
+            },
+            {
+                "name": "initialItemCount",
+                "type": "int",
+                "description": "The number of items the list starts with.",
+                "default_value": "0",
+                "possible_values": "Any non-negative integer"
+            },
+            {
+                "name": "itemBuilder",
+                "type": "Widget Function(BuildContext, int, Animation<double>)",
+                "description": "Called to build each child in the list. Provides the index and an animation for insertion/removal.",
+                "default_value": "Required",
+                "possible_values": "Any function returning a Widget"
+            },
+            {
+                "name": "controller",
+                "type": "ScrollController?",
+                "description": "Controls the scroll offset of the list.",
+                "default_value": "null",
+                "possible_values": "Any ScrollController"
+            },
+            {
+                "name": "scrollDirection",
+                "type": "Axis",
+                "description": "The axis along which the list scrolls.",
+                "default_value": "Axis.vertical",
+                "possible_values": "Axis.vertical, Axis.horizontal"
+            },
+            {
+                "name": "reverse",
+                "type": "bool",
+                "description": "Whether the list scrolls in the opposite direction.",
+                "default_value": "false",
+                "possible_values": "true or false"
+            },
+            {
+                "name": "physics",
+                "type": "ScrollPhysics?",
+                "description": "How the list should respond to user scrolling.",
+                "default_value": "null",
+                "possible_values": "Any ScrollPhysics, e.g., BouncingScrollPhysics()"
+            },
+            {
+                "name": "shrinkWrap",
+                "type": "bool",
+                "description": "Whether the list should occupy only the space it needs.",
+                "default_value": "false",
+                "possible_values": "true or false"
+            },
+            {
+                "name": "padding",
+                "type": "EdgeInsetsGeometry?",
+                "description": "Padding around the list.",
+                "default_value": "null",
+                "possible_values": "Any EdgeInsets, e.g., EdgeInsets.all(8.0)"
+            }
+        ]
+    },
+    {
+        "_id": 13,
+        "name": "AnimatedModalBarrier",
+        "description": "A widget that prevents user interaction with widgets behind it and animates the barrier color over a given animation. Often used in modal routes to block touches and provide visual feedback.",
+        "how_to_use": "AnimationController _controller = AnimationController(\n  duration: const Duration(seconds: 1),\n  vsync: this,\n);\n\nAnimatedModalBarrier(\n  color: _controller.drive(ColorTween(begin: Colors.transparent, end: Colors.black54)),\n  dismissible: false,\n);",
+        "properties": [
+            {
+                "name": "color",
+                "type": "Animation<Color?>",
+                "description": "An animation that defines the color of the modal barrier. Changes in color are animated automatically.",
+                "default_value": "Required",
+                "possible_values": "Any Animation<Color?>, e.g., ColorTween.animate(controller)"
+            },
+            {
+                "name": "dismissible",
+                "type": "bool",
+                "description": "Whether tapping the barrier should dismiss the modal route.",
+                "default_value": "true",
+                "possible_values": "true or false"
+            },
+            {
+                "name": "semanticsLabel",
+                "type": "String?",
+                "description": "Semantic label for accessibility.",
+                "default_value": "null",
+                "possible_values": "Any string"
+            }
+        ]
+    },
+    {
+        "_id": 14,
+        "name": "AnimatedOpacity",
+        "description": "A widget that automatically animates changes in opacity of its child over a given duration. Useful for fade-in and fade-out effects without using a StatefulWidget manually.",
+        "how_to_use": "AnimatedOpacity(\n  opacity: _visible ? 1.0 : 0.0,\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n  child: Container(\n    width: 100,\n    height: 100,\n    color: Colors.blue,\n  ),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget",
+                "description": "The widget below this widget in the tree whose opacity will be animated.",
+                "default_value": "Required",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "opacity",
+                "type": "double",
+                "description": "The target opacity value. 0.0 means fully transparent and 1.0 means fully opaque.",
+                "default_value": "Required",
+                "possible_values": "Any double between 0.0 and 1.0"
+            },
+            {
+                "name": "duration",
+                "type": "Duration",
+                "description": "The length of time over which to animate opacity changes.",
+                "default_value": "Required",
+                "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+            },
+            {
+                "name": "curve",
+                "type": "Curve",
+                "description": "The animation curve to use when animating the opacity changes.",
+                "default_value": "Curves.linear",
+                "possible_values": "Any Flutter animation curve, e.g., Curves.easeInOut"
+            }
+        ]
+    },
+    {
+        "_id": 15,
+        "name": "AnimatedPadding",
+        "description": "A widget that automatically animates changes in its padding over a given duration and curve. Useful for smoothly adjusting spacing around a child widget without a StatefulWidget.",
+        "how_to_use": "AnimatedPadding(\n  padding: _isExpanded ? EdgeInsets.all(50) : EdgeInsets.all(10),\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n  child: Container(\n    width: 100,\n    height: 100,\n    color: Colors.blue,\n  ),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget",
+                "description": "The widget below this widget in the tree whose padding will be animated.",
+                "default_value": "Required",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "padding",
+                "type": "EdgeInsetsGeometry",
+                "description": "The target padding around the child.",
+                "default_value": "Required",
+                "possible_values": "Any EdgeInsets, e.g., EdgeInsets.all(10), EdgeInsets.symmetric(horizontal: 20)"
+            },
+            {
+                "name": "duration",
+                "type": "Duration",
+                "description": "The length of time over which to animate padding changes.",
+                "default_value": "Required",
+                "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+            },
+            {
+                "name": "curve",
+                "type": "Curve",
+                "description": "The animation curve to use when animating the padding changes.",
+                "default_value": "Curves.linear",
+                "possible_values": "Any Flutter animation curve, e.g., Curves.easeInOut, Curves.bounceIn"
+            }
+        ]
+    },
+    {
+        "_id": 16,
+        "name": "AnimatedPhysicalModel",
+        "description": "A widget that animates changes in a physical model’s properties such as color, elevation, shape, and shadow over a given duration. Useful for smooth Material-style animations.",
+        "how_to_use": "AnimatedPhysicalModel(\n  child: Container(width: 100, height: 100, color: Colors.blue),\n  color: _isSelected ? Colors.red : Colors.blue,\n  elevation: _isSelected ? 10 : 2,\n  shape: BoxShape.rectangle,\n  shadowColor: Colors.black,\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget",
+                "description": "The widget below this widget in the tree whose physical model will be animated.",
+                "default_value": "Required",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "color",
+                "type": "Color",
+                "description": "The background color of the physical model.",
+                "default_value": "Required",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "elevation",
+                "type": "double",
+                "description": "The z-coordinate at which to place this physical model. Higher elevation casts bigger shadows.",
+                "default_value": "Required",
+                "possible_values": "Any non-negative double"
+            },
+            {
+                "name": "shape",
+                "type": "BoxShape",
+                "description": "The shape of the box. Can be rectangle or circle.",
+                "default_value": "BoxShape.rectangle",
+                "possible_values": "BoxShape.rectangle, BoxShape.circle"
+            },
+            {
+                "name": "shadowColor",
+                "type": "Color",
+                "description": "The color of the shadow below the physical model.",
+                "default_value": "Colors.black",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "clipBehavior",
+                "type": "Clip",
+                "description": "How to clip the child if it overflows the bounds.",
+                "default_value": "Clip.none",
+                "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+            },
+            {
+                "name": "duration",
+                "type": "Duration",
+                "description": "The length of time over which to animate changes to properties.",
+                "default_value": "Required",
+                "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+            },
+            {
+                "name": "curve",
+                "type": "Curve",
+                "description": "The animation curve to use when animating property changes.",
+                "default_value": "Curves.linear",
+                "possible_values": "Any Flutter animation curve, e.g., Curves.easeInOut"
+            }
+        ]
+    },
+    {
+        "_id": 17,
+        "name": "AnimatedPositioned",
+        "description": "A widget that automatically animates changes to a child's position within a Stack over a given duration and curve. Useful for smooth repositioning without manual animation controllers.",
+        "how_to_use": "AnimatedPositioned(\n  left: _isMoved ? 200 : 50,\n  top: _isMoved ? 300 : 100,\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n  child: Container(\n    width: 100,\n    height: 100,\n    color: Colors.blue,\n  ),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget",
+                "description": "The widget below this widget in the tree whose position will be animated.",
+                "default_value": "Required",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "left",
+                "type": "double?",
+                "description": "The distance from the left edge of the stack. Can be null if not required.",
+                "default_value": "null",
+                "possible_values": "Any double or null"
+            },
+            {
+                "name": "top",
+                "type": "double?",
+                "description": "The distance from the top edge of the stack. Can be null if not required.",
+                "default_value": "null",
+                "possible_values": "Any double or null"
+            },
+            {
+                "name": "right",
+                "type": "double?",
+                "description": "The distance from the right edge of the stack. Can be null if not required.",
+                "default_value": "null",
+                "possible_values": "Any double or null"
+            },
+            {
+                "name": "bottom",
+                "type": "double?",
+                "description": "The distance from the bottom edge of the stack. Can be null if not required.",
+                "default_value": "null",
+                "possible_values": "Any double or null"
+            },
+            {
+                "name": "width",
+                "type": "double?",
+                "description": "The width of the child. If null, the child’s intrinsic width is used.",
+                "default_value": "null",
+                "possible_values": "Any double or null"
+            },
+            {
+                "name": "height",
+                "type": "double?",
+                "description": "The height of the child. If null, the child’s intrinsic height is used.",
+                "default_value": "null",
+                "possible_values": "Any double or null"
+            },
+            {
+                "name": "duration",
+                "type": "Duration",
+                "description": "The length of time over which to animate changes to position and size.",
+                "default_value": "Required",
+                "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+            },
+            {
+                "name": "curve",
+                "type": "Curve",
+                "description": "The animation curve to use when animating position and size changes.",
+                "default_value": "Curves.linear",
+                "possible_values": "Any Flutter animation curve, e.g., Curves.easeInOut"
+            }
+        ]
+    },
+    {
+        "_id": 18,
+        "name": "AnimatedRotation",
+        "description": "A widget that automatically animates changes in its rotation angle over a given duration and curve. Useful for smoothly rotating a child widget without manually using an AnimationController.",
+        "how_to_use": "AnimatedRotation(\n  turns: _isRotated ? 1.0 : 0.0, // 1.0 = 360 degrees\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n  child: Container(\n    width: 100,\n    height: 100,\n    color: Colors.blue,\n  ),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget",
+                "description": "The widget below this widget in the tree to rotate.",
+                "default_value": "Required",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "turns",
+                "type": "double",
+                "description": "The number of complete rotations to apply to the child. 1.0 equals a full 360-degree rotation.",
+                "default_value": "Required",
+                "possible_values": "Any double, e.g., 0.5 for 180 degrees, 1.0 for 360 degrees"
+            },
+            {
+                "name": "alignment",
+                "type": "Alignment",
+                "description": "The alignment around which to rotate the child.",
+                "default_value": "Alignment.center",
+                "possible_values": "Any Alignment, e.g., Alignment.topLeft, Alignment.center, Alignment.bottomRight"
+            },
+            {
+                "name": "duration",
+                "type": "Duration",
+                "description": "The length of time over which to animate rotation changes.",
+                "default_value": "Required",
+                "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+            },
+            {
+                "name": "curve",
+                "type": "Curve",
+                "description": "The animation curve to use when animating rotation.",
+                "default_value": "Curves.linear",
+                "possible_values": "Any Flutter animation curve, e.g., Curves.easeInOut"
+            }
+        ]
+    },
+    {
+        "_id": 19,
+        "name": "AnimatedSize",
+        "description": "A widget that automatically animates changes in its child's size over a given duration and curve. Useful for smooth resizing of widgets without using an explicit AnimationController.",
+        "how_to_use": "AnimatedSize(\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n  child: Container(\n    width: _isExpanded ? 200 : 100,\n    height: _isExpanded ? 200 : 100,\n    color: Colors.blue,\n  ),\n  vsync: this,\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget",
+                "description": "The widget below this widget in the tree whose size will be animated.",
+                "default_value": "Required",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "duration",
+                "type": "Duration",
+                "description": "The length of time over which to animate changes in size.",
+                "default_value": "Required",
+                "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+            },
+            {
+                "name": "curve",
+                "type": "Curve",
+                "description": "The animation curve to use when animating size changes.",
+                "default_value": "Curves.linear",
+                "possible_values": "Any Flutter animation curve, e.g., Curves.easeInOut, Curves.bounceIn"
+            },
+            {
+                "name": "alignment",
+                "type": "Alignment",
+                "description": "The alignment of the child within the AnimatedSize widget during size changes.",
+                "default_value": "Alignment.center",
+                "possible_values": "Any Alignment, e.g., Alignment.topLeft, Alignment.center, Alignment.bottomRight"
+            },
+            {
+                "name": "vsync",
+                "type": "TickerProvider",
+                "description": "A TickerProvider for driving the animation. Typically, use `this` in a StatefulWidget that mixes in `TickerProviderStateMixin`.",
+                "default_value": "Required",
+                "possible_values": "Any TickerProvider, e.g., a StatefulWidget with SingleTickerProviderStateMixin"
+            }
+        ]
+    },
+    {
+        "_id": 20,
+        "name": "AnimatedSwitcher",
+        "description": "A widget that automatically transitions from an old child to a new child using a fade, scale, slide, or custom transition. Useful for smooth swapping of widgets with animation.",
+        "how_to_use": "AnimatedSwitcher(\n  duration: const Duration(seconds: 1),\n  transitionBuilder: (Widget child, Animation<double> animation) {\n    return ScaleTransition(scale: animation, child: child);\n  },\n  child: _isFirst ? Text('First', key: ValueKey(1)) : Text('Second', key: ValueKey(2)),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget to display. When this changes, AnimatedSwitcher animates from the old child to the new child.",
+                "default_value": "null",
+                "possible_values": "Any widget. Must provide a unique Key to differentiate between children."
+            },
+            {
+                "name": "duration",
+                "type": "Duration",
+                "description": "The length of time over which to animate the transition between old and new children.",
+                "default_value": "Required",
+                "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+            },
+            {
+                "name": "transitionBuilder",
+                "type": "Widget Function(Widget, Animation<double>)",
+                "description": "Defines how the old child transitions out and the new child transitions in.",
+                "default_value": "(child, animation) => FadeTransition(opacity: animation, child: child)",
+                "possible_values": "Any function returning a Widget. Can use FadeTransition, ScaleTransition, SlideTransition, etc."
+            },
+            {
+                "name": "layoutBuilder",
+                "type": "Widget Function(Widget?, List<Widget>)",
+                "description": "Defines how to lay out the new child and the outgoing children during the transition.",
+                "default_value": "(currentChild, previousChildren) => Stack(children: [...previousChildren, if (currentChild != null) currentChild])",
+                "possible_values": "Any function returning a Widget"
+            },
+            {
+                "name": "reverseDuration",
+                "type": "Duration?",
+                "description": "The duration to use for the reverse animation when switching back to a previous child.",
+                "default_value": "null (uses duration)",
+                "possible_values": "Any Duration or null"
+            },
+            {
+                "name": "switchInCurve",
+                "type": "Curve",
+                "description": "The animation curve to use when the new child appears.",
+                "default_value": "Curves.linear",
+                "possible_values": "Any Flutter animation curve"
+            },
+            {
+                "name": "switchOutCurve",
+                "type": "Curve",
+                "description": "The animation curve to use when the old child disappears.",
+                "default_value": "Curves.linear",
+                "possible_values": "Any Flutter animation curve"
+            }
+        ]
+    },
+    {
+        "_id": 21,
+        "name": "AppBar",
+        "description": "A material design app bar that displays at the top of the screen. It typically contains a title, navigation icons, and action buttons.",
+        "how_to_use": "AppBar(\n  title: Text('My App'),\n  leading: IconButton(\n    icon: Icon(Icons.menu),\n    onPressed: () {},\n  ),\n  actions: [\n    IconButton(\n      icon: Icon(Icons.search),\n      onPressed: () {},\n    ),\n  ],\n  backgroundColor: Colors.blue,\n  elevation: 4.0,\n);",
+        "properties": [
+            {
+                "name": "title",
+                "type": "Widget?",
+                "description": "A widget to display as the app bar's title, usually a Text widget.",
+                "default_value": "null",
+                "possible_values": "Any widget, typically Text"
+            },
+            {
+                "name": "leading",
+                "type": "Widget?",
+                "description": "A widget displayed before the title, often an IconButton for navigation.",
+                "default_value": "null",
+                "possible_values": "Any widget, typically IconButton"
+            },
+            {
+                "name": "actions",
+                "type": "List<Widget>?",
+                "description": "Widgets displayed after the title, typically IconButtons for actions.",
+                "default_value": "null",
+                "possible_values": "Any list of widgets"
+            },
+            {
+                "name": "backgroundColor",
+                "type": "Color?",
+                "description": "The background color of the app bar.",
+                "default_value": "Theme.of(context).primaryColor",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "elevation",
+                "type": "double",
+                "description": "The z-coordinate of the app bar, affecting the shadow size.",
+                "default_value": "4.0",
+                "possible_values": "Any non-negative double"
+            },
+            {
+                "name": "centerTitle",
+                "type": "bool?",
+                "description": "Whether the title should be centered. Defaults depend on platform.",
+                "default_value": "null",
+                "possible_values": "true or false"
+            },
+            {
+                "name": "automaticallyImplyLeading",
+                "type": "bool",
+                "description": "Whether to automatically add a back button or menu button when appropriate.",
+                "default_value": "true",
+                "possible_values": "true or false"
+            },
+            {
+                "name": "bottom",
+                "type": "PreferredSizeWidget?",
+                "description": "A widget displayed at the bottom of the app bar, usually a TabBar.",
+                "default_value": "null",
+                "possible_values": "Any PreferredSizeWidget, e.g., TabBar"
+            },
+            {
+                "name": "toolbarHeight",
+                "type": "double?",
+                "description": "Height of the toolbar portion of the app bar.",
+                "default_value": "kToolbarHeight (56.0)",
+                "possible_values": "Any double"
+            }
+        ]
+    },
+    {
+        "_id": 22,
+        "name": "AspectRatio",
+        "description": "A widget that attempts to size the child to a specific aspect ratio (width divided by height). Useful for keeping images, videos, or other content proportional.",
+        "how_to_use": "AspectRatio(\n  aspectRatio: 16 / 9,\n  child: Container(\n    color: Colors.blue,\n  ),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget below this widget in the tree that will be sized according to the aspect ratio.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "aspectRatio",
+                "type": "double",
+                "description": "The ratio of the width to the height of the child.",
+                "default_value": "Required",
+                "possible_values": "Any positive double, e.g., 16/9, 4/3, 1.0 (square)"
+            }
+        ]
+    },
+    {
+        "_id": 24,
+        "name": "BackdropFilter",
+        "description": "A widget that applies a filter to the existing painted content beneath its child. Commonly used for blurring backgrounds behind dialogs, modals, or other widgets.",
+        "how_to_use": "BackdropFilter(\n  filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),\n  child: Container(\n    color: Colors.black.withOpacity(0.3),\n  ),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget below this widget in the tree. The filter is applied to the content behind this child.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "filter",
+                "type": "ImageFilter",
+                "description": "The filter to apply to the existing painted content beneath the child. Can be blur, color filter, etc.",
+                "default_value": "Required",
+                "possible_values": "Any ImageFilter, e.g., ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0)"
+            },
+            {
+                "name": "opaque",
+                "type": "bool",
+                "description": "Whether the filter layer is opaque. Setting true may improve performance if the filtered area is fully opaque.",
+                "default_value": "false",
+                "possible_values": "true or false"
+            }
+        ]
+    },
+    {
+        "_id": 25,
+        "name": "Banner",
+        "description": "A widget that displays a diagonal message (banner) across a corner of another widget. Useful for showing labels such as 'NEW', 'SALE', or 'DEBUG' on top of content.",
+        "how_to_use": "Banner(\n  message: 'NEW',\n  location: BannerLocation.topEnd,\n  color: Colors.red,\n  textStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),\n  child: Container(\n    width: 200,\n    height: 200,\n    color: Colors.blue,\n  ),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget",
+                "description": "The widget below the banner, which the banner will overlay.",
+                "default_value": "Required",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "message",
+                "type": "String",
+                "description": "The text to display on the banner.",
+                "default_value": "Required",
+                "possible_values": "Any string"
+            },
+            {
+                "name": "location",
+                "type": "BannerLocation",
+                "description": "The corner where the banner should appear.",
+                "default_value": "BannerLocation.topStart",
+                "possible_values": "BannerLocation.topStart, topEnd, bottomStart, bottomEnd"
+            },
+            {
+                "name": "color",
+                "type": "Color",
+                "description": "The background color of the banner.",
+                "default_value": "Colors.red",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "textStyle",
+                "type": "TextStyle?",
+                "description": "The style to use for the banner message text.",
+                "default_value": "null (uses default style)",
+                "possible_values": "Any TextStyle"
+            },
+            {
+                "name": "messageDirection",
+                "type": "TextDirection?",
+                "description": "The text direction of the message.",
+                "default_value": "null (uses ambient TextDirection)",
+                "possible_values": "TextDirection.ltr or TextDirection.rtl"
+            }
+        ]
+    },
+    {
+        "_id": 26,
+        "name": "Baseline",
+        "description": "A widget that positions its child according to a baseline. Useful for aligning text or other widgets with a specific baseline in layouts.",
+        "how_to_use": "Baseline(\n  baseline: 50.0,\n  baselineType: TextBaseline.alphabetic,\n  child: Text(\n    'Hello',\n    style: TextStyle(fontSize: 24),\n  ),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget",
+                "description": "The widget below this widget in the tree to be positioned according to the baseline.",
+                "default_value": "Required",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "baseline",
+                "type": "double",
+                "description": "The offset in logical pixels from the top of the parent to place the child's baseline.",
+                "default_value": "Required",
+                "possible_values": "Any double"
+            },
+            {
+                "name": "baselineType",
+                "type": "TextBaseline",
+                "description": "The type of baseline to use for aligning the child. Usually alphabetic or ideographic.",
+                "default_value": "Required",
+                "possible_values": "TextBaseline.alphabetic, TextBaseline.ideographic"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key"
+            }
+        ]
+    },
+    {
+        "_id": 28,
+        "name": "BottomNavigationBar",
+        "description": "A widget that displays a navigation bar at the bottom of the screen, allowing the user to switch between different views or pages.",
+        "how_to_use": "BottomNavigationBar(\n  currentIndex: _selectedIndex,\n  onTap: (index) {\n    setState(() {\n      _selectedIndex = index;\n    });\n  },\n  items: [\n    BottomNavigationBarItem(\n      icon: Icon(Icons.home),\n      label: 'Home',\n    ),\n    BottomNavigationBarItem(\n      icon: Icon(Icons.search),\n      label: 'Search',\n    ),\n    BottomNavigationBarItem(\n      icon: Icon(Icons.person),\n      label: 'Profile',\n    ),\n  ],\n  backgroundColor: Colors.blue,\n  selectedItemColor: Colors.white,\n  unselectedItemColor: Colors.grey,\n  type: BottomNavigationBarType.fixed,\n);",
+        "properties": [
+            {
+                "name": "items",
+                "type": "List<BottomNavigationBarItem>",
+                "description": "The widgets to display as the bottom navigation items.",
+                "default_value": "Required",
+                "possible_values": "List of BottomNavigationBarItem widgets"
+            },
+            {
+                "name": "currentIndex",
+                "type": "int",
+                "description": "The index of the currently selected item.",
+                "default_value": "0",
+                "possible_values": "Any integer from 0 to items.length - 1"
+            },
+            {
+                "name": "onTap",
+                "type": "ValueChanged<int>?",
+                "description": "Called when an item is tapped, providing its index.",
+                "default_value": "null",
+                "possible_values": "Function(int index) or null"
+            },
+            {
+                "name": "backgroundColor",
+                "type": "Color?",
+                "description": "The color of the navigation bar background.",
+                "default_value": "null (Theme dependent)",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "selectedItemColor",
+                "type": "Color?",
+                "description": "The color of the selected item.",
+                "default_value": "Theme dependent",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "unselectedItemColor",
+                "type": "Color?",
+                "description": "The color of the unselected items.",
+                "default_value": "Theme dependent",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "type",
+                "type": "BottomNavigationBarType",
+                "description": "The layout behavior of the navigation bar. Fixed shows all items, shifting animates changes.",
+                "default_value": "BottomNavigationBarType.fixed",
+                "possible_values": "BottomNavigationBarType.fixed, BottomNavigationBarType.shifting"
+            },
+            {
+                "name": "elevation",
+                "type": "double",
+                "description": "The z-coordinate of the navigation bar, affecting shadow size.",
+                "default_value": "8.0",
+                "possible_values": "Any non-negative double"
+            },
+            {
+                "name": "showSelectedLabels",
+                "type": "bool",
+                "description": "Whether to show labels for selected items.",
+                "default_value": "true",
+                "possible_values": "true or false"
+            },
+            {
+                "name": "showUnselectedLabels",
+                "type": "bool",
+                "description": "Whether to show labels for unselected items.",
+                "default_value": "true",
+                "possible_values": "true or false"
+            }
+        ]
+    },
+    {
+        "_id": 29,
+        "name": "BottomSheet",
+        "description": "A widget that slides up from the bottom of the screen to display additional content. It can be persistent (always visible) or modal (temporary and dismissible).",
+        "how_to_use": "// Modal Bottom Sheet\nshowModalBottomSheet(\n  context: context,\n  builder: (BuildContext context) {\n    return Container(\n      height: 200,\n      color: Colors.blue[100],\n      child: Center(child: Text('Hello BottomSheet')),\n    );\n  },\n);\n\n// Persistent Bottom Sheet\nScaffold(\n  body: Center(child: Text('Body')), \n  bottomSheet: Container(\n    height: 100,\n    color: Colors.blue[200],\n    child: Center(child: Text('Persistent BottomSheet')),\n  ),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget",
+                "description": "The widget displayed inside the bottom sheet.",
+                "default_value": "Required",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "elevation",
+                "type": "double?",
+                "description": "The z-coordinate of the bottom sheet, affecting the shadow size.",
+                "default_value": "0.0",
+                "possible_values": "Any non-negative double"
+            },
+            {
+                "name": "backgroundColor",
+                "type": "Color?",
+                "description": "The background color of the bottom sheet.",
+                "default_value": "Theme dependent",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "shape",
+                "type": "ShapeBorder?",
+                "description": "The shape of the bottom sheet's material.",
+                "default_value": "null",
+                "possible_values": "Any ShapeBorder, e.g., RoundedRectangleBorder"
+            },
+            {
+                "name": "clipBehavior",
+                "type": "Clip",
+                "description": "How to clip the content if it overflows the shape boundaries.",
+                "default_value": "Clip.none",
+                "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+            },
+            {
+                "name": "enableDrag",
+                "type": "bool",
+                "description": "Whether the bottom sheet can be dragged down to dismiss.",
+                "default_value": "true",
+                "possible_values": "true or false"
+            },
+            {
+                "name": "isScrollControlled",
+                "type": "bool",
+                "description": "Whether the bottom sheet can take full screen height and respond to content scrolling.",
+                "default_value": "false",
+                "possible_values": "true or false"
+            }
+        ]
+    },
+    {
+        "_id": 30,
+        "name": "Builder",
+        "description": "A widget that allows you to obtain a BuildContext that is a descendant of the parent. Useful when you need a context that has access to an ancestor widget (like Scaffold or Theme) which isn’t available in the current context.",
+        "how_to_use": "Builder(\n  builder: (BuildContext context) {\n    return ElevatedButton(\n      onPressed: () {\n        ScaffoldMessenger.of(context).showSnackBar(\n          SnackBar(content: Text('Hello from Builder!'))\n        );\n      },\n      child: Text('Show SnackBar'),\n    );\n  },\n);",
+        "properties": [
+            {
+                "name": "builder",
+                "type": "Widget Function(BuildContext)",
+                "description": "The function that returns a widget tree, providing a BuildContext that is a descendant of the parent.",
+                "default_value": "Required",
+                "possible_values": "Any function that returns a Widget"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key"
+            }
+        ]
+    },
+    {
+        "_id": 31,
+        "name": "Card",
+        "description": "A material design card: a panel with slightly rounded corners and a shadow. Useful for grouping related information in a visually distinct container.",
+        "how_to_use": "Card(\n  elevation: 4,\n  shape: RoundedRectangleBorder(\n    borderRadius: BorderRadius.circular(10),\n  ),\n  color: Colors.white,\n  child: Padding(\n    padding: const EdgeInsets.all(16.0),\n    child: Column(\n      mainAxisSize: MainAxisSize.min,\n      children: <Widget>[\n        Text('Card Title', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),\n        SizedBox(height: 8),\n        Text('Card content goes here.'),\n      ],\n    ),\n  ),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget displayed inside the card.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "color",
+                "type": "Color?",
+                "description": "The background color of the card.",
+                "default_value": "Theme dependent",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "elevation",
+                "type": "double",
+                "description": "The z-coordinate of the card, affecting the size of the shadow.",
+                "default_value": "1.0",
+                "possible_values": "Any non-negative double"
+            },
+            {
+                "name": "shape",
+                "type": "ShapeBorder?",
+                "description": "The shape of the card's material, often a RoundedRectangleBorder.",
+                "default_value": "RoundedRectangleBorder()",
+                "possible_values": "Any ShapeBorder"
+            },
+            {
+                "name": "margin",
+                "type": "EdgeInsetsGeometry?",
+                "description": "Empty space surrounding the card.",
+                "default_value": "EdgeInsets.all(4.0)",
+                "possible_values": "Any EdgeInsets, e.g., EdgeInsets.symmetric(horizontal: 10)"
+            },
+            {
+                "name": "clipBehavior",
+                "type": "Clip",
+                "description": "How to clip the content of the card.",
+                "default_value": "Clip.none",
+                "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+            }
+        ]
+    },
+    {
+        "_id": 32,
+        "name": "Center",
+        "description": "A widget that centers its child within itself. Useful for aligning a single widget in the middle of the parent.",
+        "how_to_use": "Center(\n  child: Container(\n    width: 100,\n    height: 100,\n    color: Colors.blue,\n  ),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget to display at the center.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key"
+            }
+        ]
+    },
+    {
+        "_id": 33,
+        "name": "Checkbox",
+        "description": "A material design checkbox. Allows the user to select one or more options. Typically used in forms or settings.",
+        "how_to_use": "bool _isChecked = false;\n\nCheckbox(\n  value: _isChecked,\n  onChanged: (bool? value) {\n    setState(() {\n      _isChecked = value!;\n    });\n  },\n  activeColor: Colors.blue,\n  checkColor: Colors.white,\n  tristate: false,\n);",
+        "properties": [
+            {
+                "name": "value",
+                "type": "bool?",
+                "description": "Whether the checkbox is checked.",
+                "default_value": "false",
+                "possible_values": "true, false, or null (if tristate is true)"
+            },
+            {
+                "name": "onChanged",
+                "type": "ValueChanged<bool?>?",
+                "description": "Called when the user taps the checkbox to change its state.",
+                "default_value": "null (checkbox is disabled)",
+                "possible_values": "Function(bool? value) or null"
+            },
+            {
+                "name": "activeColor",
+                "type": "Color?",
+                "description": "The fill color of the checkbox when it is checked.",
+                "default_value": "Theme dependent",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "checkColor",
+                "type": "Color?",
+                "description": "The color of the check icon inside the checkbox.",
+                "default_value": "Colors.white",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "tristate",
+                "type": "bool",
+                "description": "Whether the checkbox can have three states: true, false, or null.",
+                "default_value": "false",
+                "possible_values": "true or false"
+            },
+            {
+                "name": "materialTapTargetSize",
+                "type": "MaterialTapTargetSize?",
+                "description": "Configures the minimum size of the tap target.",
+                "default_value": "null",
+                "possible_values": "MaterialTapTargetSize.padded, MaterialTapTargetSize.shrinkWrap"
+            },
+            {
+                "name": "focusColor",
+                "type": "Color?",
+                "description": "The color of the checkbox when it has keyboard focus.",
+                "default_value": "null",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "hoverColor",
+                "type": "Color?",
+                "description": "The color of the checkbox when a pointer is hovering over it.",
+                "default_value": "null",
+                "possible_values": "Any Color"
+            }
+        ]
+    },
+    {
+        "_id": 34,
+        "name": "CheckboxListTile",
+        "description": "A widget that combines a checkbox with a ListTile, allowing for a labeled checkbox with optional subtitle and secondary widget. Useful for forms, settings, and options lists.",
+        "how_to_use": "bool _isChecked = false;\n\nCheckboxListTile(\n  title: Text('Enable Notifications'),\n  subtitle: Text('Receive updates via email'),\n  value: _isChecked,\n  onChanged: (bool? value) {\n    setState(() {\n      _isChecked = value!;\n    });\n  },\n  secondary: Icon(Icons.notifications),\n  controlAffinity: ListTileControlAffinity.trailing,\n  activeColor: Colors.blue,\n);",
+        "properties": [
+            {
+                "name": "title",
+                "type": "Widget?",
+                "description": "The primary content of the list tile, usually a Text widget.",
+                "default_value": "null",
+                "possible_values": "Any widget, typically Text"
+            },
+            {
+                "name": "subtitle",
+                "type": "Widget?",
+                "description": "Additional content displayed below the title.",
+                "default_value": "null",
+                "possible_values": "Any widget, typically Text"
+            },
+            {
+                "name": "value",
+                "type": "bool?",
+                "description": "Whether the checkbox is checked.",
+                "default_value": "false",
+                "possible_values": "true, false, or null (if tristate is true)"
+            },
+            {
+                "name": "onChanged",
+                "type": "ValueChanged<bool?>?",
+                "description": "Called when the user taps the checkbox to change its state.",
+                "default_value": "null (checkbox is disabled)",
+                "possible_values": "Function(bool? value) or null"
+            },
+            {
+                "name": "secondary",
+                "type": "Widget?",
+                "description": "A widget to display opposite the checkbox, often an icon or avatar.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "activeColor",
+                "type": "Color?",
+                "description": "The color to use when the checkbox is checked.",
+                "default_value": "Theme dependent",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "checkColor",
+                "type": "Color?",
+                "description": "The color of the check icon inside the checkbox.",
+                "default_value": "Colors.white",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "tristate",
+                "type": "bool",
+                "description": "Whether the checkbox can have three states: true, false, or null.",
+                "default_value": "false",
+                "possible_values": "true or false"
+            },
+            {
+                "name": "controlAffinity",
+                "type": "ListTileControlAffinity",
+                "description": "The position of the checkbox relative to the text.",
+                "default_value": "ListTileControlAffinity.platform",
+                "possible_values": "ListTileControlAffinity.leading, trailing, platform"
+            },
+            {
+                "name": "dense",
+                "type": "bool?",
+                "description": "Whether this list tile is part of a vertically dense list.",
+                "default_value": "null",
+                "possible_values": "true or false"
+            }
+        ]
+    },
+    {
+        "_id": 35,
+        "name": "Chip",
+        "description": "A material design chip. A compact element that represents an attribute, text, or action. Useful for tags, categories, or user input.",
+        "how_to_use": "Chip(\n  label: Text('Example Chip'),\n  avatar: CircleAvatar(\n    backgroundColor: Colors.blue,\n    child: Text('E'),\n  ),\n  onDeleted: () {\n    print('Chip deleted');\n  },\n  deleteIcon: Icon(Icons.cancel),\n  backgroundColor: Colors.grey[200],\n  labelStyle: TextStyle(color: Colors.black),\n);",
+        "properties": [
+            {
+                "name": "label",
+                "type": "Widget",
+                "description": "The primary content of the chip, usually a Text widget.",
+                "default_value": "Required",
+                "possible_values": "Any widget, typically Text"
+            },
+            {
+                "name": "avatar",
+                "type": "Widget?",
+                "description": "A widget to display before the label, often a CircleAvatar.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "onDeleted",
+                "type": "VoidCallback?",
+                "description": "Called when the delete icon is tapped. If null, the delete icon is not shown.",
+                "default_value": "null",
+                "possible_values": "Function or null"
+            },
+            {
+                "name": "deleteIcon",
+                "type": "Widget?",
+                "description": "The icon to display for deletion.",
+                "default_value": "Icon(Icons.cancel)",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "backgroundColor",
+                "type": "Color?",
+                "description": "The background color of the chip.",
+                "default_value": "Theme dependent",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "labelStyle",
+                "type": "TextStyle?",
+                "description": "The style to use for the label text.",
+                "default_value": "Theme dependent",
+                "possible_values": "Any TextStyle"
+            },
+            {
+                "name": "padding",
+                "type": "EdgeInsetsGeometry?",
+                "description": "Empty space around the chip's content.",
+                "default_value": "EdgeInsets.symmetric(horizontal: 8.0)",
+                "possible_values": "Any EdgeInsets"
+            },
+            {
+                "name": "shape",
+                "type": "ShapeBorder?",
+                "description": "The shape of the chip, often a RoundedRectangleBorder or StadiumBorder.",
+                "default_value": "StadiumBorder()",
+                "possible_values": "Any ShapeBorder"
+            },
+            {
+                "name": "clipBehavior",
+                "type": "Clip",
+                "description": "How to clip the chip's content if it overflows.",
+                "default_value": "Clip.none",
+                "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+            }
+        ]
+    },
+    {
+        "_id": 36,
+        "name": "ChoiceChip",
+        "description": "A material design chip that represents a single choice from a set. Useful for filter options, preferences, or selections.",
+        "how_to_use": "bool _isSelected = false;\n\nChoiceChip(\n  label: Text('Option 1'),\n  selected: _isSelected,\n  onSelected: (bool selected) {\n    setState(() {\n      _isSelected = selected;\n    });\n  },\n  selectedColor: Colors.blue,\n  backgroundColor: Colors.grey[200],\n  labelStyle: TextStyle(color: Colors.white),\n);",
+        "properties": [
+            {
+                "name": "label",
+                "type": "Widget",
+                "description": "The primary content of the chip, usually a Text widget.",
+                "default_value": "Required",
+                "possible_values": "Any widget, typically Text"
+            },
+            {
+                "name": "selected",
+                "type": "bool",
+                "description": "Whether this chip is currently selected.",
+                "default_value": "false",
+                "possible_values": "true or false"
+            },
+            {
+                "name": "onSelected",
+                "type": "ValueChanged<bool>?",
+                "description": "Called when the chip is tapped, providing the new selected state.",
+                "default_value": "null (chip is disabled)",
+                "possible_values": "Function(bool selected) or null"
+            },
+            {
+                "name": "avatar",
+                "type": "Widget?",
+                "description": "A widget to display before the label, often a CircleAvatar.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "backgroundColor",
+                "type": "Color?",
+                "description": "The chip's background color when not selected.",
+                "default_value": "Theme dependent",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "selectedColor",
+                "type": "Color?",
+                "description": "The chip's background color when selected.",
+                "default_value": "Theme dependent",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "labelStyle",
+                "type": "TextStyle?",
+                "description": "The style to use for the label text.",
+                "default_value": "Theme dependent",
+                "possible_values": "Any TextStyle"
+            },
+            {
+                "name": "labelPadding",
+                "type": "EdgeInsetsGeometry?",
+                "description": "Empty space surrounding the label.",
+                "default_value": "EdgeInsets.symmetric(horizontal: 8.0)",
+                "possible_values": "Any EdgeInsets"
+            },
+            {
+                "name": "shape",
+                "type": "ShapeBorder?",
+                "description": "The shape of the chip, often a StadiumBorder or RoundedRectangleBorder.",
+                "default_value": "StadiumBorder()",
+                "possible_values": "Any ShapeBorder"
+            },
+            {
+                "name": "clipBehavior",
+                "type": "Clip",
+                "description": "How to clip the chip's content if it overflows.",
+                "default_value": "Clip.none",
+                "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+            }
+        ]
+    },
+    {
+        "_id": 37,
+        "name": "CircleAvatar",
+        "description": "A circular widget that typically represents a user profile picture. Can display an image, icon, or text inside a circle.",
+        "how_to_use": "CircleAvatar(\n  radius: 40,\n  backgroundColor: Colors.blue,\n  child: Text('AB', style: TextStyle(color: Colors.white)),\n  backgroundImage: NetworkImage('https://example.com/avatar.png'),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "A widget to display inside the circle, usually Text or Icon.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "backgroundColor",
+                "type": "Color?",
+                "description": "The background color of the circle.",
+                "default_value": "Theme dependent (usually grey)",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "foregroundColor",
+                "type": "Color?",
+                "description": "The default color for text and icons within the avatar.",
+                "default_value": "Theme dependent",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "radius",
+                "type": "double?",
+                "description": "The radius of the circle. If null, defaults to 20.0",
+                "default_value": "20.0",
+                "possible_values": "Any positive double"
+            },
+            {
+                "name": "minRadius",
+                "type": "double?",
+                "description": "The minimum radius constraint for the circle.",
+                "default_value": "null",
+                "possible_values": "Any positive double"
+            },
+            {
+                "name": "maxRadius",
+                "type": "double?",
+                "description": "The maximum radius constraint for the circle.",
+                "default_value": "null",
+                "possible_values": "Any positive double"
+            },
+            {
+                "name": "backgroundImage",
+                "type": "ImageProvider?",
+                "description": "An image to display inside the circle.",
+                "default_value": "null",
+                "possible_values": "NetworkImage, AssetImage, FileImage, etc."
+            },
+            {
+                "name": "onBackgroundImageError",
+                "type": "ImageErrorListener?",
+                "description": "Callback when the background image fails to load.",
+                "default_value": "null",
+                "possible_values": "Function or null"
+            },
+            {
+                "name": "foregroundImage",
+                "type": "ImageProvider?",
+                "description": "An image displayed over the background image.",
+                "default_value": "null",
+                "possible_values": "NetworkImage, AssetImage, FileImage, etc."
+            },
+            {
+                "name": "onForegroundImageError",
+                "type": "ImageErrorListener?",
+                "description": "Callback when the foreground image fails to load.",
+                "default_value": "null",
+                "possible_values": "Function or null"
+            }
+        ]
+    },
+    {
+        "_id": 38,
+        "name": "CircularProgressIndicator",
+        "description": "A material design circular progress indicator. Indicates that an operation is ongoing. Can be determinate (with a value) or indeterminate (spinning).",
+        "how_to_use": "CircularProgressIndicator(\n  value: 0.7, // Optional for determinate progress (0.0 to 1.0)\n  backgroundColor: Colors.grey[200],\n  valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),\n  strokeWidth: 4.0,\n);",
+        "properties": [
+            {
+                "name": "value",
+                "type": "double?",
+                "description": "The progress value, from 0.0 to 1.0. If null, the indicator is indeterminate (spinning).",
+                "default_value": "null",
+                "possible_values": "Any double between 0.0 and 1.0, or null"
+            },
+            {
+                "name": "backgroundColor",
+                "type": "Color?",
+                "description": "The color of the circle track behind the progress indicator.",
+                "default_value": "null",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "valueColor",
+                "type": "Animation<Color?>?",
+                "description": "The color of the progress indicator. Usually wrapped in an AlwaysStoppedAnimation for a fixed color.",
+                "default_value": "null (uses Theme's accent color)",
+                "possible_values": "Any Animation<Color?>, e.g., AlwaysStoppedAnimation<Color>(Colors.blue)"
+            },
+            {
+                "name": "strokeWidth",
+                "type": "double",
+                "description": "The thickness of the line used to draw the circle.",
+                "default_value": "4.0",
+                "possible_values": "Any positive double"
+            },
+            {
+                "name": "semanticsLabel",
+                "type": "String?",
+                "description": "Optional semantic label for accessibility.",
+                "default_value": "null",
+                "possible_values": "Any string"
+            },
+            {
+                "name": "semanticsValue",
+                "type": "String?",
+                "description": "Optional semantic value describing the current progress.",
+                "default_value": "null",
+                "possible_values": "Any string"
+            }
+        ]
+    },
+    {
+        "_id": 39,
+        "name": "ClipOval",
+        "description": "A widget that clips its child using an oval or circular shape. Useful for creating circular profile pictures, buttons, or custom shapes.",
+        "how_to_use": "ClipOval(\n  child: Image.network(\n    'https://example.com/avatar.png',\n    width: 100,\n    height: 100,\n    fit: BoxFit.cover,\n  ),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget to display inside the oval clip.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "clipBehavior",
+                "type": "Clip",
+                "description": "How to clip the content if it overflows the oval boundary.",
+                "default_value": "Clip.antiAlias",
+                "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key"
+            }
+        ]
+    },
+    {
+        "_id": 40,
+        "name": "ClipPath",
+        "description": "A widget that clips its child using a custom path. Useful for creating complex shapes, custom designs, or animations.",
+        "how_to_use": "ClipPath(\n  clipper: MyCustomClipper(),\n  child: Container(\n    color: Colors.blue,\n    width: 200,\n    height: 100,\n  ),\n);\n\n// Example of a custom clipper\nclass MyCustomClipper extends CustomClipper<Path> {\n  @override\n  Path getClip(Size size) {\n    Path path = Path();\n    path.lineTo(size.width, 0);\n    path.lineTo(size.width, size.height);\n    path.lineTo(0, size.height);\n    path.close();\n    return path;\n  }\n\n  @override\n  bool shouldReclip(CustomClipper<Path> oldClipper) => false;\n}",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget to display inside the custom path.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "clipper",
+                "type": "CustomClipper<Path>?",
+                "description": "A custom clipper that defines the clipping path.",
+                "default_value": "null",
+                "possible_values": "Any class that extends CustomClipper<Path>"
+            },
+            {
+                "name": "clipBehavior",
+                "type": "Clip",
+                "description": "How to clip the content if it overflows the custom path.",
+                "default_value": "Clip.antiAlias",
+                "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key"
+            }
+        ]
+    },
+    {
+        "_id": 41,
+        "name": "ClipRect",
+        "description": "A widget that clips its child using a rectangle. Useful for preventing child widgets from overflowing or for applying custom rectangular animations.",
+        "how_to_use": "ClipRect(\n  child: Align(\n    alignment: Alignment.topLeft,\n    widthFactor: 0.5,\n    heightFactor: 0.5,\n    child: Container(\n      color: Colors.blue,\n      width: 200,\n      height: 200,\n    ),\n  ),\n  clipBehavior: Clip.antiAlias,\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget to display inside the rectangle clip.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "clipper",
+                "type": "CustomClipper<Rect>?",
+                "description": "A custom clipper that defines the clipping rectangle.",
+                "default_value": "null",
+                "possible_values": "Any class that extends CustomClipper<Rect>"
+            },
+            {
+                "name": "clipBehavior",
+                "type": "Clip",
+                "description": "How to clip the content if it overflows the rectangle boundary.",
+                "default_value": "Clip.antiAlias",
+                "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key"
+            }
+        ]
+    },
+    {
+        "_id": 42,
+        "name": "ClipRRect",
+        "description": "A widget that clips its child with a rounded rectangle. Useful for creating rounded corners for images, containers, or any rectangular widget.",
+        "how_to_use": "ClipRRect(\n  borderRadius: BorderRadius.circular(20),\n  child: Image.network(\n    'https://example.com/image.jpg',\n    width: 200,\n    height: 200,\n    fit: BoxFit.cover,\n  ),\n  clipBehavior: Clip.antiAlias,\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget to display inside the rounded rectangle clip.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "borderRadius",
+                "type": "BorderRadiusGeometry",
+                "description": "The radius of the rounded corners.",
+                "default_value": "BorderRadius.zero",
+                "possible_values": "BorderRadius.circular(double), BorderRadius.only(...), etc."
+            },
+            {
+                "name": "clipBehavior",
+                "type": "Clip",
+                "description": "How to clip the content if it overflows the rounded rectangle boundary.",
+                "default_value": "Clip.antiAlias",
+                "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key"
+            }
+        ]
+    },
+    {
+        "_id": 43,
+        "name": "CloseButton",
+        "description": "A material design close button. Typically used to close dialogs, pages, or other overlay widgets.",
+        "how_to_use": "CloseButton(\n  onPressed: () {\n    Navigator.of(context).pop();\n  },\n  color: Colors.black,\n);",
+        "properties": [
+            {
+                "name": "onPressed",
+                "type": "VoidCallback?",
+                "description": "Callback function called when the button is tapped. If null, the button is disabled.",
+                "default_value": "Navigator.maybePop(context)",
+                "possible_values": "Function or null"
+            },
+            {
+                "name": "color",
+                "type": "Color?",
+                "description": "The color to use for the close icon.",
+                "default_value": "Theme dependent (usually black)",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key"
+            }
+        ]
+    },
+    {
+        "_id": 44,
+        "name": "ColoredBox",
+        "description": "A widget that paints its area with a specified color. Useful for adding solid color backgrounds without extra decoration.",
+        "how_to_use": "ColoredBox(\n  color: Colors.blue,\n  child: Padding(\n    padding: EdgeInsets.all(16.0),\n    child: Text('Hello ColoredBox', style: TextStyle(color: Colors.white)),\n  ),\n);",
+        "properties": [
+            {
+                "name": "color",
+                "type": "Color",
+                "description": "The background color to paint.",
+                "default_value": "Required",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget to display inside the colored box.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key"
+            }
+        ]
+    },
+    {
+        "_id": 45,
+        "name": "ColorFilter",
+        "description": "A widget used to apply a color filter to a child widget. Commonly used with images to apply color effects such as tint, grayscale, or blending.",
+        "how_to_use": "ColorFiltered(\n  colorFilter: ColorFilter.mode(Colors.red.withOpacity(0.5), BlendMode.modulate),\n  child: Image.network('https://example.com/image.png'),\n);",
+        "properties": [
+            {
+                "name": "colorFilter",
+                "type": "ColorFilter",
+                "description": "The color filter to apply to the child widget.",
+                "default_value": "Required",
+                "possible_values": "ColorFilter.mode(color, blendMode), ColorFilter.linearToSrgbGamma(), ColorFilter.matrix([...]), etc."
+            },
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget to which the color filter is applied.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key"
+            }
+        ]
+    },
+    {
+        "_id": 46,
+        "name": "ConstrainedBox",
+        "description": "A widget that imposes additional constraints on its child. Useful for limiting or forcing a child widget’s size.",
+        "how_to_use": "ConstrainedBox(\n  constraints: BoxConstraints(\n    minWidth: 100,\n    minHeight: 50,\n    maxWidth: 200,\n    maxHeight: 150,\n  ),\n  child: Container(\n    color: Colors.blue,\n    child: Text('Hello ConstrainedBox', style: TextStyle(color: Colors.white)),\n  ),\n);",
+        "properties": [
+            {
+                "name": "constraints",
+                "type": "BoxConstraints",
+                "description": "The additional constraints to apply to the child widget.",
+                "default_value": "Required",
+                "possible_values": "BoxConstraints.tight(Size), BoxConstraints(minWidth, maxWidth, minHeight, maxHeight), etc."
+            },
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget to display inside the constrained box.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key"
+            }
+        ]
+    },
+    {
+        "_id": 47,
+        "name": "Container",
+        "description": "A versatile widget that combines common painting, positioning, and sizing widgets. Useful for layout, styling, and decoration of its child.",
+        "how_to_use": "Container(\n  width: 200,\n  height: 100,\n  padding: EdgeInsets.all(16),\n  margin: EdgeInsets.all(8),\n  decoration: BoxDecoration(\n    color: Colors.blue,\n    borderRadius: BorderRadius.circular(12),\n    border: Border.all(color: Colors.black, width: 2),\n  ),\n  alignment: Alignment.center,\n  child: Text('Hello Container', style: TextStyle(color: Colors.white)),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget to display inside the container.",
+                "default_value": "null",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "alignment",
+                "type": "AlignmentGeometry?",
+                "description": "Aligns the child within the container.",
+                "default_value": "null",
+                "possible_values": "Alignment.center, Alignment.topLeft, Alignment.bottomRight, etc."
+            },
+            {
+                "name": "padding",
+                "type": "EdgeInsetsGeometry?",
+                "description": "Empty space to inscribe inside the container, around the child.",
+                "default_value": "null",
+                "possible_values": "EdgeInsets.all(), EdgeInsets.symmetric(), EdgeInsets.only(), etc."
+            },
+            {
+                "name": "margin",
+                "type": "EdgeInsetsGeometry?",
+                "description": "Empty space to surround the container itself.",
+                "default_value": "null",
+                "possible_values": "EdgeInsets.all(), EdgeInsets.symmetric(), EdgeInsets.only(), etc."
+            },
+            {
+                "name": "width",
+                "type": "double?",
+                "description": "The container's width.",
+                "default_value": "null",
+                "possible_values": "Any positive double"
+            },
+            {
+                "name": "height",
+                "type": "double?",
+                "description": "The container's height.",
+                "default_value": "null",
+                "possible_values": "Any positive double"
+            },
+            {
+                "name": "constraints",
+                "type": "BoxConstraints?",
+                "description": "Additional constraints to apply to the container.",
+                "default_value": "null",
+                "possible_values": "BoxConstraints(minWidth, maxWidth, minHeight, maxHeight)"
+            },
+            {
+                "name": "decoration",
+                "type": "Decoration?",
+                "description": "Decorates the container, e.g., background color, border, border radius, gradient, or box shadow.",
+                "default_value": "null",
+                "possible_values": "BoxDecoration, ShapeDecoration, etc."
+            },
+            {
+                "name": "foregroundDecoration",
+                "type": "Decoration?",
+                "description": "Decoration drawn in front of the child.",
+                "default_value": "null",
+                "possible_values": "BoxDecoration, ShapeDecoration, etc."
+            },
+            {
+                "name": "transform",
+                "type": "Matrix4?",
+                "description": "Applies a transformation before painting the container.",
+                "default_value": "null",
+                "possible_values": "Any Matrix4 transform"
+            },
+            {
+                "name": "clipBehavior",
+                "type": "Clip",
+                "description": "How to clip content when it overflows the container.",
+                "default_value": "Clip.none",
+                "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+            },
+            {
+                "name": "color",
+                "type": "Color?",
+                "description": "A shortcut for background color if decoration is not specified.",
+                "default_value": "null",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key"
+            }
+        ]
+    },
+    {
+        "_id": 48,
+        "name": "Column",
+        "description": "A widget that arranges its children vertically. Useful for building vertical layouts with alignment and spacing control.",
+        "how_to_use": "Column(\n  mainAxisAlignment: MainAxisAlignment.center,\n  crossAxisAlignment: CrossAxisAlignment.start,\n  children: [\n    Text('First Item'),\n    Text('Second Item'),\n    Text('Third Item'),\n  ],\n);",
+        "properties": [
+            {
+                "name": "children",
+                "type": "List<Widget>",
+                "description": "The widgets to display in a vertical array.",
+                "default_value": "Required",
+                "possible_values": "Any list of widgets"
+            },
+            {
+                "name": "mainAxisAlignment",
+                "type": "MainAxisAlignment",
+                "description": "How the children should be placed along the vertical axis.",
+                "default_value": "MainAxisAlignment.start",
+                "possible_values": "start, end, center, spaceBetween, spaceAround, spaceEvenly"
+            },
+            {
+                "name": "crossAxisAlignment",
+                "type": "CrossAxisAlignment",
+                "description": "How the children should be aligned horizontally within the column.",
+                "default_value": "CrossAxisAlignment.center",
+                "possible_values": "start, end, center, stretch, baseline"
+            },
+            {
+                "name": "mainAxisSize",
+                "type": "MainAxisSize",
+                "description": "The size of the column along the main axis (vertical).",
+                "default_value": "MainAxisSize.max",
+                "possible_values": "min, max"
+            },
+            {
+                "name": "textDirection",
+                "type": "TextDirection?",
+                "description": "The text direction for determining horizontal alignment.",
+                "default_value": "null (uses ambient Directionality)",
+                "possible_values": "TextDirection.ltr, TextDirection.rtl"
+            },
+            {
+                "name": "verticalDirection",
+                "type": "VerticalDirection",
+                "description": "The vertical order in which children are painted.",
+                "default_value": "VerticalDirection.down",
+                "possible_values": "down, up"
+            },
+            {
+                "name": "textBaseline",
+                "type": "TextBaseline?",
+                "description": "The baseline to use for aligning text when crossAxisAlignment is baseline.",
+                "default_value": "null",
+                "possible_values": "alphabetic, ideographic"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key"
+            }
+        ]
+    }
+]

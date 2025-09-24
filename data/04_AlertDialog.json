@@ -1,0 +1,119 @@
+{
+  "name": "AlertDialog",
+  "description": "A Material Design alert dialog. It typically contains a title, content, and a set of actions. Used to notify the user of situations that require acknowledgment or a decision.",
+  "how_to_use": "showDialog(\n  context: context,\n  builder: (context) {\n    return AlertDialog(\n      title: Text('Delete Item'),\n      content: Text('Are you sure you want to delete this item?'),\n      actions: [\n        TextButton(\n          onPressed: () => Navigator.pop(context),\n          child: Text('Cancel'),\n        ),\n        ElevatedButton(\n          onPressed: () {\n            // Perform delete\n            Navigator.pop(context);\n          },\n          child: Text('Delete'),\n        ),\n      ],\n    );\n  },\n);",
+  "properties": [
+    {
+      "name": "title",
+      "type": "Widget?",
+      "description": "The primary content of the dialog displayed in the title area.",
+      "default_value": "null",
+      "possible_values": "Any widget, typically a Text widget."
+    },
+    {
+      "name": "titlePadding",
+      "type": "EdgeInsetsGeometry?",
+      "description": "Padding around the title.",
+      "default_value": "EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0.0)",
+      "possible_values": "Any EdgeInsets value."
+    },
+    {
+      "name": "titleTextStyle",
+      "type": "TextStyle?",
+      "description": "Text style of the title.",
+      "default_value": "null (inherits from theme)",
+      "possible_values": "Any TextStyle."
+    },
+    {
+      "name": "content",
+      "type": "Widget?",
+      "description": "The main content of the dialog, typically a Text or Column widget.",
+      "default_value": "null",
+      "possible_values": "Any widget."
+    },
+    {
+      "name": "contentPadding",
+      "type": "EdgeInsetsGeometry",
+      "description": "Padding around the content.",
+      "default_value": "EdgeInsets.fromLTRB(24.0, 20.0, 24.0, 24.0)",
+      "possible_values": "Any EdgeInsets value."
+    },
+    {
+      "name": "contentTextStyle",
+      "type": "TextStyle?",
+      "description": "Text style for the content area.",
+      "default_value": "null (inherits from theme)",
+      "possible_values": "Any TextStyle."
+    },
+    {
+      "name": "actions",
+      "type": "List<Widget>?",
+      "description": "The set of actions at the bottom of the dialog (e.g., buttons).",
+      "default_value": "null",
+      "possible_values": "List of widgets, typically TextButton or ElevatedButton."
+    },
+    {
+      "name": "actionsPadding",
+      "type": "EdgeInsetsGeometry",
+      "description": "Padding around the actions area.",
+      "default_value": "EdgeInsets.only(bottom: 8.0, left: 8.0, right: 8.0)",
+      "possible_values": "Any EdgeInsets value."
+    },
+    {
+      "name": "actionsOverflowDirection",
+      "type": "VerticalDirection?",
+      "description": "The direction in which action buttons should overflow.",
+      "default_value": "null",
+      "possible_values": "up or down"
+    },
+    {
+      "name": "backgroundColor",
+      "type": "Color?",
+      "description": "The background color of the dialog.",
+      "default_value": "null (uses Theme dialogBackgroundColor)",
+      "possible_values": "Any Color."
+    },
+    {
+      "name": "elevation",
+      "type": "double?",
+      "description": "The z-coordinate of the dialog's material.",
+      "default_value": "null (uses Theme)",
+      "possible_values": "Any double value."
+    },
+    {
+      "name": "shape",
+      "type": "ShapeBorder?",
+      "description": "Shape of the dialog's border.",
+      "default_value": "null (uses default Material shape)",
+      "possible_values": "RoundedRectangleBorder, etc."
+    },
+    {
+      "name": "scrollable",
+      "type": "bool",
+      "description": "Whether the content is scrollable if it overflows.",
+      "default_value": "false",
+      "possible_values": "true or false"
+    },
+    {
+      "name": "clipBehavior",
+      "type": "Clip",
+      "description": "How to clip content if it overflows the dialog's boundary.",
+      "default_value": "Clip.none",
+      "possible_values": "none, hardEdge, antiAlias, antiAliasWithSaveLayer"
+    },
+    {
+      "name": "insetPadding",
+      "type": "EdgeInsets",
+      "description": "Padding applied to the dialog to prevent it from growing too large.",
+      "default_value": "EdgeInsets.symmetric(horizontal: 40.0, vertical: 24.0)",
+      "possible_values": "Any EdgeInsets value."
+    },
+    {
+      "name": "semanticLabel",
+      "type": "String?",
+      "description": "Semantic label for accessibility.",
+      "default_value": "null",
+      "possible_values": "Any string."
+    }
+  ]
+}

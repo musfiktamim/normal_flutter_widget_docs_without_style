@@ -1,0 +1,63 @@
+{
+  "name": "AnimatedDefaultTextStyle",
+  "description": "A widget that automatically animates changes in the default text style (TextStyle) of its child over a given duration. Useful for smooth text style transitions without a StatefulWidget.",
+  "how_to_use": "AnimatedDefaultTextStyle(\n  style: _isBold\n      ? TextStyle(fontSize: 24, color: Colors.blue, fontWeight: FontWeight.bold)\n      : TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.normal),\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n  child: const Text('Animated Text Style'),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget",
+      "description": "The widget below this widget in the tree whose text style will be animated.",
+      "default_value": "Required",
+      "possible_values": "Any widget containing text"
+    },
+    {
+      "name": "style",
+      "type": "TextStyle",
+      "description": "The target text style to animate to.",
+      "default_value": "Required",
+      "possible_values": "Any TextStyle"
+    },
+    {
+      "name": "duration",
+      "type": "Duration",
+      "description": "The length of time over which to animate the text style changes.",
+      "default_value": "Required",
+      "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+    },
+    {
+      "name": "curve",
+      "type": "Curve",
+      "description": "The animation curve to use when animating the text style changes.",
+      "default_value": "Curves.linear",
+      "possible_values": "Any Flutter animation curve, e.g., Curves.easeInOut"
+    },
+    {
+      "name": "textAlign",
+      "type": "TextAlign?",
+      "description": "How the text should be aligned horizontally within its bounds.",
+      "default_value": "null",
+      "possible_values": "start, end, center, justify, left, right"
+    },
+    {
+      "name": "softWrap",
+      "type": "bool?",
+      "description": "Whether the text should break at soft line breaks.",
+      "default_value": "null",
+      "possible_values": "true or false"
+    },
+    {
+      "name": "overflow",
+      "type": "TextOverflow?",
+      "description": "How visual overflow should be handled.",
+      "default_value": "null",
+      "possible_values": "clip, fade, ellipsis, visible"
+    },
+    {
+      "name": "maxLines",
+      "type": "int?",
+      "description": "The maximum number of lines for the text.",
+      "default_value": "null (unlimited)",
+      "possible_values": "Any positive integer"
+    }
+  ]
+}

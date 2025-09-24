@@ -1,0 +1,49 @@
+{
+  "name": "Card",
+  "description": "A material design card: a panel with slightly rounded corners and a shadow. Useful for grouping related information in a visually distinct container.",
+  "how_to_use": "Card(\n  elevation: 4,\n  shape: RoundedRectangleBorder(\n    borderRadius: BorderRadius.circular(10),\n  ),\n  color: Colors.white,\n  child: Padding(\n    padding: const EdgeInsets.all(16.0),\n    child: Column(\n      mainAxisSize: MainAxisSize.min,\n      children: <Widget>[\n        Text('Card Title', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),\n        SizedBox(height: 8),\n        Text('Card content goes here.'),\n      ],\n    ),\n  ),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget displayed inside the card.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "color",
+      "type": "Color?",
+      "description": "The background color of the card.",
+      "default_value": "Theme dependent",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "elevation",
+      "type": "double",
+      "description": "The z-coordinate of the card, affecting the size of the shadow.",
+      "default_value": "1.0",
+      "possible_values": "Any non-negative double"
+    },
+    {
+      "name": "shape",
+      "type": "ShapeBorder?",
+      "description": "The shape of the card's material, often a RoundedRectangleBorder.",
+      "default_value": "RoundedRectangleBorder()",
+      "possible_values": "Any ShapeBorder"
+    },
+    {
+      "name": "margin",
+      "type": "EdgeInsetsGeometry?",
+      "description": "Empty space surrounding the card.",
+      "default_value": "EdgeInsets.all(4.0)",
+      "possible_values": "Any EdgeInsets, e.g., EdgeInsets.symmetric(horizontal: 10)"
+    },
+    {
+      "name": "clipBehavior",
+      "type": "Clip",
+      "description": "How to clip the content of the card.",
+      "default_value": "Clip.none",
+      "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+    }
+  ]
+}

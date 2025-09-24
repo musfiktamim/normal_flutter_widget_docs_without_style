@@ -1,0 +1,70 @@
+{
+  "name": "AppBar",
+  "description": "A material design app bar that displays at the top of the screen. It typically contains a title, navigation icons, and action buttons.",
+  "how_to_use": "AppBar(\n  title: Text('My App'),\n  leading: IconButton(\n    icon: Icon(Icons.menu),\n    onPressed: () {},\n  ),\n  actions: [\n    IconButton(\n      icon: Icon(Icons.search),\n      onPressed: () {},\n    ),\n  ],\n  backgroundColor: Colors.blue,\n  elevation: 4.0,\n);",
+  "properties": [
+    {
+      "name": "title",
+      "type": "Widget?",
+      "description": "A widget to display as the app bar's title, usually a Text widget.",
+      "default_value": "null",
+      "possible_values": "Any widget, typically Text"
+    },
+    {
+      "name": "leading",
+      "type": "Widget?",
+      "description": "A widget displayed before the title, often an IconButton for navigation.",
+      "default_value": "null",
+      "possible_values": "Any widget, typically IconButton"
+    },
+    {
+      "name": "actions",
+      "type": "List<Widget>?",
+      "description": "Widgets displayed after the title, typically IconButtons for actions.",
+      "default_value": "null",
+      "possible_values": "Any list of widgets"
+    },
+    {
+      "name": "backgroundColor",
+      "type": "Color?",
+      "description": "The background color of the app bar.",
+      "default_value": "Theme.of(context).primaryColor",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "elevation",
+      "type": "double",
+      "description": "The z-coordinate of the app bar, affecting the shadow size.",
+      "default_value": "4.0",
+      "possible_values": "Any non-negative double"
+    },
+    {
+      "name": "centerTitle",
+      "type": "bool?",
+      "description": "Whether the title should be centered. Defaults depend on platform.",
+      "default_value": "null",
+      "possible_values": "true or false"
+    },
+    {
+      "name": "automaticallyImplyLeading",
+      "type": "bool",
+      "description": "Whether to automatically add a back button or menu button when appropriate.",
+      "default_value": "true",
+      "possible_values": "true or false"
+    },
+    {
+      "name": "bottom",
+      "type": "PreferredSizeWidget?",
+      "description": "A widget displayed at the bottom of the app bar, usually a TabBar.",
+      "default_value": "null",
+      "possible_values": "Any PreferredSizeWidget, e.g., TabBar"
+    },
+    {
+      "name": "toolbarHeight",
+      "type": "double?",
+      "description": "Height of the toolbar portion of the app bar.",
+      "default_value": "kToolbarHeight (56.0)",
+      "possible_values": "Any double"
+    }
+  ]
+}

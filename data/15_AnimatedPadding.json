@@ -1,0 +1,35 @@
+{
+  "name": "AnimatedPadding",
+  "description": "A widget that automatically animates changes in its padding over a given duration and curve. Useful for smoothly adjusting spacing around a child widget without a StatefulWidget.",
+  "how_to_use": "AnimatedPadding(\n  padding: _isExpanded ? EdgeInsets.all(50) : EdgeInsets.all(10),\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n  child: Container(\n    width: 100,\n    height: 100,\n    color: Colors.blue,\n  ),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget",
+      "description": "The widget below this widget in the tree whose padding will be animated.",
+      "default_value": "Required",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "padding",
+      "type": "EdgeInsetsGeometry",
+      "description": "The target padding around the child.",
+      "default_value": "Required",
+      "possible_values": "Any EdgeInsets, e.g., EdgeInsets.all(10), EdgeInsets.symmetric(horizontal: 20)"
+    },
+    {
+      "name": "duration",
+      "type": "Duration",
+      "description": "The length of time over which to animate padding changes.",
+      "default_value": "Required",
+      "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+    },
+    {
+      "name": "curve",
+      "type": "Curve",
+      "description": "The animation curve to use when animating the padding changes.",
+      "default_value": "Curves.linear",
+      "possible_values": "Any Flutter animation curve, e.g., Curves.easeInOut, Curves.bounceIn"
+    }
+  ]
+}

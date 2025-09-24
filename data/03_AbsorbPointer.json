@@ -1,0 +1,28 @@
+{
+  "name": "AbsorbPointer",
+  "description": "A widget that prevents its subtree from receiving pointer events. It still participates in layout and painting but absorbs any touches, gestures, or pointer interactions.",
+  "how_to_use": "AbsorbPointer(\n  absorbing: true,\n  child: ElevatedButton(\n    onPressed: () {\n      print('Button tapped');\n    },\n    child: Text('Tap Me'),\n  ),\n)",
+  "properties": [
+    {
+      "name": "absorbing",
+      "type": "bool",
+      "description": "Whether to absorb (block) pointer events. If true, the child cannot be interacted with.",
+      "default_value": "true",
+      "possible_values": "true or false"
+    },
+    {
+      "name": "ignoringSemantics",
+      "type": "bool",
+      "description": "Whether to ignore the semantics of the child for accessibility. Useful when disabling interactions but keeping or removing semantics.",
+      "default_value": "false",
+      "possible_values": "true or false"
+    },
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget below this widget in the tree that will be prevented from receiving pointer events.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    }
+  ]
+}

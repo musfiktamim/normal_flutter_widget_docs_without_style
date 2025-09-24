@@ -1,0 +1,77 @@
+{
+  "name": "CircleAvatar",
+  "description": "A circular widget that typically represents a user profile picture. Can display an image, icon, or text inside a circle.",
+  "how_to_use": "CircleAvatar(\n  radius: 40,\n  backgroundColor: Colors.blue,\n  child: Text('AB', style: TextStyle(color: Colors.white)),\n  backgroundImage: NetworkImage('https://example.com/avatar.png'),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "A widget to display inside the circle, usually Text or Icon.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "backgroundColor",
+      "type": "Color?",
+      "description": "The background color of the circle.",
+      "default_value": "Theme dependent (usually grey)",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "foregroundColor",
+      "type": "Color?",
+      "description": "The default color for text and icons within the avatar.",
+      "default_value": "Theme dependent",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "radius",
+      "type": "double?",
+      "description": "The radius of the circle. If null, defaults to 20.0",
+      "default_value": "20.0",
+      "possible_values": "Any positive double"
+    },
+    {
+      "name": "minRadius",
+      "type": "double?",
+      "description": "The minimum radius constraint for the circle.",
+      "default_value": "null",
+      "possible_values": "Any positive double"
+    },
+    {
+      "name": "maxRadius",
+      "type": "double?",
+      "description": "The maximum radius constraint for the circle.",
+      "default_value": "null",
+      "possible_values": "Any positive double"
+    },
+    {
+      "name": "backgroundImage",
+      "type": "ImageProvider?",
+      "description": "An image to display inside the circle.",
+      "default_value": "null",
+      "possible_values": "NetworkImage, AssetImage, FileImage, etc."
+    },
+    {
+      "name": "onBackgroundImageError",
+      "type": "ImageErrorListener?",
+      "description": "Callback when the background image fails to load.",
+      "default_value": "null",
+      "possible_values": "Function or null"
+    },
+    {
+      "name": "foregroundImage",
+      "type": "ImageProvider?",
+      "description": "An image displayed over the background image.",
+      "default_value": "null",
+      "possible_values": "NetworkImage, AssetImage, FileImage, etc."
+    },
+    {
+      "name": "onForegroundImageError",
+      "type": "ImageErrorListener?",
+      "description": "Callback when the foreground image fails to load.",
+      "default_value": "null",
+      "possible_values": "Function or null"
+    }
+  ]
+}

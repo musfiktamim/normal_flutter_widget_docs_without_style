@@ -1,0 +1,35 @@
+{
+  "name": "Align",
+  "description": "A widget that aligns its child within itself and optionally sizes itself based on the child's size.",
+  "how_to_use": "Align(\n  alignment: Alignment.topRight,\n  widthFactor: 2.0,\n  heightFactor: 2.0,\n  child: Container(\n    color: Colors.blue,\n    width: 50,\n    height: 50,\n  ),\n);",
+  "properties": [
+    {
+      "name": "alignment",
+      "type": "AlignmentGeometry",
+      "description": "Defines how the child is aligned within the parent.",
+      "default_value": "Alignment.center",
+      "possible_values": "Alignment.topLeft, Alignment.topCenter, Alignment.topRight, Alignment.centerLeft, Alignment.center, Alignment.centerRight, Alignment.bottomLeft, Alignment.bottomCenter, Alignment.bottomRight, Alignment(x, y)"
+    },
+    {
+      "name": "widthFactor",
+      "type": "double?",
+      "description": "If non-null, sets the width of the Align widget to be this factor times the child's width.",
+      "default_value": "null",
+      "possible_values": "Any positive double or null"
+    },
+    {
+      "name": "heightFactor",
+      "type": "double?",
+      "description": "If non-null, sets the height of the Align widget to be this factor times the child's height.",
+      "default_value": "null",
+      "possible_values": "Any positive double or null"
+    },
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget below this widget in the tree to be aligned.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    }
+  ]
+}

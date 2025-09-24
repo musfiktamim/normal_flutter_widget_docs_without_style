@@ -1,0 +1,28 @@
+{
+  "name": "AnimatedModalBarrier",
+  "description": "A widget that prevents user interaction with widgets behind it and animates the barrier color over a given animation. Often used in modal routes to block touches and provide visual feedback.",
+  "how_to_use": "AnimationController _controller = AnimationController(\n  duration: const Duration(seconds: 1),\n  vsync: this,\n);\n\nAnimatedModalBarrier(\n  color: _controller.drive(ColorTween(begin: Colors.transparent, end: Colors.black54)),\n  dismissible: false,\n);",
+  "properties": [
+    {
+      "name": "color",
+      "type": "Animation<Color?>",
+      "description": "An animation that defines the color of the modal barrier. Changes in color are animated automatically.",
+      "default_value": "Required",
+      "possible_values": "Any Animation<Color?>, e.g., ColorTween.animate(controller)"
+    },
+    {
+      "name": "dismissible",
+      "type": "bool",
+      "description": "Whether tapping the barrier should dismiss the modal route.",
+      "default_value": "true",
+      "possible_values": "true or false"
+    },
+    {
+      "name": "semanticsLabel",
+      "type": "String?",
+      "description": "Semantic label for accessibility.",
+      "default_value": "null",
+      "possible_values": "Any string"
+    }
+  ]
+}

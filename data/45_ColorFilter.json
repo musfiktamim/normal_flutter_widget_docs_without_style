@@ -1,0 +1,28 @@
+{
+  "name": "ColorFilter",
+  "description": "A widget used to apply a color filter to a child widget. Commonly used with images to apply color effects such as tint, grayscale, or blending.",
+  "how_to_use": "ColorFiltered(\n  colorFilter: ColorFilter.mode(Colors.red.withOpacity(0.5), BlendMode.modulate),\n  child: Image.network('https://example.com/image.png'),\n);",
+  "properties": [
+    {
+      "name": "colorFilter",
+      "type": "ColorFilter",
+      "description": "The color filter to apply to the child widget.",
+      "default_value": "Required",
+      "possible_values": "ColorFilter.mode(color, blendMode), ColorFilter.linearToSrgbGamma(), ColorFilter.matrix([...]), etc."
+    },
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget to which the color filter is applied.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "key",
+      "type": "Key?",
+      "description": "An optional identifier for this widget.",
+      "default_value": "null",
+      "possible_values": "Any Key"
+    }
+  ]
+}

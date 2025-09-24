@@ -1,0 +1,63 @@
+{
+  "name": "Column",
+  "description": "A widget that arranges its children vertically. Useful for building vertical layouts with alignment and spacing control.",
+  "how_to_use": "Column(\n  mainAxisAlignment: MainAxisAlignment.center,\n  crossAxisAlignment: CrossAxisAlignment.start,\n  children: [\n    Text('First Item'),\n    Text('Second Item'),\n    Text('Third Item'),\n  ],\n);",
+  "properties": [
+    {
+      "name": "children",
+      "type": "List<Widget>",
+      "description": "The widgets to display in a vertical array.",
+      "default_value": "Required",
+      "possible_values": "Any list of widgets"
+    },
+    {
+      "name": "mainAxisAlignment",
+      "type": "MainAxisAlignment",
+      "description": "How the children should be placed along the vertical axis.",
+      "default_value": "MainAxisAlignment.start",
+      "possible_values": "start, end, center, spaceBetween, spaceAround, spaceEvenly"
+    },
+    {
+      "name": "crossAxisAlignment",
+      "type": "CrossAxisAlignment",
+      "description": "How the children should be aligned horizontally within the column.",
+      "default_value": "CrossAxisAlignment.center",
+      "possible_values": "start, end, center, stretch, baseline"
+    },
+    {
+      "name": "mainAxisSize",
+      "type": "MainAxisSize",
+      "description": "The size of the column along the main axis (vertical).",
+      "default_value": "MainAxisSize.max",
+      "possible_values": "min, max"
+    },
+    {
+      "name": "textDirection",
+      "type": "TextDirection?",
+      "description": "The text direction for determining horizontal alignment.",
+      "default_value": "null (uses ambient Directionality)",
+      "possible_values": "TextDirection.ltr, TextDirection.rtl"
+    },
+    {
+      "name": "verticalDirection",
+      "type": "VerticalDirection",
+      "description": "The vertical order in which children are painted.",
+      "default_value": "VerticalDirection.down",
+      "possible_values": "down, up"
+    },
+    {
+      "name": "textBaseline",
+      "type": "TextBaseline?",
+      "description": "The baseline to use for aligning text when crossAxisAlignment is baseline.",
+      "default_value": "null",
+      "possible_values": "alphabetic, ideographic"
+    },
+    {
+      "name": "key",
+      "type": "Key?",
+      "description": "An optional identifier for this widget.",
+      "default_value": "null",
+      "possible_values": "Any Key"
+    }
+  ]
+}

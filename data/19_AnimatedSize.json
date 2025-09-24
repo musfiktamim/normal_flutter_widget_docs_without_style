@@ -1,0 +1,42 @@
+{
+  "name": "AnimatedSize",
+  "description": "A widget that automatically animates changes in its child's size over a given duration and curve. Useful for smooth resizing of widgets without using an explicit AnimationController.",
+  "how_to_use": "AnimatedSize(\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n  child: Container(\n    width: _isExpanded ? 200 : 100,\n    height: _isExpanded ? 200 : 100,\n    color: Colors.blue,\n  ),\n  vsync: this,\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget",
+      "description": "The widget below this widget in the tree whose size will be animated.",
+      "default_value": "Required",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "duration",
+      "type": "Duration",
+      "description": "The length of time over which to animate changes in size.",
+      "default_value": "Required",
+      "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+    },
+    {
+      "name": "curve",
+      "type": "Curve",
+      "description": "The animation curve to use when animating size changes.",
+      "default_value": "Curves.linear",
+      "possible_values": "Any Flutter animation curve, e.g., Curves.easeInOut, Curves.bounceIn"
+    },
+    {
+      "name": "alignment",
+      "type": "Alignment",
+      "description": "The alignment of the child within the AnimatedSize widget during size changes.",
+      "default_value": "Alignment.center",
+      "possible_values": "Any Alignment, e.g., Alignment.topLeft, Alignment.center, Alignment.bottomRight"
+    },
+    {
+      "name": "vsync",
+      "type": "TickerProvider",
+      "description": "A TickerProvider for driving the animation. Typically, use `this` in a StatefulWidget that mixes in `TickerProviderStateMixin`.",
+      "default_value": "Required",
+      "possible_values": "Any TickerProvider, e.g., a StatefulWidget with SingleTickerProviderStateMixin"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "CloseButton",
+  "description": "A material design close button. Typically used to close dialogs, pages, or other overlay widgets.",
+  "how_to_use": "CloseButton(\n  onPressed: () {\n    Navigator.of(context).pop();\n  },\n  color: Colors.black,\n);",
+  "properties": [
+    {
+      "name": "onPressed",
+      "type": "VoidCallback?",
+      "description": "Callback function called when the button is tapped. If null, the button is disabled.",
+      "default_value": "Navigator.maybePop(context)",
+      "possible_values": "Function or null"
+    },
+    {
+      "name": "color",
+      "type": "Color?",
+      "description": "The color to use for the close icon.",
+      "default_value": "Theme dependent (usually black)",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "key",
+      "type": "Key?",
+      "description": "An optional identifier for this widget.",
+      "default_value": "null",
+      "possible_values": "Any Key"
+    }
+  ]
+}

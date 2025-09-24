@@ -1,0 +1,63 @@
+{
+  "name": "Checkbox",
+  "description": "A material design checkbox. Allows the user to select one or more options. Typically used in forms or settings.",
+  "how_to_use": "bool _isChecked = false;\n\nCheckbox(\n  value: _isChecked,\n  onChanged: (bool? value) {\n    setState(() {\n      _isChecked = value!;\n    });\n  },\n  activeColor: Colors.blue,\n  checkColor: Colors.white,\n  tristate: false,\n);",
+  "properties": [
+    {
+      "name": "value",
+      "type": "bool?",
+      "description": "Whether the checkbox is checked.",
+      "default_value": "false",
+      "possible_values": "true, false, or null (if tristate is true)"
+    },
+    {
+      "name": "onChanged",
+      "type": "ValueChanged<bool?>?",
+      "description": "Called when the user taps the checkbox to change its state.",
+      "default_value": "null (checkbox is disabled)",
+      "possible_values": "Function(bool? value) or null"
+    },
+    {
+      "name": "activeColor",
+      "type": "Color?",
+      "description": "The fill color of the checkbox when it is checked.",
+      "default_value": "Theme dependent",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "checkColor",
+      "type": "Color?",
+      "description": "The color of the check icon inside the checkbox.",
+      "default_value": "Colors.white",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "tristate",
+      "type": "bool",
+      "description": "Whether the checkbox can have three states: true, false, or null.",
+      "default_value": "false",
+      "possible_values": "true or false"
+    },
+    {
+      "name": "materialTapTargetSize",
+      "type": "MaterialTapTargetSize?",
+      "description": "Configures the minimum size of the tap target.",
+      "default_value": "null",
+      "possible_values": "MaterialTapTargetSize.padded, MaterialTapTargetSize.shrinkWrap"
+    },
+    {
+      "name": "focusColor",
+      "type": "Color?",
+      "description": "The color of the checkbox when it has keyboard focus.",
+      "default_value": "null",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "hoverColor",
+      "type": "Color?",
+      "description": "The color of the checkbox when a pointer is hovering over it.",
+      "default_value": "null",
+      "possible_values": "Any Color"
+    }
+  ]
+}

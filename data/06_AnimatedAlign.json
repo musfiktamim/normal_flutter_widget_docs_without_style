@@ -1,0 +1,49 @@
+{
+  "name": "AnimatedAlign",
+  "description": "A widget that automatically transitions its child's position over a given duration whenever the alignment changes. Useful for smooth animations when changing alignment.",
+  "how_to_use": "AnimatedAlign(\n  alignment: _isTopRight ? Alignment.topRight : Alignment.bottomLeft,\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n  child: Container(\n    width: 50,\n    height: 50,\n    color: Colors.red,\n  ),\n);",
+  "properties": [
+    {
+      "name": "alignment",
+      "type": "AlignmentGeometry",
+      "description": "The alignment of the child within the parent. Changes to this value are animated.",
+      "default_value": "Alignment.center",
+      "possible_values": "Alignment.topLeft, Alignment.topCenter, Alignment.topRight, Alignment.centerLeft, Alignment.center, Alignment.centerRight, Alignment.bottomLeft, Alignment.bottomCenter, Alignment.bottomRight, Alignment(x, y)"
+    },
+    {
+      "name": "duration",
+      "type": "Duration",
+      "description": "The length of time the animation should last when alignment changes.",
+      "default_value": "Required",
+      "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+    },
+    {
+      "name": "curve",
+      "type": "Curve",
+      "description": "The animation curve to use when changing alignment.",
+      "default_value": "Curves.linear",
+      "possible_values": "Any Flutter animation curve, e.g., Curves.easeIn, Curves.easeOut"
+    },
+    {
+      "name": "widthFactor",
+      "type": "double?",
+      "description": "If non-null, sets the width of the AnimatedAlign to this factor times the child's width.",
+      "default_value": "null",
+      "possible_values": "Any positive double or null"
+    },
+    {
+      "name": "heightFactor",
+      "type": "double?",
+      "description": "If non-null, sets the height of the AnimatedAlign to this factor times the child's height.",
+      "default_value": "null",
+      "possible_values": "Any positive double or null"
+    },
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget below this widget in the tree to animate.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    }
+  ]
+}

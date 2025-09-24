@@ -1,0 +1,98 @@
+{
+  "name": "AnimatedContainer",
+  "description": "A container that automatically animates changes to its properties over a given duration and curve. Useful for creating implicit animations without a StatefulWidget.",
+  "how_to_use": "AnimatedContainer(\n  width: _isExpanded ? 200 : 100,\n  height: _isExpanded ? 200 : 100,\n  color: _isExpanded ? Colors.blue : Colors.red,\n  alignment: _isExpanded ? Alignment.center : Alignment.topLeft,\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n  child: const Text('Animated Container'),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget below this widget in the tree.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "alignment",
+      "type": "AlignmentGeometry?",
+      "description": "How to align the child within the container.",
+      "default_value": "null",
+      "possible_values": "Alignment.topLeft, Alignment.center, Alignment.bottomRight, etc."
+    },
+    {
+      "name": "padding",
+      "type": "EdgeInsetsGeometry?",
+      "description": "Empty space inside the container around the child.",
+      "default_value": "null",
+      "possible_values": "EdgeInsets.all(), EdgeInsets.symmetric(), etc."
+    },
+    {
+      "name": "color",
+      "type": "Color?",
+      "description": "Background color of the container.",
+      "default_value": "null",
+      "possible_values": "Any Color, e.g., Colors.red"
+    },
+    {
+      "name": "decoration",
+      "type": "Decoration?",
+      "description": "A decoration to paint behind the child. Cannot be specified if color is non-null.",
+      "default_value": "null",
+      "possible_values": "BoxDecoration, ShapeDecoration, etc."
+    },
+    {
+      "name": "foregroundDecoration",
+      "type": "Decoration?",
+      "description": "A decoration to paint in front of the child.",
+      "default_value": "null",
+      "possible_values": "BoxDecoration, ShapeDecoration, etc."
+    },
+    {
+      "name": "width",
+      "type": "double?",
+      "description": "The width of the container.",
+      "default_value": "null",
+      "possible_values": "Any positive double or null"
+    },
+    {
+      "name": "height",
+      "type": "double?",
+      "description": "The height of the container.",
+      "default_value": "null",
+      "possible_values": "Any positive double or null"
+    },
+    {
+      "name": "constraints",
+      "type": "BoxConstraints?",
+      "description": "Additional constraints to apply to the container.",
+      "default_value": "null",
+      "possible_values": "BoxConstraints(minWidth: ..., maxHeight: ...)"
+    },
+    {
+      "name": "margin",
+      "type": "EdgeInsetsGeometry?",
+      "description": "Empty space around the container.",
+      "default_value": "null",
+      "possible_values": "EdgeInsets.all(), EdgeInsets.symmetric(), etc."
+    },
+    {
+      "name": "transform",
+      "type": "Matrix4?",
+      "description": "A transformation to apply before painting the container.",
+      "default_value": "null",
+      "possible_values": "Any Matrix4"
+    },
+    {
+      "name": "duration",
+      "type": "Duration",
+      "description": "The length of time over which to animate changes to properties.",
+      "default_value": "Required",
+      "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+    },
+    {
+      "name": "curve",
+      "type": "Curve",
+      "description": "The animation curve to use when animating changes.",
+      "default_value": "Curves.linear",
+      "possible_values": "Curves.easeIn, Curves.easeOut, Curves.easeInOut, etc."
+    }
+  ]
+}

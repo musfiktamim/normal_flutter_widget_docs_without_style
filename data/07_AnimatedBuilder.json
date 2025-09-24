@@ -1,0 +1,28 @@
+{
+  "name": "AnimatedBuilder",
+  "description": "A widget that rebuilds whenever the given animation changes. It is useful for creating custom animations without creating a separate StatefulWidget.",
+  "how_to_use": "AnimationController _controller = AnimationController(\n  duration: const Duration(seconds: 2),\n  vsync: this,\n);\n\nAnimatedBuilder(\n  animation: _controller,\n  builder: (context, child) {\n    return Transform.rotate(\n      angle: _controller.value * 2 * 3.1416,\n      child: child,\n    );\n  },\n  child: Container(\n    width: 100,\n    height: 100,\n    color: Colors.blue,\n  ),\n);",
+  "properties": [
+    {
+      "name": "animation",
+      "type": "Listenable",
+      "description": "The animation (usually an AnimationController or Animation) to listen to. The builder is called whenever this animation updates.",
+      "default_value": "Required",
+      "possible_values": "Any object that implements Listenable, e.g., AnimationController or Animation<double>"
+    },
+    {
+      "name": "builder",
+      "type": "Widget Function(BuildContext, Widget?)",
+      "description": "Called whenever the animation changes. Must return a widget that is part of the widget tree.",
+      "default_value": "Required",
+      "possible_values": "Any function returning a widget."
+    },
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "Optional child widget that does not depend on the animation and can be passed to the builder to avoid rebuilding it every frame.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    }
+  ]
+}

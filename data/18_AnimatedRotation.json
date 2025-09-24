@@ -1,0 +1,42 @@
+{
+  "name": "AnimatedRotation",
+  "description": "A widget that automatically animates changes in its rotation angle over a given duration and curve. Useful for smoothly rotating a child widget without manually using an AnimationController.",
+  "how_to_use": "AnimatedRotation(\n  turns: _isRotated ? 1.0 : 0.0, // 1.0 = 360 degrees\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n  child: Container(\n    width: 100,\n    height: 100,\n    color: Colors.blue,\n  ),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget",
+      "description": "The widget below this widget in the tree to rotate.",
+      "default_value": "Required",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "turns",
+      "type": "double",
+      "description": "The number of complete rotations to apply to the child. 1.0 equals a full 360-degree rotation.",
+      "default_value": "Required",
+      "possible_values": "Any double, e.g., 0.5 for 180 degrees, 1.0 for 360 degrees"
+    },
+    {
+      "name": "alignment",
+      "type": "Alignment",
+      "description": "The alignment around which to rotate the child.",
+      "default_value": "Alignment.center",
+      "possible_values": "Any Alignment, e.g., Alignment.topLeft, Alignment.center, Alignment.bottomRight"
+    },
+    {
+      "name": "duration",
+      "type": "Duration",
+      "description": "The length of time over which to animate rotation changes.",
+      "default_value": "Required",
+      "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+    },
+    {
+      "name": "curve",
+      "type": "Curve",
+      "description": "The animation curve to use when animating rotation.",
+      "default_value": "Curves.linear",
+      "possible_values": "Any Flutter animation curve, e.g., Curves.easeInOut"
+    }
+  ]
+}

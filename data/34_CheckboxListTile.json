@@ -1,0 +1,77 @@
+{
+  "name": "CheckboxListTile",
+  "description": "A widget that combines a checkbox with a ListTile, allowing for a labeled checkbox with optional subtitle and secondary widget. Useful for forms, settings, and options lists.",
+  "how_to_use": "bool _isChecked = false;\n\nCheckboxListTile(\n  title: Text('Enable Notifications'),\n  subtitle: Text('Receive updates via email'),\n  value: _isChecked,\n  onChanged: (bool? value) {\n    setState(() {\n      _isChecked = value!;\n    });\n  },\n  secondary: Icon(Icons.notifications),\n  controlAffinity: ListTileControlAffinity.trailing,\n  activeColor: Colors.blue,\n);",
+  "properties": [
+    {
+      "name": "title",
+      "type": "Widget?",
+      "description": "The primary content of the list tile, usually a Text widget.",
+      "default_value": "null",
+      "possible_values": "Any widget, typically Text"
+    },
+    {
+      "name": "subtitle",
+      "type": "Widget?",
+      "description": "Additional content displayed below the title.",
+      "default_value": "null",
+      "possible_values": "Any widget, typically Text"
+    },
+    {
+      "name": "value",
+      "type": "bool?",
+      "description": "Whether the checkbox is checked.",
+      "default_value": "false",
+      "possible_values": "true, false, or null (if tristate is true)"
+    },
+    {
+      "name": "onChanged",
+      "type": "ValueChanged<bool?>?",
+      "description": "Called when the user taps the checkbox to change its state.",
+      "default_value": "null (checkbox is disabled)",
+      "possible_values": "Function(bool? value) or null"
+    },
+    {
+      "name": "secondary",
+      "type": "Widget?",
+      "description": "A widget to display opposite the checkbox, often an icon or avatar.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "activeColor",
+      "type": "Color?",
+      "description": "The color to use when the checkbox is checked.",
+      "default_value": "Theme dependent",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "checkColor",
+      "type": "Color?",
+      "description": "The color of the check icon inside the checkbox.",
+      "default_value": "Colors.white",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "tristate",
+      "type": "bool",
+      "description": "Whether the checkbox can have three states: true, false, or null.",
+      "default_value": "false",
+      "possible_values": "true or false"
+    },
+    {
+      "name": "controlAffinity",
+      "type": "ListTileControlAffinity",
+      "description": "The position of the checkbox relative to the text.",
+      "default_value": "ListTileControlAffinity.platform",
+      "possible_values": "ListTileControlAffinity.leading, trailing, platform"
+    },
+    {
+      "name": "dense",
+      "type": "bool?",
+      "description": "Whether this list tile is part of a vertically dense list.",
+      "default_value": "null",
+      "possible_values": "true or false"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "ClipRRect",
+  "description": "A widget that clips its child with a rounded rectangle. Useful for creating rounded corners for images, containers, or any rectangular widget.",
+  "how_to_use": "ClipRRect(\n  borderRadius: BorderRadius.circular(20),\n  child: Image.network(\n    'https://example.com/image.jpg',\n    width: 200,\n    height: 200,\n    fit: BoxFit.cover,\n  ),\n  clipBehavior: Clip.antiAlias,\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget to display inside the rounded rectangle clip.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "borderRadius",
+      "type": "BorderRadiusGeometry",
+      "description": "The radius of the rounded corners.",
+      "default_value": "BorderRadius.zero",
+      "possible_values": "BorderRadius.circular(double), BorderRadius.only(...), etc."
+    },
+    {
+      "name": "clipBehavior",
+      "type": "Clip",
+      "description": "How to clip the content if it overflows the rounded rectangle boundary.",
+      "default_value": "Clip.antiAlias",
+      "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+    },
+    {
+      "name": "key",
+      "type": "Key?",
+      "description": "An optional identifier for this widget.",
+      "default_value": "null",
+      "possible_values": "Any Key"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "name": "Container",
+  "description": "A versatile widget that combines common painting, positioning, and sizing widgets. Useful for layout, styling, and decoration of its child.",
+  "how_to_use": "Container(\n  width: 200,\n  height: 100,\n  padding: EdgeInsets.all(16),\n  margin: EdgeInsets.all(8),\n  decoration: BoxDecoration(\n    color: Colors.blue,\n    borderRadius: BorderRadius.circular(12),\n    border: Border.all(color: Colors.black, width: 2),\n  ),\n  alignment: Alignment.center,\n  child: Text('Hello Container', style: TextStyle(color: Colors.white)),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget to display inside the container.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "alignment",
+      "type": "AlignmentGeometry?",
+      "description": "Aligns the child within the container.",
+      "default_value": "null",
+      "possible_values": "Alignment.center, Alignment.topLeft, Alignment.bottomRight, etc."
+    },
+    {
+      "name": "padding",
+      "type": "EdgeInsetsGeometry?",
+      "description": "Empty space to inscribe inside the container, around the child.",
+      "default_value": "null",
+      "possible_values": "EdgeInsets.all(), EdgeInsets.symmetric(), EdgeInsets.only(), etc."
+    },
+    {
+      "name": "margin",
+      "type": "EdgeInsetsGeometry?",
+      "description": "Empty space to surround the container itself.",
+      "default_value": "null",
+      "possible_values": "EdgeInsets.all(), EdgeInsets.symmetric(), EdgeInsets.only(), etc."
+    },
+    {
+      "name": "width",
+      "type": "double?",
+      "description": "The container's width.",
+      "default_value": "null",
+      "possible_values": "Any positive double"
+    },
+    {
+      "name": "height",
+      "type": "double?",
+      "description": "The container's height.",
+      "default_value": "null",
+      "possible_values": "Any positive double"
+    },
+    {
+      "name": "constraints",
+      "type": "BoxConstraints?",
+      "description": "Additional constraints to apply to the container.",
+      "default_value": "null",
+      "possible_values": "BoxConstraints(minWidth, maxWidth, minHeight, maxHeight)"
+    },
+    {
+      "name": "decoration",
+      "type": "Decoration?",
+      "description": "Decorates the container, e.g., background color, border, border radius, gradient, or box shadow.",
+      "default_value": "null",
+      "possible_values": "BoxDecoration, ShapeDecoration, etc."
+    },
+    {
+      "name": "foregroundDecoration",
+      "type": "Decoration?",
+      "description": "Decoration drawn in front of the child.",
+      "default_value": "null",
+      "possible_values": "BoxDecoration, ShapeDecoration, etc."
+    },
+    {
+      "name": "transform",
+      "type": "Matrix4?",
+      "description": "Applies a transformation before painting the container.",
+      "default_value": "null",
+      "possible_values": "Any Matrix4 transform"
+    },
+    {
+      "name": "clipBehavior",
+      "type": "Clip",
+      "description": "How to clip content when it overflows the container.",
+      "default_value": "Clip.none",
+      "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+    },
+    {
+      "name": "color",
+      "type": "Color?",
+      "description": "A shortcut for background color if decoration is not specified.",
+      "default_value": "null",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "key",
+      "type": "Key?",
+      "description": "An optional identifier for this widget.",
+      "default_value": "null",
+      "possible_values": "Any Key"
+    }
+  ]
+}

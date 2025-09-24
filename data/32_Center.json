@@ -1,0 +1,21 @@
+{
+  "name": "Center",
+  "description": "A widget that centers its child within itself. Useful for aligning a single widget in the middle of the parent.",
+  "how_to_use": "Center(\n  child: Container(\n    width: 100,\n    height: 100,\n    color: Colors.blue,\n  ),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget to display at the center.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "key",
+      "type": "Key?",
+      "description": "An optional identifier for this widget.",
+      "default_value": "null",
+      "possible_values": "Any Key"
+    }
+  ]
+}

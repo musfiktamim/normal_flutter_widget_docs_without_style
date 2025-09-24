@@ -1,0 +1,42 @@
+{
+  "name": "AboutDialog",
+  "description": "A Material Design dialog that shows application information such as name, version, and legalese. Typically used for an “About” section in apps.",
+  "how_to_use": "showAboutDialog(\n  context: context,\n  applicationName: 'My Flutter App',\n  applicationVersion: '1.0.0',\n  applicationLegalese: '© 2025 My Company',\n  applicationIcon: FlutterLogo(size: 48),\n);",
+  "properties": [
+    {
+      "name": "applicationName",
+      "type": "String?",
+      "description": "The name of the application to display in the dialog.",
+      "default_value": "null (defaults to the app's title from MaterialApp if provided)",
+      "possible_values": "Any string"
+    },
+    {
+      "name": "applicationVersion",
+      "type": "String?",
+      "description": "The version of the application.",
+      "default_value": "null",
+      "possible_values": "Any string (e.g., '1.0.0')"
+    },
+    {
+      "name": "applicationIcon",
+      "type": "Widget?",
+      "description": "An optional widget to display as the application icon at the top of the dialog.",
+      "default_value": "null",
+      "possible_values": "Any widget (e.g., FlutterLogo())"
+    },
+    {
+      "name": "applicationLegalese",
+      "type": "String?",
+      "description": "Optional legal text to display, such as copyright information.",
+      "default_value": "null",
+      "possible_values": "Any string"
+    },
+    {
+      "name": "children",
+      "type": "List<Widget>?",
+      "description": "Optional widgets to display between the version/legalese and the close button.",
+      "default_value": "null",
+      "possible_values": "Any list of widgets"
+    }
+  ]
+}

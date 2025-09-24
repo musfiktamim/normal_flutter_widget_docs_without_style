@@ -1,0 +1,70 @@
+{
+  "name": "AnimatedList",
+  "description": "A scrollable list of widgets that animates items when they are inserted or removed. Useful for dynamic lists where items can appear or disappear with smooth animations.",
+  "how_to_use": "final GlobalKey<AnimatedListState> _listKey = GlobalKey<AnimatedListState>();\nList<String> items = ['Item 1', 'Item 2'];\n\nAnimatedList(\n  key: _listKey,\n  initialItemCount: items.length,\n  itemBuilder: (context, index, animation) {\n    return SizeTransition(\n      sizeFactor: animation,\n      child: ListTile(title: Text(items[index])),\n    );\n  },\n);\n\n// To insert an item:\nitems.insert(1, 'New Item');\n_listKey.currentState?.insertItem(1);\n\n// To remove an item:\nfinal removedItem = items.removeAt(0);\n_listKey.currentState?.removeItem(\n  0,\n  (context, animation) => SizeTransition(\n    sizeFactor: animation,\n    child: ListTile(title: Text(removedItem)),\n  ),\n);",
+  "properties": [
+    {
+      "name": "key",
+      "type": "Key?",
+      "description": "An optional key to uniquely identify the AnimatedList.",
+      "default_value": "null",
+      "possible_values": "Any Key"
+    },
+    {
+      "name": "initialItemCount",
+      "type": "int",
+      "description": "The number of items the list starts with.",
+      "default_value": "0",
+      "possible_values": "Any non-negative integer"
+    },
+    {
+      "name": "itemBuilder",
+      "type": "Widget Function(BuildContext, int, Animation<double>)",
+      "description": "Called to build each child in the list. Provides the index and an animation for insertion/removal.",
+      "default_value": "Required",
+      "possible_values": "Any function returning a Widget"
+    },
+    {
+      "name": "controller",
+      "type": "ScrollController?",
+      "description": "Controls the scroll offset of the list.",
+      "default_value": "null",
+      "possible_values": "Any ScrollController"
+    },
+    {
+      "name": "scrollDirection",
+      "type": "Axis",
+      "description": "The axis along which the list scrolls.",
+      "default_value": "Axis.vertical",
+      "possible_values": "Axis.vertical, Axis.horizontal"
+    },
+    {
+      "name": "reverse",
+      "type": "bool",
+      "description": "Whether the list scrolls in the opposite direction.",
+      "default_value": "false",
+      "possible_values": "true or false"
+    },
+    {
+      "name": "physics",
+      "type": "ScrollPhysics?",
+      "description": "How the list should respond to user scrolling.",
+      "default_value": "null",
+      "possible_values": "Any ScrollPhysics, e.g., BouncingScrollPhysics()"
+    },
+    {
+      "name": "shrinkWrap",
+      "type": "bool",
+      "description": "Whether the list should occupy only the space it needs.",
+      "default_value": "false",
+      "possible_values": "true or false"
+    },
+    {
+      "name": "padding",
+      "type": "EdgeInsetsGeometry?",
+      "description": "Padding around the list.",
+      "default_value": "null",
+      "possible_values": "Any EdgeInsets, e.g., EdgeInsets.all(8.0)"
+    }
+  ]
+}

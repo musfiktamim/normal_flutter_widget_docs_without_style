@@ -1,0 +1,35 @@
+{
+  "name": "Baseline",
+  "description": "A widget that positions its child according to a baseline. Useful for aligning text or other widgets with a specific baseline in layouts.",
+  "how_to_use": "Baseline(\n  baseline: 50.0,\n  baselineType: TextBaseline.alphabetic,\n  child: Text(\n    'Hello',\n    style: TextStyle(fontSize: 24),\n  ),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget",
+      "description": "The widget below this widget in the tree to be positioned according to the baseline.",
+      "default_value": "Required",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "baseline",
+      "type": "double",
+      "description": "The offset in logical pixels from the top of the parent to place the child's baseline.",
+      "default_value": "Required",
+      "possible_values": "Any double"
+    },
+    {
+      "name": "baselineType",
+      "type": "TextBaseline",
+      "description": "The type of baseline to use for aligning the child. Usually alphabetic or ideographic.",
+      "default_value": "Required",
+      "possible_values": "TextBaseline.alphabetic, TextBaseline.ideographic"
+    },
+    {
+      "name": "key",
+      "type": "Key?",
+      "description": "An optional identifier for this widget.",
+      "default_value": "null",
+      "possible_values": "Any Key"
+    }
+  ]
+}

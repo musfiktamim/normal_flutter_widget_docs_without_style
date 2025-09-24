@@ -1,0 +1,56 @@
+{
+  "name": "AnimatedSwitcher",
+  "description": "A widget that automatically transitions from an old child to a new child using a fade, scale, slide, or custom transition. Useful for smooth swapping of widgets with animation.",
+  "how_to_use": "AnimatedSwitcher(\n  duration: const Duration(seconds: 1),\n  transitionBuilder: (Widget child, Animation<double> animation) {\n    return ScaleTransition(scale: animation, child: child);\n  },\n  child: _isFirst ? Text('First', key: ValueKey(1)) : Text('Second', key: ValueKey(2)),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget to display. When this changes, AnimatedSwitcher animates from the old child to the new child.",
+      "default_value": "null",
+      "possible_values": "Any widget. Must provide a unique Key to differentiate between children."
+    },
+    {
+      "name": "duration",
+      "type": "Duration",
+      "description": "The length of time over which to animate the transition between old and new children.",
+      "default_value": "Required",
+      "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+    },
+    {
+      "name": "transitionBuilder",
+      "type": "Widget Function(Widget, Animation<double>)",
+      "description": "Defines how the old child transitions out and the new child transitions in.",
+      "default_value": "(child, animation) => FadeTransition(opacity: animation, child: child)",
+      "possible_values": "Any function returning a Widget. Can use FadeTransition, ScaleTransition, SlideTransition, etc."
+    },
+    {
+      "name": "layoutBuilder",
+      "type": "Widget Function(Widget?, List<Widget>)",
+      "description": "Defines how to lay out the new child and the outgoing children during the transition.",
+      "default_value": "(currentChild, previousChildren) => Stack(children: [...previousChildren, if (currentChild != null) currentChild])",
+      "possible_values": "Any function returning a Widget"
+    },
+    {
+      "name": "reverseDuration",
+      "type": "Duration?",
+      "description": "The duration to use for the reverse animation when switching back to a previous child.",
+      "default_value": "null (uses duration)",
+      "possible_values": "Any Duration or null"
+    },
+    {
+      "name": "switchInCurve",
+      "type": "Curve",
+      "description": "The animation curve to use when the new child appears.",
+      "default_value": "Curves.linear",
+      "possible_values": "Any Flutter animation curve"
+    },
+    {
+      "name": "switchOutCurve",
+      "type": "Curve",
+      "description": "The animation curve to use when the old child disappears.",
+      "default_value": "Curves.linear",
+      "possible_values": "Any Flutter animation curve"
+    }
+  ]
+}

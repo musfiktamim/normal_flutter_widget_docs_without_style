@@ -1,0 +1,28 @@
+{
+  "name": "BackdropFilter",
+  "description": "A widget that applies a filter to the existing painted content beneath its child. Commonly used for blurring backgrounds behind dialogs, modals, or other widgets.",
+  "how_to_use": "BackdropFilter(\n  filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),\n  child: Container(\n    color: Colors.black.withOpacity(0.3),\n  ),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget below this widget in the tree. The filter is applied to the content behind this child.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "filter",
+      "type": "ImageFilter",
+      "description": "The filter to apply to the existing painted content beneath the child. Can be blur, color filter, etc.",
+      "default_value": "Required",
+      "possible_values": "Any ImageFilter, e.g., ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0)"
+    },
+    {
+      "name": "opaque",
+      "type": "bool",
+      "description": "Whether the filter layer is opaque. Setting true may improve performance if the filtered area is fully opaque.",
+      "default_value": "false",
+      "possible_values": "true or false"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "ColoredBox",
+  "description": "A widget that paints its area with a specified color. Useful for adding solid color backgrounds without extra decoration.",
+  "how_to_use": "ColoredBox(\n  color: Colors.blue,\n  child: Padding(\n    padding: EdgeInsets.all(16.0),\n    child: Text('Hello ColoredBox', style: TextStyle(color: Colors.white)),\n  ),\n);",
+  "properties": [
+    {
+      "name": "color",
+      "type": "Color",
+      "description": "The background color to paint.",
+      "default_value": "Required",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget to display inside the colored box.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "key",
+      "type": "Key?",
+      "description": "An optional identifier for this widget.",
+      "default_value": "null",
+      "possible_values": "Any Key"
+    }
+  ]
+}

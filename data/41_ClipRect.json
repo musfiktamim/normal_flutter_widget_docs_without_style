@@ -1,0 +1,35 @@
+{
+  "name": "ClipRect",
+  "description": "A widget that clips its child using a rectangle. Useful for preventing child widgets from overflowing or for applying custom rectangular animations.",
+  "how_to_use": "ClipRect(\n  child: Align(\n    alignment: Alignment.topLeft,\n    widthFactor: 0.5,\n    heightFactor: 0.5,\n    child: Container(\n      color: Colors.blue,\n      width: 200,\n      height: 200,\n    ),\n  ),\n  clipBehavior: Clip.antiAlias,\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget to display inside the rectangle clip.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "clipper",
+      "type": "CustomClipper<Rect>?",
+      "description": "A custom clipper that defines the clipping rectangle.",
+      "default_value": "null",
+      "possible_values": "Any class that extends CustomClipper<Rect>"
+    },
+    {
+      "name": "clipBehavior",
+      "type": "Clip",
+      "description": "How to clip the content if it overflows the rectangle boundary.",
+      "default_value": "Clip.antiAlias",
+      "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+    },
+    {
+      "name": "key",
+      "type": "Key?",
+      "description": "An optional identifier for this widget.",
+      "default_value": "null",
+      "possible_values": "Any Key"
+    }
+  ]
+}

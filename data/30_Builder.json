@@ -1,0 +1,21 @@
+{
+  "name": "Builder",
+  "description": "A widget that allows you to obtain a BuildContext that is a descendant of the parent. Useful when you need a context that has access to an ancestor widget (like Scaffold or Theme) which isn’t available in the current context.",
+  "how_to_use": "Builder(\n  builder: (BuildContext context) {\n    return ElevatedButton(\n      onPressed: () {\n        ScaffoldMessenger.of(context).showSnackBar(\n          SnackBar(content: Text('Hello from Builder!'))\n        );\n      },\n      child: Text('Show SnackBar'),\n    );\n  },\n);",
+  "properties": [
+    {
+      "name": "builder",
+      "type": "Widget Function(BuildContext)",
+      "description": "The function that returns a widget tree, providing a BuildContext that is a descendant of the parent.",
+      "default_value": "Required",
+      "possible_values": "Any function that returns a Widget"
+    },
+    {
+      "name": "key",
+      "type": "Key?",
+      "description": "An optional identifier for this widget.",
+      "default_value": "null",
+      "possible_values": "Any Key"
+    }
+  ]
+}

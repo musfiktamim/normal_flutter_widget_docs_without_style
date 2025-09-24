@@ -1,0 +1,28 @@
+{
+  "name": "ConstrainedBox",
+  "description": "A widget that imposes additional constraints on its child. Useful for limiting or forcing a child widget’s size.",
+  "how_to_use": "ConstrainedBox(\n  constraints: BoxConstraints(\n    minWidth: 100,\n    minHeight: 50,\n    maxWidth: 200,\n    maxHeight: 150,\n  ),\n  child: Container(\n    color: Colors.blue,\n    child: Text('Hello ConstrainedBox', style: TextStyle(color: Colors.white)),\n  ),\n);",
+  "properties": [
+    {
+      "name": "constraints",
+      "type": "BoxConstraints",
+      "description": "The additional constraints to apply to the child widget.",
+      "default_value": "Required",
+      "possible_values": "BoxConstraints.tight(Size), BoxConstraints(minWidth, maxWidth, minHeight, maxHeight), etc."
+    },
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget to display inside the constrained box.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "key",
+      "type": "Key?",
+      "description": "An optional identifier for this widget.",
+      "default_value": "null",
+      "possible_values": "Any Key"
+    }
+  ]
+}

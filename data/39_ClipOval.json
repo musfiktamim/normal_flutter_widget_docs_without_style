@@ -1,0 +1,28 @@
+{
+  "name": "ClipOval",
+  "description": "A widget that clips its child using an oval or circular shape. Useful for creating circular profile pictures, buttons, or custom shapes.",
+  "how_to_use": "ClipOval(\n  child: Image.network(\n    'https://example.com/avatar.png',\n    width: 100,\n    height: 100,\n    fit: BoxFit.cover,\n  ),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "The widget to display inside the oval clip.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "clipBehavior",
+      "type": "Clip",
+      "description": "How to clip the content if it overflows the oval boundary.",
+      "default_value": "Clip.antiAlias",
+      "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+    },
+    {
+      "name": "key",
+      "type": "Key?",
+      "description": "An optional identifier for this widget.",
+      "default_value": "null",
+      "possible_values": "Any Key"
+    }
+  ]
+}

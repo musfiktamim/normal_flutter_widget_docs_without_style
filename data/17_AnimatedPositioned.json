@@ -1,0 +1,70 @@
+{
+  "name": "AnimatedPositioned",
+  "description": "A widget that automatically animates changes to a child's position within a Stack over a given duration and curve. Useful for smooth repositioning without manual animation controllers.",
+  "how_to_use": "AnimatedPositioned(\n  left: _isMoved ? 200 : 50,\n  top: _isMoved ? 300 : 100,\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n  child: Container(\n    width: 100,\n    height: 100,\n    color: Colors.blue,\n  ),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget",
+      "description": "The widget below this widget in the tree whose position will be animated.",
+      "default_value": "Required",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "left",
+      "type": "double?",
+      "description": "The distance from the left edge of the stack. Can be null if not required.",
+      "default_value": "null",
+      "possible_values": "Any double or null"
+    },
+    {
+      "name": "top",
+      "type": "double?",
+      "description": "The distance from the top edge of the stack. Can be null if not required.",
+      "default_value": "null",
+      "possible_values": "Any double or null"
+    },
+    {
+      "name": "right",
+      "type": "double?",
+      "description": "The distance from the right edge of the stack. Can be null if not required.",
+      "default_value": "null",
+      "possible_values": "Any double or null"
+    },
+    {
+      "name": "bottom",
+      "type": "double?",
+      "description": "The distance from the bottom edge of the stack. Can be null if not required.",
+      "default_value": "null",
+      "possible_values": "Any double or null"
+    },
+    {
+      "name": "width",
+      "type": "double?",
+      "description": "The width of the child. If null, the child’s intrinsic width is used.",
+      "default_value": "null",
+      "possible_values": "Any double or null"
+    },
+    {
+      "name": "height",
+      "type": "double?",
+      "description": "The height of the child. If null, the child’s intrinsic height is used.",
+      "default_value": "null",
+      "possible_values": "Any double or null"
+    },
+    {
+      "name": "duration",
+      "type": "Duration",
+      "description": "The length of time over which to animate changes to position and size.",
+      "default_value": "Required",
+      "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+    },
+    {
+      "name": "curve",
+      "type": "Curve",
+      "description": "The animation curve to use when animating position and size changes.",
+      "default_value": "Curves.linear",
+      "possible_values": "Any Flutter animation curve, e.g., Curves.easeInOut"
+    }
+  ]
+}

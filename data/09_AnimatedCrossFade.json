@@ -1,0 +1,70 @@
+{
+  "name": "AnimatedCrossFade",
+  "description": "A widget that cross-fades between two children and animates their size over a given duration. Useful for smoothly transitioning between two widgets.",
+  "how_to_use": "AnimatedCrossFade(\n  firstChild: Container(\n    width: 100,\n    height: 100,\n    color: Colors.blue,\n    child: Center(child: Text('First')),\n  ),\n  secondChild: Container(\n    width: 150,\n    height: 150,\n    color: Colors.red,\n    child: Center(child: Text('Second')),\n  ),\n  crossFadeState: _showFirst ? CrossFadeState.showFirst : CrossFadeState.showSecond,\n  duration: const Duration(seconds: 1),\n  firstCurve: Curves.easeIn,\n  secondCurve: Curves.easeOut,\n);",
+  "properties": [
+    {
+      "name": "firstChild",
+      "type": "Widget",
+      "description": "The first widget to display in the cross-fade.",
+      "default_value": "Required",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "secondChild",
+      "type": "Widget",
+      "description": "The second widget to display in the cross-fade.",
+      "default_value": "Required",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "crossFadeState",
+      "type": "CrossFadeState",
+      "description": "Determines which child is shown.",
+      "default_value": "Required",
+      "possible_values": "CrossFadeState.showFirst, CrossFadeState.showSecond"
+    },
+    {
+      "name": "duration",
+      "type": "Duration",
+      "description": "The length of time over which to animate the cross-fade.",
+      "default_value": "Required",
+      "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+    },
+    {
+      "name": "reverseDuration",
+      "type": "Duration?",
+      "description": "The duration of the reverse animation. If null, uses `duration`.",
+      "default_value": "null",
+      "possible_values": "Any Duration or null"
+    },
+    {
+      "name": "sizeCurve",
+      "type": "Curve",
+      "description": "The curve to apply to the size animation during the cross-fade.",
+      "default_value": "Curves.linear",
+      "possible_values": "Any Flutter curve, e.g., Curves.easeInOut"
+    },
+    {
+      "name": "firstCurve",
+      "type": "Curve",
+      "description": "The curve to apply to the first child’s opacity animation.",
+      "default_value": "Curves.linear",
+      "possible_values": "Any Flutter curve"
+    },
+    {
+      "name": "secondCurve",
+      "type": "Curve",
+      "description": "The curve to apply to the second child’s opacity animation.",
+      "default_value": "Curves.linear",
+      "possible_values": "Any Flutter curve"
+    },
+    {
+      "name": "alignment",
+      "type": "AlignmentGeometry",
+      "description": "The alignment of the children within the parent during the cross-fade.",
+      "default_value": "Alignment.center",
+      "possible_values": "Any Alignment, e.g., Alignment.topLeft, Alignment.center, etc."
+    }
+  ]
+}

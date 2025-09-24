@@ -1,0 +1,77 @@
+{
+  "name": "BottomNavigationBar",
+  "description": "A widget that displays a navigation bar at the bottom of the screen, allowing the user to switch between different views or pages.",
+  "how_to_use": "BottomNavigationBar(\n  currentIndex: _selectedIndex,\n  onTap: (index) {\n    setState(() {\n      _selectedIndex = index;\n    });\n  },\n  items: [\n    BottomNavigationBarItem(\n      icon: Icon(Icons.home),\n      label: 'Home',\n    ),\n    BottomNavigationBarItem(\n      icon: Icon(Icons.search),\n      label: 'Search',\n    ),\n    BottomNavigationBarItem(\n      icon: Icon(Icons.person),\n      label: 'Profile',\n    ),\n  ],\n  backgroundColor: Colors.blue,\n  selectedItemColor: Colors.white,\n  unselectedItemColor: Colors.grey,\n  type: BottomNavigationBarType.fixed,\n);",
+  "properties": [
+    {
+      "name": "items",
+      "type": "List<BottomNavigationBarItem>",
+      "description": "The widgets to display as the bottom navigation items.",
+      "default_value": "Required",
+      "possible_values": "List of BottomNavigationBarItem widgets"
+    },
+    {
+      "name": "currentIndex",
+      "type": "int",
+      "description": "The index of the currently selected item.",
+      "default_value": "0",
+      "possible_values": "Any integer from 0 to items.length - 1"
+    },
+    {
+      "name": "onTap",
+      "type": "ValueChanged<int>?",
+      "description": "Called when an item is tapped, providing its index.",
+      "default_value": "null",
+      "possible_values": "Function(int index) or null"
+    },
+    {
+      "name": "backgroundColor",
+      "type": "Color?",
+      "description": "The color of the navigation bar background.",
+      "default_value": "null (Theme dependent)",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "selectedItemColor",
+      "type": "Color?",
+      "description": "The color of the selected item.",
+      "default_value": "Theme dependent",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "unselectedItemColor",
+      "type": "Color?",
+      "description": "The color of the unselected items.",
+      "default_value": "Theme dependent",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "type",
+      "type": "BottomNavigationBarType",
+      "description": "The layout behavior of the navigation bar. Fixed shows all items, shifting animates changes.",
+      "default_value": "BottomNavigationBarType.fixed",
+      "possible_values": "BottomNavigationBarType.fixed, BottomNavigationBarType.shifting"
+    },
+    {
+      "name": "elevation",
+      "type": "double",
+      "description": "The z-coordinate of the navigation bar, affecting shadow size.",
+      "default_value": "8.0",
+      "possible_values": "Any non-negative double"
+    },
+    {
+      "name": "showSelectedLabels",
+      "type": "bool",
+      "description": "Whether to show labels for selected items.",
+      "default_value": "true",
+      "possible_values": "true or false"
+    },
+    {
+      "name": "showUnselectedLabels",
+      "type": "bool",
+      "description": "Whether to show labels for unselected items.",
+      "default_value": "true",
+      "possible_values": "true or false"
+    }
+  ]
+}

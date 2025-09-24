@@ -1,0 +1,70 @@
+{
+  "name": "Chip",
+  "description": "A material design chip. A compact element that represents an attribute, text, or action. Useful for tags, categories, or user input.",
+  "how_to_use": "Chip(\n  label: Text('Example Chip'),\n  avatar: CircleAvatar(\n    backgroundColor: Colors.blue,\n    child: Text('E'),\n  ),\n  onDeleted: () {\n    print('Chip deleted');\n  },\n  deleteIcon: Icon(Icons.cancel),\n  backgroundColor: Colors.grey[200],\n  labelStyle: TextStyle(color: Colors.black),\n);",
+  "properties": [
+    {
+      "name": "label",
+      "type": "Widget",
+      "description": "The primary content of the chip, usually a Text widget.",
+      "default_value": "Required",
+      "possible_values": "Any widget, typically Text"
+    },
+    {
+      "name": "avatar",
+      "type": "Widget?",
+      "description": "A widget to display before the label, often a CircleAvatar.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "onDeleted",
+      "type": "VoidCallback?",
+      "description": "Called when the delete icon is tapped. If null, the delete icon is not shown.",
+      "default_value": "null",
+      "possible_values": "Function or null"
+    },
+    {
+      "name": "deleteIcon",
+      "type": "Widget?",
+      "description": "The icon to display for deletion.",
+      "default_value": "Icon(Icons.cancel)",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "backgroundColor",
+      "type": "Color?",
+      "description": "The background color of the chip.",
+      "default_value": "Theme dependent",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "labelStyle",
+      "type": "TextStyle?",
+      "description": "The style to use for the label text.",
+      "default_value": "Theme dependent",
+      "possible_values": "Any TextStyle"
+    },
+    {
+      "name": "padding",
+      "type": "EdgeInsetsGeometry?",
+      "description": "Empty space around the chip's content.",
+      "default_value": "EdgeInsets.symmetric(horizontal: 8.0)",
+      "possible_values": "Any EdgeInsets"
+    },
+    {
+      "name": "shape",
+      "type": "ShapeBorder?",
+      "description": "The shape of the chip, often a RoundedRectangleBorder or StadiumBorder.",
+      "default_value": "StadiumBorder()",
+      "possible_values": "Any ShapeBorder"
+    },
+    {
+      "name": "clipBehavior",
+      "type": "Clip",
+      "description": "How to clip the chip's content if it overflows.",
+      "default_value": "Clip.none",
+      "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+    }
+  ]
+}

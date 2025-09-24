@@ -1,0 +1,49 @@
+{
+  "name": "AnimatedIcon",
+  "description": "A widget that displays an animated icon that can be controlled via an AnimationController. Useful for animated transitions between icon states.",
+  "how_to_use": "AnimatedIcon(\n  icon: AnimatedIcons.menu_close,\n  progress: _controller,\n  size: 48.0,\n  color: Colors.blue,\n);",
+  "properties": [
+    {
+      "name": "icon",
+      "type": "AnimatedIconData",
+      "description": "The type of animated icon to display. This defines the animation between two icon states.",
+      "default_value": "Required",
+      "possible_values": "Any AnimatedIcons built-in icons, e.g., AnimatedIcons.menu_close, AnimatedIcons.play_pause, AnimatedIcons.add_event, etc."
+    },
+    {
+      "name": "progress",
+      "type": "Animation<double>",
+      "description": "Controls the animation of the icon. The value should typically be between 0.0 and 1.0.",
+      "default_value": "Required",
+      "possible_values": "Any Animation<double> or AnimationController"
+    },
+    {
+      "name": "size",
+      "type": "double?",
+      "description": "The size of the icon in logical pixels.",
+      "default_value": "24.0",
+      "possible_values": "Any positive double"
+    },
+    {
+      "name": "color",
+      "type": "Color?",
+      "description": "The color to use when painting the icon.",
+      "default_value": "null (inherits from IconTheme)",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "semanticLabel",
+      "type": "String?",
+      "description": "Text description for accessibility.",
+      "default_value": "null",
+      "possible_values": "Any string"
+    },
+    {
+      "name": "textDirection",
+      "type": "TextDirection?",
+      "description": "The text direction to use for rendering icons that depend on text direction (like arrow animations).",
+      "default_value": "null",
+      "possible_values": "TextDirection.ltr or TextDirection.rtl"
+    }
+  ]
+}

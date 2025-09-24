@@ -1,0 +1,63 @@
+{
+  "name": "AnimatedPhysicalModel",
+  "description": "A widget that animates changes in a physical model’s properties such as color, elevation, shape, and shadow over a given duration. Useful for smooth Material-style animations.",
+  "how_to_use": "AnimatedPhysicalModel(\n  child: Container(width: 100, height: 100, color: Colors.blue),\n  color: _isSelected ? Colors.red : Colors.blue,\n  elevation: _isSelected ? 10 : 2,\n  shape: BoxShape.rectangle,\n  shadowColor: Colors.black,\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget",
+      "description": "The widget below this widget in the tree whose physical model will be animated.",
+      "default_value": "Required",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "color",
+      "type": "Color",
+      "description": "The background color of the physical model.",
+      "default_value": "Required",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "elevation",
+      "type": "double",
+      "description": "The z-coordinate at which to place this physical model. Higher elevation casts bigger shadows.",
+      "default_value": "Required",
+      "possible_values": "Any non-negative double"
+    },
+    {
+      "name": "shape",
+      "type": "BoxShape",
+      "description": "The shape of the box. Can be rectangle or circle.",
+      "default_value": "BoxShape.rectangle",
+      "possible_values": "BoxShape.rectangle, BoxShape.circle"
+    },
+    {
+      "name": "shadowColor",
+      "type": "Color",
+      "description": "The color of the shadow below the physical model.",
+      "default_value": "Colors.black",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "clipBehavior",
+      "type": "Clip",
+      "description": "How to clip the child if it overflows the bounds.",
+      "default_value": "Clip.none",
+      "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+    },
+    {
+      "name": "duration",
+      "type": "Duration",
+      "description": "The length of time over which to animate changes to properties.",
+      "default_value": "Required",
+      "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+    },
+    {
+      "name": "curve",
+      "type": "Curve",
+      "description": "The animation curve to use when animating property changes.",
+      "default_value": "Curves.linear",
+      "possible_values": "Any Flutter animation curve, e.g., Curves.easeInOut"
+    }
+  ]
+}

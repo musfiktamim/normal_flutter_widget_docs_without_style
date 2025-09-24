@@ -1,0 +1,70 @@
+{
+  "name": "AboutListTile",
+  "description": "A convenience ListTile that opens an About dialog when tapped. It’s a quick way to include an app information section inside a Drawer or Settings screen.",
+  "how_to_use": "AboutListTile(\n  icon: Icon(Icons.info),\n  applicationName: 'My Flutter App',\n  applicationVersion: '1.0.0',\n  applicationLegalese: '© 2025 My Company',\n  aboutBoxChildren: [\n    Text('This app is built with Flutter.'),\n  ],\n);",
+  "properties": [
+    {
+      "name": "icon",
+      "type": "Widget?",
+      "description": "Leading widget shown before the title (usually an Icon).",
+      "default_value": "null",
+      "possible_values": "Any widget, e.g. Icon(Icons.info)"
+    },
+    {
+      "name": "child",
+      "type": "Widget?",
+      "description": "Custom widget for the tile’s title. If null, `applicationName` or a default text is used.",
+      "default_value": "null",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "applicationName",
+      "type": "String?",
+      "description": "The name of the application displayed in the About dialog.",
+      "default_value": "null (defaults to the MaterialApp title if available)",
+      "possible_values": "Any string"
+    },
+    {
+      "name": "applicationVersion",
+      "type": "String?",
+      "description": "The version of the application displayed in the About dialog.",
+      "default_value": "null",
+      "possible_values": "Any string (e.g. '1.0.0')"
+    },
+    {
+      "name": "applicationIcon",
+      "type": "Widget?",
+      "description": "Widget displayed as the application icon inside the About dialog.",
+      "default_value": "null",
+      "possible_values": "Any widget, e.g. FlutterLogo()"
+    },
+    {
+      "name": "applicationLegalese",
+      "type": "String?",
+      "description": "Optional legal text such as copyright or license info.",
+      "default_value": "null",
+      "possible_values": "Any string"
+    },
+    {
+      "name": "aboutBoxChildren",
+      "type": "List<Widget>?",
+      "description": "Additional widgets to display in the About dialog below the version/legalese.",
+      "default_value": "null",
+      "possible_values": "Any list of widgets"
+    },
+    {
+      "name": "dense",
+      "type": "bool?",
+      "description": "Whether this list tile is part of a vertically dense list.",
+      "default_value": "false",
+      "possible_values": "true or false"
+    },
+    {
+      "name": "onTap",
+      "type": "VoidCallback?",
+      "description": "Callback when the tile is tapped. Defaults to showing the About dialog.",
+      "default_value": "null (shows default dialog)",
+      "possible_values": "Any function"
+    }
+  ]
+}

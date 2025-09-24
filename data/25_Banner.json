@@ -1,0 +1,49 @@
+{
+  "name": "Banner",
+  "description": "A widget that displays a diagonal message (banner) across a corner of another widget. Useful for showing labels such as 'NEW', 'SALE', or 'DEBUG' on top of content.",
+  "how_to_use": "Banner(\n  message: 'NEW',\n  location: BannerLocation.topEnd,\n  color: Colors.red,\n  textStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),\n  child: Container(\n    width: 200,\n    height: 200,\n    color: Colors.blue,\n  ),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget",
+      "description": "The widget below the banner, which the banner will overlay.",
+      "default_value": "Required",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "message",
+      "type": "String",
+      "description": "The text to display on the banner.",
+      "default_value": "Required",
+      "possible_values": "Any string"
+    },
+    {
+      "name": "location",
+      "type": "BannerLocation",
+      "description": "The corner where the banner should appear.",
+      "default_value": "BannerLocation.topStart",
+      "possible_values": "BannerLocation.topStart, topEnd, bottomStart, bottomEnd"
+    },
+    {
+      "name": "color",
+      "type": "Color",
+      "description": "The background color of the banner.",
+      "default_value": "Colors.red",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "textStyle",
+      "type": "TextStyle?",
+      "description": "The style to use for the banner message text.",
+      "default_value": "null (uses default style)",
+      "possible_values": "Any TextStyle"
+    },
+    {
+      "name": "messageDirection",
+      "type": "TextDirection?",
+      "description": "The text direction of the message.",
+      "default_value": "null (uses ambient TextDirection)",
+      "possible_values": "TextDirection.ltr or TextDirection.rtl"
+    }
+  ]
+}

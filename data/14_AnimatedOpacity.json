@@ -1,0 +1,35 @@
+{
+  "name": "AnimatedOpacity",
+  "description": "A widget that automatically animates changes in opacity of its child over a given duration. Useful for fade-in and fade-out effects without using a StatefulWidget manually.",
+  "how_to_use": "AnimatedOpacity(\n  opacity: _visible ? 1.0 : 0.0,\n  duration: const Duration(seconds: 1),\n  curve: Curves.easeInOut,\n  child: Container(\n    width: 100,\n    height: 100,\n    color: Colors.blue,\n  ),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget",
+      "description": "The widget below this widget in the tree whose opacity will be animated.",
+      "default_value": "Required",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "opacity",
+      "type": "double",
+      "description": "The target opacity value. 0.0 means fully transparent and 1.0 means fully opaque.",
+      "default_value": "Required",
+      "possible_values": "Any double between 0.0 and 1.0"
+    },
+    {
+      "name": "duration",
+      "type": "Duration",
+      "description": "The length of time over which to animate opacity changes.",
+      "default_value": "Required",
+      "possible_values": "Any Duration, e.g., Duration(seconds: 1)"
+    },
+    {
+      "name": "curve",
+      "type": "Curve",
+      "description": "The animation curve to use when animating the opacity changes.",
+      "default_value": "Curves.linear",
+      "possible_values": "Any Flutter animation curve, e.g., Curves.easeInOut"
+    }
+  ]
+}

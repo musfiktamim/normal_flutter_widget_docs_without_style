@@ -1,0 +1,56 @@
+{
+  "name": "BottomSheet",
+  "description": "A widget that slides up from the bottom of the screen to display additional content. It can be persistent (always visible) or modal (temporary and dismissible).",
+  "how_to_use": "// Modal Bottom Sheet\nshowModalBottomSheet(\n  context: context,\n  builder: (BuildContext context) {\n    return Container(\n      height: 200,\n      color: Colors.blue[100],\n      child: Center(child: Text('Hello BottomSheet')),\n    );\n  },\n);\n\n// Persistent Bottom Sheet\nScaffold(\n  body: Center(child: Text('Body')), \n  bottomSheet: Container(\n    height: 100,\n    color: Colors.blue[200],\n    child: Center(child: Text('Persistent BottomSheet')),\n  ),\n);",
+  "properties": [
+    {
+      "name": "child",
+      "type": "Widget",
+      "description": "The widget displayed inside the bottom sheet.",
+      "default_value": "Required",
+      "possible_values": "Any widget"
+    },
+    {
+      "name": "elevation",
+      "type": "double?",
+      "description": "The z-coordinate of the bottom sheet, affecting the shadow size.",
+      "default_value": "0.0",
+      "possible_values": "Any non-negative double"
+    },
+    {
+      "name": "backgroundColor",
+      "type": "Color?",
+      "description": "The background color of the bottom sheet.",
+      "default_value": "Theme dependent",
+      "possible_values": "Any Color"
+    },
+    {
+      "name": "shape",
+      "type": "ShapeBorder?",
+      "description": "The shape of the bottom sheet's material.",
+      "default_value": "null",
+      "possible_values": "Any ShapeBorder, e.g., RoundedRectangleBorder"
+    },
+    {
+      "name": "clipBehavior",
+      "type": "Clip",
+      "description": "How to clip the content if it overflows the shape boundaries.",
+      "default_value": "Clip.none",
+      "possible_values": "Clip.none, Clip.hardEdge, Clip.antiAlias, Clip.antiAliasWithSaveLayer"
+    },
+    {
+      "name": "enableDrag",
+      "type": "bool",
+      "description": "Whether the bottom sheet can be dragged down to dismiss.",
+      "default_value": "true",
+      "possible_values": "true or false"
+    },
+    {
+      "name": "isScrollControlled",
+      "type": "bool",
+      "description": "Whether the bottom sheet can take full screen height and respond to content scrolling.",
+      "default_value": "false",
+      "possible_values": "true or false"
+    }
+  ]
+}
