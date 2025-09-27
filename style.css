@@ -125,14 +125,20 @@ body,
     color: rgba(29, 28, 28, 0.57);
 }
 
+#op {
+    display: none;
+}
 @media (max-width:850px) {
+
     .main .side-mainscr .mainscr {
         width: 100%;
         left: 0;
         bottom: 0;
         right: 0;
     }
-
+        #op {
+            display: inline;
+        }
     .main .side-mainscr .sidebar {
         position: absolute;
         left: -100%;
