@@ -10,7 +10,7 @@ function showingdata(dta) {
     let a = document.createElement("a");
     li.classList.add("ul_li");
     a.innerText = dta.name;
-    a.href = `/normal_flutter_widget_docs_without_style/#${dta._id}`;
+    a.href = `#${dta._id}`;
     li.appendChild(a);
     widget_ul.appendChild(li);
     let div = document.createElement("div");
