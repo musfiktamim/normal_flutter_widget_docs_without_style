@@ -1,0 +1,70 @@
+{
+    "name": "CupertinoDatePicker",
+    "description": "An iOS-style date and time picker. It displays a scrollable wheel interface allowing users to select a date, time, or both.",
+    "how_to_use": "CupertinoDatePicker(\n  mode: CupertinoDatePickerMode.dateAndTime,\n  initialDateTime: DateTime.now(),\n  onDateTimeChanged: (DateTime newDate) {\n    print(newDate);\n  },\n);",
+    "properties": [
+        {
+            "name": "mode",
+            "type": "CupertinoDatePickerMode",
+            "description": "The type of picker to display.",
+            "default_value": "CupertinoDatePickerMode.dateAndTime",
+            "possible_values": "CupertinoDatePickerMode.time, CupertinoDatePickerMode.date, CupertinoDatePickerMode.dateAndTime"
+        },
+        {
+            "name": "onDateTimeChanged",
+            "type": "ValueChanged<DateTime>",
+            "description": "Called whenever the user changes the selected date or time.",
+            "default_value": "Required",
+            "possible_values": "Any callback function."
+        },
+        {
+            "name": "initialDateTime",
+            "type": "DateTime",
+            "description": "The initial date and time displayed by the picker.",
+            "default_value": "DateTime.now()",
+            "possible_values": "Any valid DateTime."
+        },
+        {
+            "name": "minimumDate",
+            "type": "DateTime?",
+            "description": "The earliest date that can be selected.",
+            "default_value": "null",
+            "possible_values": "Any DateTime before maximumDate."
+        },
+        {
+            "name": "maximumDate",
+            "type": "DateTime?",
+            "description": "The latest date that can be selected.",
+            "default_value": "null",
+            "possible_values": "Any DateTime after minimumDate."
+        },
+        {
+            "name": "minuteInterval",
+            "type": "int",
+            "description": "The granularity of the minute selection.",
+            "default_value": "1",
+            "possible_values": "1 to 30 (must be a factor of 60)."
+        },
+        {
+            "name": "use24hFormat",
+            "type": "bool",
+            "description": "Whether to use a 24-hour format for time mode.",
+            "default_value": "false",
+            "possible_values": "true, false"
+        },
+        {
+            "name": "backgroundColor",
+            "type": "Color?",
+            "description": "The background color of the picker.",
+            "default_value": "null",
+            "possible_values": "Any Color."
+        },
+        {
+            "name": "key",
+            "type": "Key?",
+            "description": "An optional identifier for this widget.",
+            "default_value": "null",
+            "possible_values": "Any Key."
+        }
+    ]
+}

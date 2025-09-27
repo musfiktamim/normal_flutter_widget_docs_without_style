@@ -1,0 +1,56 @@
+{
+    "name": "CupertinoSlidingSegmentedControl",
+    "description": "An iOS-style segmented control where the selected segment slides smoothly between options. Useful for switching between views or modes in an app.",
+    "how_to_use": "CupertinoSlidingSegmentedControl<int>(\n  children: {\n    0: Text('First'),\n    1: Text('Second'),\n    2: Text('Third'),\n  },\n  groupValue: selectedSegment,\n  onValueChanged: (value) {\n    setState(() {\n      selectedSegment = value!;\n    });\n  },\n);",
+    "properties": [
+        {
+            "name": "children",
+            "type": "Map<T, Widget>",
+            "description": "A map of segment index/keys to the widgets to display in each segment.",
+            "default_value": "{}",
+            "possible_values": "Any map of key-value pairs where keys are of type T and values are Widgets."
+        },
+        {
+            "name": "groupValue",
+            "type": "T?",
+            "description": "The currently selected value. Should match one of the keys in children.",
+            "default_value": "null",
+            "possible_values": "Any key from the children map or null."
+        },
+        {
+            "name": "onValueChanged",
+            "type": "ValueChanged<T>?",
+            "description": "Called when the user selects a different segment. Provides the new selected key.",
+            "default_value": "null",
+            "possible_values": "Any function that takes a value of type T."
+        },
+        {
+            "name": "padding",
+            "type": "EdgeInsetsGeometry?",
+            "description": "The padding around the whole segmented control.",
+            "default_value": "EdgeInsets.zero",
+            "possible_values": "Any EdgeInsets value."
+        },
+        {
+            "name": "thumbColor",
+            "type": "Color?",
+            "description": "The color of the sliding thumb that highlights the selected segment.",
+            "default_value": "CupertinoColors.activeBlue",
+            "possible_values": "Any Color."
+        },
+        {
+            "name": "backgroundColor",
+            "type": "Color?",
+            "description": "The background color of the control when unselected.",
+            "default_value": "CupertinoColors.systemGrey",
+            "possible_values": "Any Color."
+        },
+        {
+            "name": "key",
+            "type": "Key?",
+            "description": "An optional identifier for this widget.",
+            "default_value": "null",
+            "possible_values": "Any Key."
+        }
+    ]
+}

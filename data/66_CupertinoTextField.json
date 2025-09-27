@@ -1,0 +1,77 @@
+{
+    "name": "CupertinoTextField",
+    "description": "An iOS-style text field for inputting text. Supports placeholder text, controllers, focus, and styling options.",
+    "how_to_use": "CupertinoTextField(\n  placeholder: 'Enter text',\n  controller: textController,\n  onChanged: (value) {\n    print('Text changed: $value');\n  },\n);",
+    "properties": [
+        {
+            "name": "controller",
+            "type": "TextEditingController?",
+            "description": "Controls the text being edited. Useful for reading and modifying the text.",
+            "default_value": "null",
+            "possible_values": "Any TextEditingController."
+        },
+        {
+            "name": "placeholder",
+            "type": "String?",
+            "description": "Text displayed when the field is empty.",
+            "default_value": "null",
+            "possible_values": "Any String."
+        },
+        {
+            "name": "onChanged",
+            "type": "ValueChanged<String>?",
+            "description": "Called when the user changes the text.",
+            "default_value": "null",
+            "possible_values": "Any function that takes a String."
+        },
+        {
+            "name": "keyboardType",
+            "type": "TextInputType?",
+            "description": "The type of keyboard to use for editing the text.",
+            "default_value": "TextInputType.text",
+            "possible_values": "Any TextInputType."
+        },
+        {
+            "name": "obscureText",
+            "type": "bool",
+            "description": "Whether to hide the text being entered, useful for passwords.",
+            "default_value": "false",
+            "possible_values": "true, false"
+        },
+        {
+            "name": "prefix",
+            "type": "Widget?",
+            "description": "An optional widget to display before the text field (like an icon).",
+            "default_value": "null",
+            "possible_values": "Any Widget."
+        },
+        {
+            "name": "suffix",
+            "type": "Widget?",
+            "description": "An optional widget to display after the text field (like a clear button).",
+            "default_value": "null",
+            "possible_values": "Any Widget."
+        },
+        {
+            "name": "padding",
+            "type": "EdgeInsetsGeometry?",
+            "description": "Padding inside the text field.",
+            "default_value": "EdgeInsets.symmetric(horizontal: 6.0, vertical: 6.0)",
+            "possible_values": "Any EdgeInsets."
+        },
+        {
+            "name": "decoration",
+            "type": "BoxDecoration?",
+            "description": "The decoration around the text field.",
+            "default_value": "null",
+            "possible_values": "Any BoxDecoration."
+        },
+        {
+            "name": "key",
+            "type": "Key?",
+            "description": "An optional identifier for this widget.",
+            "default_value": "null",
+            "possible_values": "Any Key."
+        }
+    ]
+}

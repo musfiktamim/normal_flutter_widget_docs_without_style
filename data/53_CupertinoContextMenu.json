@@ -1,0 +1,42 @@
+{
+    "name": "CupertinoContextMenu",
+    "description": "An iOS-style context menu that shows a full-screen preview when the user long-presses on the child widget. It can display additional menu actions in a pop-up sheet.",
+    "how_to_use": "CupertinoContextMenu(\n  actions: [\n    CupertinoContextMenuAction(\n      child: Text('Action 1'),\n      onPressed: () {\n        Navigator.pop(context);\n      },\n    ),\n    CupertinoContextMenuAction(\n      child: Text('Action 2'),\n      onPressed: () {\n        Navigator.pop(context);\n      },\n    ),\n  ],\n  child: Image.network('https://example.com/image.jpg', width: 150),\n);",
+    "properties": [
+        {
+            "name": "actions",
+            "type": "List<Widget>",
+            "description": "The list of menu actions shown when the context menu is opened.",
+            "default_value": "Required",
+            "possible_values": "List of CupertinoContextMenuAction or custom widgets."
+        },
+        {
+            "name": "child",
+            "type": "Widget",
+            "description": "The widget that triggers the context menu when long-pressed.",
+            "default_value": "Required",
+            "possible_values": "Any widget."
+        },
+        {
+            "name": "previewBuilder",
+            "type": "Widget Function(BuildContext, Animation<double>, Widget)?",
+            "description": "An optional builder to customize the preview animation. Provides the build context, animation progress, and the default preview child.",
+            "default_value": "null",
+            "possible_values": "Any function returning a Widget."
+        },
+        {
+            "name": "enableHapticFeedback",
+            "type": "bool",
+            "description": "Determines whether to trigger haptic feedback when the menu is opened.",
+            "default_value": "true",
+            "possible_values": "true, false"
+        },
+        {
+            "name": "key",
+            "type": "Key?",
+            "description": "An optional identifier for this widget.",
+            "default_value": "null",
+            "possible_values": "Any Key."
+        }
+    ]
+}

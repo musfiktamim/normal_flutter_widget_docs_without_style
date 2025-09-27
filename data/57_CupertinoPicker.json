@@ -1,0 +1,91 @@
+{
+    "name": "CupertinoPicker",
+    "description": "An iOS-style picker that displays its children widgets on a scrollable wheel. It allows users to select a single value from a list of options with a smooth, scrollable interface.",
+    "how_to_use": "CupertinoPicker(\n  itemExtent: 32.0,\n  onSelectedItemChanged: (int index) {\n    print('Selected index: $index');\n  },\n  children: [\n    Text('Option 1'),\n    Text('Option 2'),\n    Text('Option 3'),\n  ],\n);",
+    "properties": [
+        {
+            "name": "itemExtent",
+            "type": "double",
+            "description": "The height of each child item in the picker.",
+            "default_value": "Required",
+            "possible_values": "Any positive double."
+        },
+        {
+            "name": "onSelectedItemChanged",
+            "type": "ValueChanged<int>?",
+            "description": "Called when the user scrolls and selects a new item.",
+            "default_value": "null",
+            "possible_values": "Any callback function."
+        },
+        {
+            "name": "children",
+            "type": "List<Widget>",
+            "description": "The list of widgets to display as selectable options.",
+            "default_value": "Required",
+            "possible_values": "Any list of widgets."
+        },
+        {
+            "name": "diameterRatio",
+            "type": "double",
+            "description": "Controls the curvature of the wheel. A smaller value makes the wheel more curved.",
+            "default_value": "1.07",
+            "possible_values": "Must be greater than 0."
+        },
+        {
+            "name": "magnification",
+            "type": "double",
+            "description": "The magnification factor applied to the currently selected item.",
+            "default_value": "1.0",
+            "possible_values": "Any positive double."
+        },
+        {
+            "name": "squeeze",
+            "type": "double",
+            "description": "The ratio of the item extent to the viewport height, affecting spacing between items.",
+            "default_value": "1.25",
+            "possible_values": "Any positive double."
+        },
+        {
+            "name": "offAxisFraction",
+            "type": "double",
+            "description": "How far the wheel is horizontally shifted, where 0 is centered.",
+            "default_value": "0.0",
+            "possible_values": "-1.0 to 1.0"
+        },
+        {
+            "name": "scrollController",
+            "type": "FixedExtentScrollController?",
+            "description": "Controls the scroll position of the picker. Useful for setting the initial selected index.",
+            "default_value": "null",
+            "possible_values": "Any FixedExtentScrollController."
+        },
+        {
+            "name": "backgroundColor",
+            "type": "Color?",
+            "description": "The background color of the picker wheel.",
+            "default_value": "null",
+            "possible_values": "Any Color."
+        },
+        {
+            "name": "selectionOverlay",
+            "type": "Widget?",
+            "description": "A custom widget displayed over the currently selected item. By default, a translucent grey overlay is used.",
+            "default_value": "null",
+            "possible_values": "Any Widget."
+        },
+        {
+            "name": "looping",
+            "type": "bool",
+            "description": "Whether the picker loops back to the beginning when reaching the end of the list.",
+            "default_value": "false",
+            "possible_values": "true, false"
+        },
+        {
+            "name": "key",
+            "type": "Key?",
+            "description": "An optional identifier for this widget.",
+            "default_value": "null",
+            "possible_values": "Any Key."
+        }
+    ]
+}

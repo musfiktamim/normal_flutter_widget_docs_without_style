@@ -1,0 +1,49 @@
+{
+    "name": "CupertinoPageRoute",
+    "description": "An iOS-style page route that transitions between screens with a Cupertino (iOS) page animation. It provides a swipe-back gesture to pop the current route and uses the standard iOS navigation transition.",
+    "how_to_use": "Navigator.push(\n  context,\n  CupertinoPageRoute(\n    builder: (context) => NextPage(),\n  ),\n);",
+    "properties": [
+        {
+            "name": "builder",
+            "type": "WidgetBuilder",
+            "description": "The builder function to create the primary contents of the route.",
+            "default_value": "Required",
+            "possible_values": "Any function returning a Widget."
+        },
+        {
+            "name": "settings",
+            "type": "RouteSettings?",
+            "description": "Configuration information for the route, such as name and arguments.",
+            "default_value": "null",
+            "possible_values": "Any RouteSettings."
+        },
+        {
+            "name": "fullscreenDialog",
+            "type": "bool",
+            "description": "Whether the page is displayed as a full-screen modal dialog.",
+            "default_value": "false",
+            "possible_values": "true, false"
+        },
+        {
+            "name": "maintainState",
+            "type": "bool",
+            "description": "Whether the route should remain in memory when it is inactive.",
+            "default_value": "true",
+            "possible_values": "true, false"
+        },
+        {
+            "name": "title",
+            "type": "String?",
+            "description": "The title of the route, used by iOS for the back button text of the previous page.",
+            "default_value": "null",
+            "possible_values": "Any string."
+        },
+        {
+            "name": "allowSnapshotting",
+            "type": "bool",
+            "description": "Determines whether this route can be snapshotted for use in iOS transition animations.",
+            "default_value": "true",
+            "possible_values": "true, false"
+        }
+    ]
+}

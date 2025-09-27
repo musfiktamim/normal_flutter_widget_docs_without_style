@@ -1,0 +1,28 @@
+{
+    "name": "CupertinoPopupSurface",
+    "description": "An iOS-style popup surface that provides a rounded, translucent background for popups and modal views. It is typically used as the visual container for Cupertino-style popup elements.",
+    "how_to_use": "CupertinoPopupSurface(\n  isSurfacePainted: true,\n  child: Padding(\n    padding: EdgeInsets.all(16.0),\n    child: Text('This is a Cupertino popup surface'),\n  ),\n);",
+    "properties": [
+        {
+            "name": "isSurfacePainted",
+            "type": "bool",
+            "description": "Determines whether the popup surface is painted with a translucent background and rounded corners.",
+            "default_value": "true",
+            "possible_values": "true, false"
+        },
+        {
+            "name": "child",
+            "type": "Widget?",
+            "description": "The widget inside the popup surface.",
+            "default_value": "null",
+            "possible_values": "Any Widget."
+        },
+        {
+            "name": "key",
+            "type": "Key?",
+            "description": "An optional identifier for this widget.",
+            "default_value": "null",
+            "possible_values": "Any Key."
+        }
+    ]
+}

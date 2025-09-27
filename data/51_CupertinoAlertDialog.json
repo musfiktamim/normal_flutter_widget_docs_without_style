@@ -1,0 +1,63 @@
+{
+    "name": "CupertinoAlertDialog",
+    "description": "An iOS-style alert dialog that informs the user about situations requiring acknowledgment. It can display a title, content, and a list of actions (buttons).",
+    "how_to_use": "showCupertinoDialog(\n  context: context,\n  builder: (context) {\n    return CupertinoAlertDialog(\n      title: Text('Alert'),\n      content: Text('This is an iOS style alert dialog.'),\n      actions: [\n        CupertinoDialogAction(\n          child: Text('Cancel'),\n          onPressed: () => Navigator.pop(context),\n        ),\n        CupertinoDialogAction(\n          child: Text('OK'),\n          onPressed: () => Navigator.pop(context),\n        ),\n      ],\n    );\n  },\n);",
+    "properties": [
+        {
+            "name": "title",
+            "type": "Widget?",
+            "description": "The primary content of the alert dialog displayed in a larger font at the top.",
+            "default_value": "null",
+            "possible_values": "Any widget (commonly Text)."
+        },
+        {
+            "name": "content",
+            "type": "Widget?",
+            "description": "The message or main body of the alert dialog, displayed under the title.",
+            "default_value": "null",
+            "possible_values": "Any widget (commonly Text)."
+        },
+        {
+            "name": "actions",
+            "type": "List<Widget>",
+            "description": "The set of actions (buttons) displayed at the bottom of the dialog.",
+            "default_value": "const []",
+            "possible_values": "List of CupertinoDialogAction or custom widgets."
+        },
+        {
+            "name": "scrollController",
+            "type": "ScrollController?",
+            "description": "Controller for scrolling the content if it overflows vertically.",
+            "default_value": "null",
+            "possible_values": "Any ScrollController."
+        },
+        {
+            "name": "actionScrollController",
+            "type": "ScrollController?",
+            "description": "Controller for scrolling the actions section if actions overflow.",
+            "default_value": "null",
+            "possible_values": "Any ScrollController."
+        },
+        {
+            "name": "insetAnimationDuration",
+            "type": "Duration",
+            "description": "The duration of the dialog's inset animation.",
+            "default_value": "Duration(milliseconds: 100)",
+            "possible_values": "Any Duration."
+        },
+        {
+            "name": "insetAnimationCurve",
+            "type": "Curve",
+            "description": "The curve used for the inset animation.",
+            "default_value": "Curves.decelerate",
+            "possible_values": "Any Curve."
+        },
+        {
+            "name": "key",
+            "type": "Key?",
+            "description": "An optional identifier for this widget.",
+            "default_value": "null",
+            "possible_values": "Any Key."
+        }
+    ]
+}

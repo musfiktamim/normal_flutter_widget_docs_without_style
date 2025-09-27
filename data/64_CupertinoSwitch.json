@@ -1,0 +1,49 @@
+{
+    "name": "CupertinoSwitch",
+    "description": "An iOS-style switch that toggles between on/off states. Commonly used to represent boolean settings in an app.",
+    "how_to_use": "CupertinoSwitch(\n  value: switchValue,\n  onChanged: (bool value) {\n    setState(() {\n      switchValue = value;\n    });\n  },\n);",
+    "properties": [
+        {
+            "name": "value",
+            "type": "bool",
+            "description": "Whether the switch is on (true) or off (false).",
+            "default_value": "false",
+            "possible_values": "true, false"
+        },
+        {
+            "name": "onChanged",
+            "type": "ValueChanged<bool>?",
+            "description": "Called when the user toggles the switch. Provides the new value.",
+            "default_value": "null",
+            "possible_values": "Any function that takes a bool."
+        },
+        {
+            "name": "activeColor",
+            "type": "Color?",
+            "description": "The color of the switch when it is on.",
+            "default_value": "CupertinoColors.activeGreen",
+            "possible_values": "Any Color."
+        },
+        {
+            "name": "trackColor",
+            "type": "Color?",
+            "description": "The color of the switch track when it is off.",
+            "default_value": "CupertinoColors.secondarySystemFill",
+            "possible_values": "Any Color."
+        },
+        {
+            "name": "thumbColor",
+            "type": "Color?",
+            "description": "The color of the switch thumb. If null, defaults to white.",
+            "default_value": "null",
+            "possible_values": "Any Color or null."
+        },
+        {
+            "name": "key",
+            "type": "Key?",
+            "description": "An optional identifier for this widget.",
+            "default_value": "null",
+            "possible_values": "Any Key."
+        }
+    ]
+}

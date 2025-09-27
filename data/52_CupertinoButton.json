@@ -1,0 +1,84 @@
+{
+    "name": "CupertinoButton",
+    "description": "An iOS-style button that responds to touches with a fade-in/out effect. It is commonly used to create tappable controls that match the Cupertino design language.",
+    "how_to_use": "CupertinoButton(\n  child: Text('Press Me'),\n  color: CupertinoColors.activeBlue,\n  onPressed: () {\n    print('Button pressed');\n  },\n);",
+    "properties": [
+        {
+            "name": "child",
+            "type": "Widget?",
+            "description": "The widget inside the button, usually a Text or Icon.",
+            "default_value": "null",
+            "possible_values": "Any widget."
+        },
+        {
+            "name": "onPressed",
+            "type": "VoidCallback?",
+            "description": "The callback function that is called when the button is tapped. If null, the button is disabled.",
+            "default_value": "Required",
+            "possible_values": "Any function or null."
+        },
+        {
+            "name": "color",
+            "type": "Color?",
+            "description": "The background color of the button.",
+            "default_value": "null",
+            "possible_values": "Any Color."
+        },
+        {
+            "name": "padding",
+            "type": "EdgeInsetsGeometry",
+            "description": "The padding inside the button around the child.",
+            "default_value": "EdgeInsets.symmetric(horizontal: 16.0)",
+            "possible_values": "Any EdgeInsets."
+        },
+        {
+            "name": "borderRadius",
+            "type": "BorderRadius",
+            "description": "The border radius of the button for rounded corners.",
+            "default_value": "BorderRadius.circular(8.0)",
+            "possible_values": "Any BorderRadius."
+        },
+        {
+            "name": "minSize",
+            "type": "double",
+            "description": "The minimum size of the button.",
+            "default_value": "44.0",
+            "possible_values": "Any positive double."
+        },
+        {
+            "name": "pressedOpacity",
+            "type": "double",
+            "description": "The opacity of the button when pressed.",
+            "default_value": "0.4",
+            "possible_values": "0.0 to 1.0"
+        },
+        {
+            "name": "alignment",
+            "type": "AlignmentGeometry",
+            "description": "The alignment of the child within the button.",
+            "default_value": "Alignment.center",
+            "possible_values": "Any Alignment."
+        },
+        {
+            "name": "padding",
+            "type": "EdgeInsetsGeometry",
+            "description": "Internal padding for the button content.",
+            "default_value": "EdgeInsets.symmetric(horizontal: 16.0)",
+            "possible_values": "Any EdgeInsets."
+        },
+        {
+            "name": "disabledColor",
+            "type": "Color?",
+            "description": "The background color when the button is disabled (onPressed is null).",
+            "default_value": "CupertinoColors.quaternarySystemFill",
+            "possible_values": "Any Color."
+        },
+        {
+            "name": "key",
+            "type": "Key?",
+            "description": "An optional identifier for the widget.",
+            "default_value": "null",
+            "possible_values": "Any Key."
+        }
+    ]
+}

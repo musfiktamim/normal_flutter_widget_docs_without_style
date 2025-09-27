@@ -1,0 +1,49 @@
+{
+    "name": "CupertinoTabScaffold",
+    "description": "An iOS-style scaffold that lays out the tab bar at the bottom and displays content for the selected tab. Commonly used for apps with multiple tabs.",
+    "how_to_use": "CupertinoTabScaffold(\n  tabBar: CupertinoTabBar(\n    items: [\n      BottomNavigationBarItem(icon: Icon(CupertinoIcons.home), label: 'Home'),\n      BottomNavigationBarItem(icon: Icon(CupertinoIcons.settings), label: 'Settings'),\n    ],\n  ),\n  tabBuilder: (context, index) {\n    switch (index) {\n      case 0:\n        return HomePage();\n      case 1:\n        return SettingsPage();\n      default:\n        return Container();\n    }\n  },\n);",
+    "properties": [
+        {
+            "name": "tabBar",
+            "type": "CupertinoTabBar",
+            "description": "The tab bar displayed at the bottom of the scaffold.",
+            "default_value": "null",
+            "possible_values": "Any CupertinoTabBar widget."
+        },
+        {
+            "name": "tabBuilder",
+            "type": "Widget Function(BuildContext, int)",
+            "description": "Builder function that returns the content widget for the selected tab index.",
+            "default_value": "null",
+            "possible_values": "Any function that returns a Widget for a given tab index."
+        },
+        {
+            "name": "backgroundColor",
+            "type": "Color?",
+            "description": "The background color of the scaffold.",
+            "default_value": "CupertinoColors.systemBackground",
+            "possible_values": "Any Color."
+        },
+        {
+            "name": "resizeToAvoidBottomInset",
+            "type": "bool",
+            "description": "Whether the scaffold should resize when the keyboard appears.",
+            "default_value": "true",
+            "possible_values": "true, false"
+        },
+        {
+            "name": "controller",
+            "type": "CupertinoTabController?",
+            "description": "Optional controller for managing the active tab programmatically.",
+            "default_value": "null",
+            "possible_values": "Any CupertinoTabController or null."
+        },
+        {
+            "name": "key",
+            "type": "Key?",
+            "description": "An optional identifier for this widget.",
+            "default_value": "null",
+            "possible_values": "Any Key."
+        }
+    ]
+}

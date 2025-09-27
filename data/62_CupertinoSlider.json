@@ -1,0 +1,63 @@
+{
+    "name": "CupertinoSlider",
+    "description": "An iOS-style slider that allows users to select a value from a continuous range. It can be customized with minimum, maximum, and divisions, and provides a smooth sliding animation.",
+    "how_to_use": "CupertinoSlider(\n  value: sliderValue,\n  min: 0.0,\n  max: 100.0,\n  onChanged: (double value) {\n    setState(() {\n      sliderValue = value;\n    });\n  },\n);",
+    "properties": [
+        {
+            "name": "value",
+            "type": "double",
+            "description": "The current value of the slider.",
+            "default_value": "0.0",
+            "possible_values": "Any double within min and max."
+        },
+        {
+            "name": "onChanged",
+            "type": "ValueChanged<double>?",
+            "description": "Called when the user changes the slider's value.",
+            "default_value": "null",
+            "possible_values": "Any function that takes a double."
+        },
+        {
+            "name": "min",
+            "type": "double",
+            "description": "The minimum value the user can select.",
+            "default_value": "0.0",
+            "possible_values": "Any double less than max."
+        },
+        {
+            "name": "max",
+            "type": "double",
+            "description": "The maximum value the user can select.",
+            "default_value": "1.0",
+            "possible_values": "Any double greater than min."
+        },
+        {
+            "name": "divisions",
+            "type": "int?",
+            "description": "The number of discrete divisions. If null, the slider is continuous.",
+            "default_value": "null",
+            "possible_values": "Any positive integer or null."
+        },
+        {
+            "name": "activeColor",
+            "type": "Color?",
+            "description": "The color of the portion of the slider that has been selected.",
+            "default_value": "CupertinoColors.activeBlue",
+            "possible_values": "Any Color."
+        },
+        {
+            "name": "thumbColor",
+            "type": "Color?",
+            "description": "The color of the slider thumb.",
+            "default_value": "CupertinoColors.white",
+            "possible_values": "Any Color."
+        },
+        {
+            "name": "key",
+            "type": "Key?",
+            "description": "An optional identifier for this widget.",
+            "default_value": "null",
+            "possible_values": "Any Key."
+        }
+    ]
+}

@@ -2382,5 +2382,945 @@
                 "possible_values": "Any Key"
             }
         ]
-    }
+    },
+    {
+        "_id": 49,
+        "name": "CupertinoActionSheetAction",
+        "description": "An iOS-style action button used inside a CupertinoActionSheet. Typically represents a single action option like 'Delete', 'Share', or 'Edit'.",
+        "how_to_use": "CupertinoActionSheet(\n  title: Text('Select an Option'),\n  actions: [\n    CupertinoActionSheetAction(\n      onPressed: () {\n        print('Option 1 Selected');\n      },\n      child: Text('Option 1'),\n      isDefaultAction: true,\n    ),\n    CupertinoActionSheetAction(\n      onPressed: () {\n        print('Option 2 Selected');\n      },\n      child: Text('Option 2'),\n      isDestructiveAction: true,\n    ),\n  ],\n  cancelButton: CupertinoActionSheetAction(\n    onPressed: () {\n      Navigator.pop(context);\n    },\n    child: Text('Cancel'),\n  ),\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget",
+                "description": "The content of the action button, typically a Text widget.",
+                "default_value": "Required",
+                "possible_values": "Any widget"
+            },
+            {
+                "name": "onPressed",
+                "type": "VoidCallback?",
+                "description": "Callback function executed when the action is pressed.",
+                "default_value": "null",
+                "possible_values": "Any function or null"
+            },
+            {
+                "name": "isDefaultAction",
+                "type": "bool",
+                "description": "Whether this action is the default (highlighted) action.",
+                "default_value": "false",
+                "possible_values": "true, false"
+            },
+            {
+                "name": "isDestructiveAction",
+                "type": "bool",
+                "description": "Whether this action indicates a destructive operation (e.g., delete).",
+                "default_value": "false",
+                "possible_values": "true, false"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key"
+            }
+        ]
+    },
+    {
+        "_id": 50,
+        "name": "CupertinoActivityIndicator",
+        "description": "An iOS-style activity indicator (spinner) that shows that an ongoing process is happening. Similar to the UIActivityIndicator in iOS.",
+        "how_to_use": "CupertinoActivityIndicator(\n  radius: 20.0,\n  animating: true,\n  color: CupertinoColors.activeBlue,\n);",
+        "properties": [
+            {
+                "name": "animating",
+                "type": "bool",
+                "description": "Controls whether the spinner is spinning. If false, the spinner is hidden.",
+                "default_value": "true",
+                "possible_values": "true, false"
+            },
+            {
+                "name": "radius",
+                "type": "double",
+                "description": "The radius of the spinner. Affects the size of the indicator.",
+                "default_value": "10.0",
+                "possible_values": "Any positive double"
+            },
+            {
+                "name": "color",
+                "type": "Color?",
+                "description": "The color of the spinner. If null, defaults to CupertinoColors.activeGray.",
+                "default_value": "null (activeGray)",
+                "possible_values": "Any Color"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key"
+            }
+        ]
+    },
+    {
+        "_id": 51,
+        "name": "CupertinoAlertDialog",
+        "description": "An iOS-style alert dialog that informs the user about situations requiring acknowledgment. It can display a title, content, and a list of actions (buttons).",
+        "how_to_use": "showCupertinoDialog(\n  context: context,\n  builder: (context) {\n    return CupertinoAlertDialog(\n      title: Text('Alert'),\n      content: Text('This is an iOS style alert dialog.'),\n      actions: [\n        CupertinoDialogAction(\n          child: Text('Cancel'),\n          onPressed: () => Navigator.pop(context),\n        ),\n        CupertinoDialogAction(\n          child: Text('OK'),\n          onPressed: () => Navigator.pop(context),\n        ),\n      ],\n    );\n  },\n);",
+        "properties": [
+            {
+                "name": "title",
+                "type": "Widget?",
+                "description": "The primary content of the alert dialog displayed in a larger font at the top.",
+                "default_value": "null",
+                "possible_values": "Any widget (commonly Text)."
+            },
+            {
+                "name": "content",
+                "type": "Widget?",
+                "description": "The message or main body of the alert dialog, displayed under the title.",
+                "default_value": "null",
+                "possible_values": "Any widget (commonly Text)."
+            },
+            {
+                "name": "actions",
+                "type": "List<Widget>",
+                "description": "The set of actions (buttons) displayed at the bottom of the dialog.",
+                "default_value": "const []",
+                "possible_values": "List of CupertinoDialogAction or custom widgets."
+            },
+            {
+                "name": "scrollController",
+                "type": "ScrollController?",
+                "description": "Controller for scrolling the content if it overflows vertically.",
+                "default_value": "null",
+                "possible_values": "Any ScrollController."
+            },
+            {
+                "name": "actionScrollController",
+                "type": "ScrollController?",
+                "description": "Controller for scrolling the actions section if actions overflow.",
+                "default_value": "null",
+                "possible_values": "Any ScrollController."
+            },
+            {
+                "name": "insetAnimationDuration",
+                "type": "Duration",
+                "description": "The duration of the dialog's inset animation.",
+                "default_value": "Duration(milliseconds: 100)",
+                "possible_values": "Any Duration."
+            },
+            {
+                "name": "insetAnimationCurve",
+                "type": "Curve",
+                "description": "The curve used for the inset animation.",
+                "default_value": "Curves.decelerate",
+                "possible_values": "Any Curve."
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key."
+            }
+        ]
+    },
+    {
+        "_id": 52,
+        "name": "CupertinoButton",
+        "description": "An iOS-style button that responds to touches with a fade-in/out effect. It is commonly used to create tappable controls that match the Cupertino design language.",
+        "how_to_use": "CupertinoButton(\n  child: Text('Press Me'),\n  color: CupertinoColors.activeBlue,\n  onPressed: () {\n    print('Button pressed');\n  },\n);",
+        "properties": [
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget inside the button, usually a Text or Icon.",
+                "default_value": "null",
+                "possible_values": "Any widget."
+            },
+            {
+                "name": "onPressed",
+                "type": "VoidCallback?",
+                "description": "The callback function that is called when the button is tapped. If null, the button is disabled.",
+                "default_value": "Required",
+                "possible_values": "Any function or null."
+            },
+            {
+                "name": "color",
+                "type": "Color?",
+                "description": "The background color of the button.",
+                "default_value": "null",
+                "possible_values": "Any Color."
+            },
+            {
+                "name": "padding",
+                "type": "EdgeInsetsGeometry",
+                "description": "The padding inside the button around the child.",
+                "default_value": "EdgeInsets.symmetric(horizontal: 16.0)",
+                "possible_values": "Any EdgeInsets."
+            },
+            {
+                "name": "borderRadius",
+                "type": "BorderRadius",
+                "description": "The border radius of the button for rounded corners.",
+                "default_value": "BorderRadius.circular(8.0)",
+                "possible_values": "Any BorderRadius."
+            },
+            {
+                "name": "minSize",
+                "type": "double",
+                "description": "The minimum size of the button.",
+                "default_value": "44.0",
+                "possible_values": "Any positive double."
+            },
+            {
+                "name": "pressedOpacity",
+                "type": "double",
+                "description": "The opacity of the button when pressed.",
+                "default_value": "0.4",
+                "possible_values": "0.0 to 1.0"
+            },
+            {
+                "name": "alignment",
+                "type": "AlignmentGeometry",
+                "description": "The alignment of the child within the button.",
+                "default_value": "Alignment.center",
+                "possible_values": "Any Alignment."
+            },
+            {
+                "name": "padding",
+                "type": "EdgeInsetsGeometry",
+                "description": "Internal padding for the button content.",
+                "default_value": "EdgeInsets.symmetric(horizontal: 16.0)",
+                "possible_values": "Any EdgeInsets."
+            },
+            {
+                "name": "disabledColor",
+                "type": "Color?",
+                "description": "The background color when the button is disabled (onPressed is null).",
+                "default_value": "CupertinoColors.quaternarySystemFill",
+                "possible_values": "Any Color."
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for the widget.",
+                "default_value": "null",
+                "possible_values": "Any Key."
+            }
+        ]
+    },
+    {
+        "_id": 53,
+        "name": "CupertinoContextMenu",
+        "description": "An iOS-style context menu that shows a full-screen preview when the user long-presses on the child widget. It can display additional menu actions in a pop-up sheet.",
+        "how_to_use": "CupertinoContextMenu(\n  actions: [\n    CupertinoContextMenuAction(\n      child: Text('Action 1'),\n      onPressed: () {\n        Navigator.pop(context);\n      },\n    ),\n    CupertinoContextMenuAction(\n      child: Text('Action 2'),\n      onPressed: () {\n        Navigator.pop(context);\n      },\n    ),\n  ],\n  child: Image.network('https://example.com/image.jpg', width: 150),\n);",
+        "properties": [
+            {
+                "name": "actions",
+                "type": "List<Widget>",
+                "description": "The list of menu actions shown when the context menu is opened.",
+                "default_value": "Required",
+                "possible_values": "List of CupertinoContextMenuAction or custom widgets."
+            },
+            {
+                "name": "child",
+                "type": "Widget",
+                "description": "The widget that triggers the context menu when long-pressed.",
+                "default_value": "Required",
+                "possible_values": "Any widget."
+            },
+            {
+                "name": "previewBuilder",
+                "type": "Widget Function(BuildContext, Animation<double>, Widget)?",
+                "description": "An optional builder to customize the preview animation. Provides the build context, animation progress, and the default preview child.",
+                "default_value": "null",
+                "possible_values": "Any function returning a Widget."
+            },
+            {
+                "name": "enableHapticFeedback",
+                "type": "bool",
+                "description": "Determines whether to trigger haptic feedback when the menu is opened.",
+                "default_value": "true",
+                "possible_values": "true, false"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key."
+            }
+        ]
+    },
+    {
+        "_id": 54,
+        "name": "CupertinoDatePicker",
+        "description": "An iOS-style date and time picker. It displays a scrollable wheel interface allowing users to select a date, time, or both.",
+        "how_to_use": "CupertinoDatePicker(\n  mode: CupertinoDatePickerMode.dateAndTime,\n  initialDateTime: DateTime.now(),\n  onDateTimeChanged: (DateTime newDate) {\n    print(newDate);\n  },\n);",
+        "properties": [
+            {
+                "name": "mode",
+                "type": "CupertinoDatePickerMode",
+                "description": "The type of picker to display.",
+                "default_value": "CupertinoDatePickerMode.dateAndTime",
+                "possible_values": "CupertinoDatePickerMode.time, CupertinoDatePickerMode.date, CupertinoDatePickerMode.dateAndTime"
+            },
+            {
+                "name": "onDateTimeChanged",
+                "type": "ValueChanged<DateTime>",
+                "description": "Called whenever the user changes the selected date or time.",
+                "default_value": "Required",
+                "possible_values": "Any callback function."
+            },
+            {
+                "name": "initialDateTime",
+                "type": "DateTime",
+                "description": "The initial date and time displayed by the picker.",
+                "default_value": "DateTime.now()",
+                "possible_values": "Any valid DateTime."
+            },
+            {
+                "name": "minimumDate",
+                "type": "DateTime?",
+                "description": "The earliest date that can be selected.",
+                "default_value": "null",
+                "possible_values": "Any DateTime before maximumDate."
+            },
+            {
+                "name": "maximumDate",
+                "type": "DateTime?",
+                "description": "The latest date that can be selected.",
+                "default_value": "null",
+                "possible_values": "Any DateTime after minimumDate."
+            },
+            {
+                "name": "minuteInterval",
+                "type": "int",
+                "description": "The granularity of the minute selection.",
+                "default_value": "1",
+                "possible_values": "1 to 30 (must be a factor of 60)."
+            },
+            {
+                "name": "use24hFormat",
+                "type": "bool",
+                "description": "Whether to use a 24-hour format for time mode.",
+                "default_value": "false",
+                "possible_values": "true, false"
+            },
+            {
+                "name": "backgroundColor",
+                "type": "Color?",
+                "description": "The background color of the picker.",
+                "default_value": "null",
+                "possible_values": "Any Color."
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key."
+            }
+        ]
+    },
+    {
+        "_id": 55,
+        "name": "CupertinoPageRoute",
+        "description": "An iOS-style page route that transitions between screens with a Cupertino (iOS) page animation. It provides a swipe-back gesture to pop the current route and uses the standard iOS navigation transition.",
+        "how_to_use": "Navigator.push(\n  context,\n  CupertinoPageRoute(\n    builder: (context) => NextPage(),\n  ),\n);",
+        "properties": [
+            {
+                "name": "builder",
+                "type": "WidgetBuilder",
+                "description": "The builder function to create the primary contents of the route.",
+                "default_value": "Required",
+                "possible_values": "Any function returning a Widget."
+            },
+            {
+                "name": "settings",
+                "type": "RouteSettings?",
+                "description": "Configuration information for the route, such as name and arguments.",
+                "default_value": "null",
+                "possible_values": "Any RouteSettings."
+            },
+            {
+                "name": "fullscreenDialog",
+                "type": "bool",
+                "description": "Whether the page is displayed as a full-screen modal dialog.",
+                "default_value": "false",
+                "possible_values": "true, false"
+            },
+            {
+                "name": "maintainState",
+                "type": "bool",
+                "description": "Whether the route should remain in memory when it is inactive.",
+                "default_value": "true",
+                "possible_values": "true, false"
+            },
+            {
+                "name": "title",
+                "type": "String?",
+                "description": "The title of the route, used by iOS for the back button text of the previous page.",
+                "default_value": "null",
+                "possible_values": "Any string."
+            },
+            {
+                "name": "allowSnapshotting",
+                "type": "bool",
+                "description": "Determines whether this route can be snapshotted for use in iOS transition animations.",
+                "default_value": "true",
+                "possible_values": "true, false"
+            }
+        ]
+    },
+    {
+        "_id": 57,
+        "name": "CupertinoPicker",
+        "description": "An iOS-style picker that displays its children widgets on a scrollable wheel. It allows users to select a single value from a list of options with a smooth, scrollable interface.",
+        "how_to_use": "CupertinoPicker(\n  itemExtent: 32.0,\n  onSelectedItemChanged: (int index) {\n    print('Selected index: $index');\n  },\n  children: [\n    Text('Option 1'),\n    Text('Option 2'),\n    Text('Option 3'),\n  ],\n);",
+        "properties": [
+            {
+                "name": "itemExtent",
+                "type": "double",
+                "description": "The height of each child item in the picker.",
+                "default_value": "Required",
+                "possible_values": "Any positive double."
+            },
+            {
+                "name": "onSelectedItemChanged",
+                "type": "ValueChanged<int>?",
+                "description": "Called when the user scrolls and selects a new item.",
+                "default_value": "null",
+                "possible_values": "Any callback function."
+            },
+            {
+                "name": "children",
+                "type": "List<Widget>",
+                "description": "The list of widgets to display as selectable options.",
+                "default_value": "Required",
+                "possible_values": "Any list of widgets."
+            },
+            {
+                "name": "diameterRatio",
+                "type": "double",
+                "description": "Controls the curvature of the wheel. A smaller value makes the wheel more curved.",
+                "default_value": "1.07",
+                "possible_values": "Must be greater than 0."
+            },
+            {
+                "name": "magnification",
+                "type": "double",
+                "description": "The magnification factor applied to the currently selected item.",
+                "default_value": "1.0",
+                "possible_values": "Any positive double."
+            },
+            {
+                "name": "squeeze",
+                "type": "double",
+                "description": "The ratio of the item extent to the viewport height, affecting spacing between items.",
+                "default_value": "1.25",
+                "possible_values": "Any positive double."
+            },
+            {
+                "name": "offAxisFraction",
+                "type": "double",
+                "description": "How far the wheel is horizontally shifted, where 0 is centered.",
+                "default_value": "0.0",
+                "possible_values": "-1.0 to 1.0"
+            },
+            {
+                "name": "scrollController",
+                "type": "FixedExtentScrollController?",
+                "description": "Controls the scroll position of the picker. Useful for setting the initial selected index.",
+                "default_value": "null",
+                "possible_values": "Any FixedExtentScrollController."
+            },
+            {
+                "name": "backgroundColor",
+                "type": "Color?",
+                "description": "The background color of the picker wheel.",
+                "default_value": "null",
+                "possible_values": "Any Color."
+            },
+            {
+                "name": "selectionOverlay",
+                "type": "Widget?",
+                "description": "A custom widget displayed over the currently selected item. By default, a translucent grey overlay is used.",
+                "default_value": "null",
+                "possible_values": "Any Widget."
+            },
+            {
+                "name": "looping",
+                "type": "bool",
+                "description": "Whether the picker loops back to the beginning when reaching the end of the list.",
+                "default_value": "false",
+                "possible_values": "true, false"
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key."
+            }
+        ]
+    },
+    {
+        "_id": 58,
+        "name": "CupertinoPopupSurface",
+        "description": "An iOS-style popup surface that provides a rounded, translucent background for popups and modal views. It is typically used as the visual container for Cupertino-style popup elements.",
+        "how_to_use": "CupertinoPopupSurface(\n  isSurfacePainted: true,\n  child: Padding(\n    padding: EdgeInsets.all(16.0),\n    child: Text('This is a Cupertino popup surface'),\n  ),\n);",
+        "properties": [
+            {
+                "name": "isSurfacePainted",
+                "type": "bool",
+                "description": "Determines whether the popup surface is painted with a translucent background and rounded corners.",
+                "default_value": "true",
+                "possible_values": "true, false"
+            },
+            {
+                "name": "child",
+                "type": "Widget?",
+                "description": "The widget inside the popup surface.",
+                "default_value": "null",
+                "possible_values": "Any Widget."
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key."
+            }
+        ]
+    },
+    {
+        "_id": 60,
+        "name": "CupertinoSearchTextField",
+        "description": "An iOS-style search text field that provides a text input for search queries. It typically includes a clear button, a search icon, and supports placeholder text.",
+        "how_to_use": "CupertinoSearchTextField(\n  placeholder: 'Search here',\n  onChanged: (value) {\n    print('Search query: $value');\n  },\n);",
+        "properties": [
+            {
+                "name": "placeholder",
+                "type": "String?",
+                "description": "The placeholder text displayed when the field is empty.",
+                "default_value": "'Search'",
+                "possible_values": "Any String."
+            },
+            {
+                "name": "onChanged",
+                "type": "ValueChanged<String>?",
+                "description": "Called when the user changes the text in the field.",
+                "default_value": "null",
+                "possible_values": "Any function that takes a String."
+            },
+            {
+                "name": "controller",
+                "type": "TextEditingController?",
+                "description": "Controls the text being edited. Useful for reading and modifying the text.",
+                "default_value": "null",
+                "possible_values": "Any TextEditingController."
+            },
+            {
+                "name": "autofocus",
+                "type": "bool",
+                "description": "Whether this text field should focus itself if nothing else is already focused.",
+                "default_value": "false",
+                "possible_values": "true, false"
+            },
+            {
+                "name": "style",
+                "type": "TextStyle?",
+                "description": "The style to use for the text being edited.",
+                "default_value": "null",
+                "possible_values": "Any TextStyle."
+            },
+            {
+                "name": "prefixIcon",
+                "type": "Widget?",
+                "description": "An optional widget to display at the start of the text field, typically an icon.",
+                "default_value": "Icon(CupertinoIcons.search)",
+                "possible_values": "Any Widget."
+            },
+            {
+                "name": "suffixIcon",
+                "type": "Widget?",
+                "description": "An optional widget to display at the end of the text field, often a clear button.",
+                "default_value": "null",
+                "possible_values": "Any Widget."
+            },
+            {
+                "name": "backgroundColor",
+                "type": "Color?",
+                "description": "The background color of the text field.",
+                "default_value": "CupertinoColors.systemGrey5",
+                "possible_values": "Any Color."
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key."
+            }
+        ]
+    },
+    {
+        "_id": 61,
+        "name": "CupertinoSlidingSegmentedControl",
+        "description": "An iOS-style segmented control where the selected segment slides smoothly between options. Useful for switching between views or modes in an app.",
+        "how_to_use": "CupertinoSlidingSegmentedControl<int>(\n  children: {\n    0: Text('First'),\n    1: Text('Second'),\n    2: Text('Third'),\n  },\n  groupValue: selectedSegment,\n  onValueChanged: (value) {\n    setState(() {\n      selectedSegment = value!;\n    });\n  },\n);",
+        "properties": [
+            {
+                "name": "children",
+                "type": "Map<T, Widget>",
+                "description": "A map of segment index/keys to the widgets to display in each segment.",
+                "default_value": "{}",
+                "possible_values": "Any map of key-value pairs where keys are of type T and values are Widgets."
+            },
+            {
+                "name": "groupValue",
+                "type": "T?",
+                "description": "The currently selected value. Should match one of the keys in children.",
+                "default_value": "null",
+                "possible_values": "Any key from the children map or null."
+            },
+            {
+                "name": "onValueChanged",
+                "type": "ValueChanged<T>?",
+                "description": "Called when the user selects a different segment. Provides the new selected key.",
+                "default_value": "null",
+                "possible_values": "Any function that takes a value of type T."
+            },
+            {
+                "name": "padding",
+                "type": "EdgeInsetsGeometry?",
+                "description": "The padding around the whole segmented control.",
+                "default_value": "EdgeInsets.zero",
+                "possible_values": "Any EdgeInsets value."
+            },
+            {
+                "name": "thumbColor",
+                "type": "Color?",
+                "description": "The color of the sliding thumb that highlights the selected segment.",
+                "default_value": "CupertinoColors.activeBlue",
+                "possible_values": "Any Color."
+            },
+            {
+                "name": "backgroundColor",
+                "type": "Color?",
+                "description": "The background color of the control when unselected.",
+                "default_value": "CupertinoColors.systemGrey",
+                "possible_values": "Any Color."
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key."
+            }
+        ]
+    },
+    {
+        "_id": 62,
+        "name": "CupertinoSlider",
+        "description": "An iOS-style slider that allows users to select a value from a continuous range. It can be customized with minimum, maximum, and divisions, and provides a smooth sliding animation.",
+        "how_to_use": "CupertinoSlider(\n  value: sliderValue,\n  min: 0.0,\n  max: 100.0,\n  onChanged: (double value) {\n    setState(() {\n      sliderValue = value;\n    });\n  },\n);",
+        "properties": [
+            {
+                "name": "value",
+                "type": "double",
+                "description": "The current value of the slider.",
+                "default_value": "0.0",
+                "possible_values": "Any double within min and max."
+            },
+            {
+                "name": "onChanged",
+                "type": "ValueChanged<double>?",
+                "description": "Called when the user changes the slider's value.",
+                "default_value": "null",
+                "possible_values": "Any function that takes a double."
+            },
+            {
+                "name": "min",
+                "type": "double",
+                "description": "The minimum value the user can select.",
+                "default_value": "0.0",
+                "possible_values": "Any double less than max."
+            },
+            {
+                "name": "max",
+                "type": "double",
+                "description": "The maximum value the user can select.",
+                "default_value": "1.0",
+                "possible_values": "Any double greater than min."
+            },
+            {
+                "name": "divisions",
+                "type": "int?",
+                "description": "The number of discrete divisions. If null, the slider is continuous.",
+                "default_value": "null",
+                "possible_values": "Any positive integer or null."
+            },
+            {
+                "name": "activeColor",
+                "type": "Color?",
+                "description": "The color of the portion of the slider that has been selected.",
+                "default_value": "CupertinoColors.activeBlue",
+                "possible_values": "Any Color."
+            },
+            {
+                "name": "thumbColor",
+                "type": "Color?",
+                "description": "The color of the slider thumb.",
+                "default_value": "CupertinoColors.white",
+                "possible_values": "Any Color."
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key."
+            }
+        ]
+    },
+    {
+        "_id": 63,
+        "name": "CupertinoSlidingSegmentedControl",
+        "description": "An iOS-style segmented control where the selected segment slides smoothly between options. Useful for switching between views or modes in an app.",
+        "how_to_use": "CupertinoSlidingSegmentedControl<int>(\n  children: {\n    0: Text('First'),\n    1: Text('Second'),\n    2: Text('Third'),\n  },\n  groupValue: selectedSegment,\n  onValueChanged: (value) {\n    setState(() {\n      selectedSegment = value!;\n    });\n  },\n);",
+        "properties": [
+            {
+                "name": "children",
+                "type": "Map<T, Widget>",
+                "description": "A map of segment index/keys to the widgets to display in each segment.",
+                "default_value": "{}",
+                "possible_values": "Any map of key-value pairs where keys are of type T and values are Widgets."
+            },
+            {
+                "name": "groupValue",
+                "type": "T?",
+                "description": "The currently selected value. Should match one of the keys in children.",
+                "default_value": "null",
+                "possible_values": "Any key from the children map or null."
+            },
+            {
+                "name": "onValueChanged",
+                "type": "ValueChanged<T>?",
+                "description": "Called when the user selects a different segment. Provides the new selected key.",
+                "default_value": "null",
+                "possible_values": "Any function that takes a value of type T."
+            },
+            {
+                "name": "padding",
+                "type": "EdgeInsetsGeometry?",
+                "description": "The padding around the whole segmented control.",
+                "default_value": "EdgeInsets.zero",
+                "possible_values": "Any EdgeInsets value."
+            },
+            {
+                "name": "thumbColor",
+                "type": "Color?",
+                "description": "The color of the sliding thumb that highlights the selected segment.",
+                "default_value": "CupertinoColors.activeBlue",
+                "possible_values": "Any Color."
+            },
+            {
+                "name": "backgroundColor",
+                "type": "Color?",
+                "description": "The background color of the control when unselected.",
+                "default_value": "CupertinoColors.systemGrey",
+                "possible_values": "Any Color."
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key."
+            }
+        ]
+    },
+    {
+        "_id": 64,
+        "name": "CupertinoSwitch",
+        "description": "An iOS-style switch that toggles between on/off states. Commonly used to represent boolean settings in an app.",
+        "how_to_use": "CupertinoSwitch(\n  value: switchValue,\n  onChanged: (bool value) {\n    setState(() {\n      switchValue = value;\n    });\n  },\n);",
+        "properties": [
+            {
+                "name": "value",
+                "type": "bool",
+                "description": "Whether the switch is on (true) or off (false).",
+                "default_value": "false",
+                "possible_values": "true, false"
+            },
+            {
+                "name": "onChanged",
+                "type": "ValueChanged<bool>?",
+                "description": "Called when the user toggles the switch. Provides the new value.",
+                "default_value": "null",
+                "possible_values": "Any function that takes a bool."
+            },
+            {
+                "name": "activeColor",
+                "type": "Color?",
+                "description": "The color of the switch when it is on.",
+                "default_value": "CupertinoColors.activeGreen",
+                "possible_values": "Any Color."
+            },
+            {
+                "name": "trackColor",
+                "type": "Color?",
+                "description": "The color of the switch track when it is off.",
+                "default_value": "CupertinoColors.secondarySystemFill",
+                "possible_values": "Any Color."
+            },
+            {
+                "name": "thumbColor",
+                "type": "Color?",
+                "description": "The color of the switch thumb. If null, defaults to white.",
+                "default_value": "null",
+                "possible_values": "Any Color or null."
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key."
+            }
+        ]
+    },
+    {
+        "_id": 65,
+        "name": "CupertinoTabScaffold",
+        "description": "An iOS-style scaffold that lays out the tab bar at the bottom and displays content for the selected tab. Commonly used for apps with multiple tabs.",
+        "how_to_use": "CupertinoTabScaffold(\n  tabBar: CupertinoTabBar(\n    items: [\n      BottomNavigationBarItem(icon: Icon(CupertinoIcons.home), label: 'Home'),\n      BottomNavigationBarItem(icon: Icon(CupertinoIcons.settings), label: 'Settings'),\n    ],\n  ),\n  tabBuilder: (context, index) {\n    switch (index) {\n      case 0:\n        return HomePage();\n      case 1:\n        return SettingsPage();\n      default:\n        return Container();\n    }\n  },\n);",
+        "properties": [
+            {
+                "name": "tabBar",
+                "type": "CupertinoTabBar",
+                "description": "The tab bar displayed at the bottom of the scaffold.",
+                "default_value": "null",
+                "possible_values": "Any CupertinoTabBar widget."
+            },
+            {
+                "name": "tabBuilder",
+                "type": "Widget Function(BuildContext, int)",
+                "description": "Builder function that returns the content widget for the selected tab index.",
+                "default_value": "null",
+                "possible_values": "Any function that returns a Widget for a given tab index."
+            },
+            {
+                "name": "backgroundColor",
+                "type": "Color?",
+                "description": "The background color of the scaffold.",
+                "default_value": "CupertinoColors.systemBackground",
+                "possible_values": "Any Color."
+            },
+            {
+                "name": "resizeToAvoidBottomInset",
+                "type": "bool",
+                "description": "Whether the scaffold should resize when the keyboard appears.",
+                "default_value": "true",
+                "possible_values": "true, false"
+            },
+            {
+                "name": "controller",
+                "type": "CupertinoTabController?",
+                "description": "Optional controller for managing the active tab programmatically.",
+                "default_value": "null",
+                "possible_values": "Any CupertinoTabController or null."
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key."
+            }
+        ]
+    },
+    {
+        "_id": 66,
+        "name": "CupertinoTextField",
+        "description": "An iOS-style text field for inputting text. Supports placeholder text, controllers, focus, and styling options.",
+        "how_to_use": "CupertinoTextField(\n  placeholder: 'Enter text',\n  controller: textController,\n  onChanged: (value) {\n    print('Text changed: $value');\n  },\n);",
+        "properties": [
+            {
+                "name": "controller",
+                "type": "TextEditingController?",
+                "description": "Controls the text being edited. Useful for reading and modifying the text.",
+                "default_value": "null",
+                "possible_values": "Any TextEditingController."
+            },
+            {
+                "name": "placeholder",
+                "type": "String?",
+                "description": "Text displayed when the field is empty.",
+                "default_value": "null",
+                "possible_values": "Any String."
+            },
+            {
+                "name": "onChanged",
+                "type": "ValueChanged<String>?",
+                "description": "Called when the user changes the text.",
+                "default_value": "null",
+                "possible_values": "Any function that takes a String."
+            },
+            {
+                "name": "keyboardType",
+                "type": "TextInputType?",
+                "description": "The type of keyboard to use for editing the text.",
+                "default_value": "TextInputType.text",
+                "possible_values": "Any TextInputType."
+            },
+            {
+                "name": "obscureText",
+                "type": "bool",
+                "description": "Whether to hide the text being entered, useful for passwords.",
+                "default_value": "false",
+                "possible_values": "true, false"
+            },
+            {
+                "name": "prefix",
+                "type": "Widget?",
+                "description": "An optional widget to display before the text field (like an icon).",
+                "default_value": "null",
+                "possible_values": "Any Widget."
+            },
+            {
+                "name": "suffix",
+                "type": "Widget?",
+                "description": "An optional widget to display after the text field (like a clear button).",
+                "default_value": "null",
+                "possible_values": "Any Widget."
+            },
+            {
+                "name": "padding",
+                "type": "EdgeInsetsGeometry?",
+                "description": "Padding inside the text field.",
+                "default_value": "EdgeInsets.symmetric(horizontal: 6.0, vertical: 6.0)",
+                "possible_values": "Any EdgeInsets."
+            },
+            {
+                "name": "decoration",
+                "type": "BoxDecoration?",
+                "description": "The decoration around the text field.",
+                "default_value": "null",
+                "possible_values": "Any BoxDecoration."
+            },
+            {
+                "name": "key",
+                "type": "Key?",
+                "description": "An optional identifier for this widget.",
+                "default_value": "null",
+                "possible_values": "Any Key."
+            }
+        ]
+}
 ]

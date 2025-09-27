@@ -1,0 +1,70 @@
+{
+    "name": "CupertinoSearchTextField",
+    "description": "An iOS-style search text field that provides a text input for search queries. It typically includes a clear button, a search icon, and supports placeholder text.",
+    "how_to_use": "CupertinoSearchTextField(\n  placeholder: 'Search here',\n  onChanged: (value) {\n    print('Search query: $value');\n  },\n);",
+    "properties": [
+        {
+            "name": "placeholder",
+            "type": "String?",
+            "description": "The placeholder text displayed when the field is empty.",
+            "default_value": "'Search'",
+            "possible_values": "Any String."
+        },
+        {
+            "name": "onChanged",
+            "type": "ValueChanged<String>?",
+            "description": "Called when the user changes the text in the field.",
+            "default_value": "null",
+            "possible_values": "Any function that takes a String."
+        },
+        {
+            "name": "controller",
+            "type": "TextEditingController?",
+            "description": "Controls the text being edited. Useful for reading and modifying the text.",
+            "default_value": "null",
+            "possible_values": "Any TextEditingController."
+        },
+        {
+            "name": "autofocus",
+            "type": "bool",
+            "description": "Whether this text field should focus itself if nothing else is already focused.",
+            "default_value": "false",
+            "possible_values": "true, false"
+        },
+        {
+            "name": "style",
+            "type": "TextStyle?",
+            "description": "The style to use for the text being edited.",
+            "default_value": "null",
+            "possible_values": "Any TextStyle."
+        },
+        {
+            "name": "prefixIcon",
+            "type": "Widget?",
+            "description": "An optional widget to display at the start of the text field, typically an icon.",
+            "default_value": "Icon(CupertinoIcons.search)",
+            "possible_values": "Any Widget."
+        },
+        {
+            "name": "suffixIcon",
+            "type": "Widget?",
+            "description": "An optional widget to display at the end of the text field, often a clear button.",
+            "default_value": "null",
+            "possible_values": "Any Widget."
+        },
+        {
+            "name": "backgroundColor",
+            "type": "Color?",
+            "description": "The background color of the text field.",
+            "default_value": "CupertinoColors.systemGrey5",
+            "possible_values": "Any Color."
+        },
+        {
+            "name": "key",
+            "type": "Key?",
+            "description": "An optional identifier for this widget.",
+            "default_value": "null",
+            "possible_values": "Any Key."
+        }
+    ]
+}

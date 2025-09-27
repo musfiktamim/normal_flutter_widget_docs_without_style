@@ -1,0 +1,42 @@
+{
+    "name": "CupertinoActionSheetAction",
+    "description": "An iOS-style action button used inside a CupertinoActionSheet. Typically represents a single action option like 'Delete', 'Share', or 'Edit'.",
+    "how_to_use": "CupertinoActionSheet(\n  title: Text('Select an Option'),\n  actions: [\n    CupertinoActionSheetAction(\n      onPressed: () {\n        print('Option 1 Selected');\n      },\n      child: Text('Option 1'),\n      isDefaultAction: true,\n    ),\n    CupertinoActionSheetAction(\n      onPressed: () {\n        print('Option 2 Selected');\n      },\n      child: Text('Option 2'),\n      isDestructiveAction: true,\n    ),\n  ],\n  cancelButton: CupertinoActionSheetAction(\n    onPressed: () {\n      Navigator.pop(context);\n    },\n    child: Text('Cancel'),\n  ),\n);",
+    "properties": [
+        {
+            "name": "child",
+            "type": "Widget",
+            "description": "The content of the action button, typically a Text widget.",
+            "default_value": "Required",
+            "possible_values": "Any widget"
+        },
+        {
+            "name": "onPressed",
+            "type": "VoidCallback?",
+            "description": "Callback function executed when the action is pressed.",
+            "default_value": "null",
+            "possible_values": "Any function or null"
+        },
+        {
+            "name": "isDefaultAction",
+            "type": "bool",
+            "description": "Whether this action is the default (highlighted) action.",
+            "default_value": "false",
+            "possible_values": "true, false"
+        },
+        {
+            "name": "isDestructiveAction",
+            "type": "bool",
+            "description": "Whether this action indicates a destructive operation (e.g., delete).",
+            "default_value": "false",
+            "possible_values": "true, false"
+        },
+        {
+            "name": "key",
+            "type": "Key?",
+            "description": "An optional identifier for this widget.",
+            "default_value": "null",
+            "possible_values": "Any Key"
+        }
+    ]
+}

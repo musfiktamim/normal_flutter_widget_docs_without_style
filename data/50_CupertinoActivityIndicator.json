@@ -1,0 +1,35 @@
+{
+    "name": "CupertinoActivityIndicator",
+    "description": "An iOS-style activity indicator (spinner) that shows that an ongoing process is happening. Similar to the UIActivityIndicator in iOS.",
+    "how_to_use": "CupertinoActivityIndicator(\n  radius: 20.0,\n  animating: true,\n  color: CupertinoColors.activeBlue,\n);",
+    "properties": [
+        {
+            "name": "animating",
+            "type": "bool",
+            "description": "Controls whether the spinner is spinning. If false, the spinner is hidden.",
+            "default_value": "true",
+            "possible_values": "true, false"
+        },
+        {
+            "name": "radius",
+            "type": "double",
+            "description": "The radius of the spinner. Affects the size of the indicator.",
+            "default_value": "10.0",
+            "possible_values": "Any positive double"
+        },
+        {
+            "name": "color",
+            "type": "Color?",
+            "description": "The color of the spinner. If null, defaults to CupertinoColors.activeGray.",
+            "default_value": "null (activeGray)",
+            "possible_values": "Any Color"
+        },
+        {
+            "name": "key",
+            "type": "Key?",
+            "description": "An optional identifier for this widget.",
+            "default_value": "null",
+            "possible_values": "Any Key"
+        }
+    ]
+}
