@@ -4,7 +4,7 @@ let sidebar = document.getElementById("si");
 let nbop = document.getElementById("op");
 
 let op = true;
-var prod = true;
+let prod = true;
 function showingdata(dta) {
     let li = document.createElement("li");
     let a = document.createElement("a");
