@@ -4,12 +4,13 @@ let sidebar = document.getElementById("si");
 let nbop = document.getElementById("op");
 
 let op = true;
+var prod = true;
 function showingdata(dta) {
     let li = document.createElement("li");
     let a = document.createElement("a");
     li.classList.add("ul_li");
     a.innerText = dta.name;
-    a.href = `/#${dta._id}`;
+    a.href = prod ? `/normal_flutter_widget_docs_without_style/#${dta._id}` : `/#${dta._id}`;
     li.appendChild(a);
     widget_ul.appendChild(li);
     let div = document.createElement("div");
